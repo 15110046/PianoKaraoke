@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YP8-aW-864">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pikanoke-->
+        <scene sceneID="odg-2S-j02">
+            <objects>
+                <viewController id="Dzb-Tq-zrx" customClass="LocalSong" customModule="Piano_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pqm-cy-Dr7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" alpha="0.84999999999999998" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HRY-VY-zUC" customClass="TableViewListSong" customModule="Piano_App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="94" width="375" height="573"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Dzb-Tq-zrx" id="d3U-Ub-z4g"/>
+                                    <outlet property="delegate" destination="Dzb-Tq-zrx" id="9lN-dh-fh3"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W6G-9G-0zR">
+                                <rect key="frame" x="0.0" y="64" width="375" height="30"/>
+                                <color key="backgroundColor" name="findHighlightColor" catalog="System" colorSpace="catalog"/>
+                                <state key="normal" title="List Song Karaoke"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HRY-VY-zUC" firstAttribute="trailing" secondItem="T1N-mo-2vP" secondAttribute="trailing" id="4X5-oj-i2U"/>
+                            <constraint firstItem="HRY-VY-zUC" firstAttribute="leading" secondItem="T1N-mo-2vP" secondAttribute="leading" id="DUH-8I-skO"/>
+                            <constraint firstItem="T1N-mo-2vP" firstAttribute="trailing" secondItem="W6G-9G-0zR" secondAttribute="trailing" id="GcN-bC-p9B"/>
+                            <constraint firstItem="T1N-mo-2vP" firstAttribute="bottom" secondItem="HRY-VY-zUC" secondAttribute="bottom" id="duk-L3-Zvm"/>
+                            <constraint firstItem="W6G-9G-0zR" firstAttribute="top" secondItem="T1N-mo-2vP" secondAttribute="top" id="eVU-JJ-c7c"/>
+                            <constraint firstItem="W6G-9G-0zR" firstAttribute="leading" secondItem="T1N-mo-2vP" secondAttribute="leading" id="qIy-Mp-dni"/>
+                            <constraint firstItem="HRY-VY-zUC" firstAttribute="top" secondItem="W6G-9G-0zR" secondAttribute="bottom" id="wPS-5C-6ET"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="T1N-mo-2vP"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Pikanoke" id="vtr-FC-3fM"/>
+                    <connections>
+                        <outlet property="tableViewListSong" destination="HRY-VY-zUC" id="xgV-bB-LnZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UKo-LI-u1l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="967.20000000000005" y="89.505247376311857"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QGQ-bK-tZo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YP8-aW-864" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BcB-if-Pe6">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.23439428070000001" green="0.91751509899999995" blue="0.17882391340000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Dzb-Tq-zrx" kind="relationship" relationship="rootViewController" id="iyJ-vX-fCC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W3T-ha-9Ap" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28" y="89.505247376311857"/>
+        </scene>
+    </scenes>
+</document>

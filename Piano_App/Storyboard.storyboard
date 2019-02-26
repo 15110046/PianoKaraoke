@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9qe-zh-Y9C">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller Test-->
+        <scene sceneID="EvS-fz-HyL">
+            <objects>
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="9qe-zh-Y9C" customClass="ViewControllerTest" customModule="Piano_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nBe-nL-oXL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQ8-FK-EFx">
+                                <rect key="frame" x="137.5" y="293.5" width="100" height="100"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="9s6-MN-pZS"/>
+                                    <constraint firstAttribute="width" constant="100" id="fsz-FM-IbA"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="inside4:forEvent:" destination="9qe-zh-Y9C" eventType="touchDragInside" id="Zzt-2q-tAH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xch-cP-dUh">
+                                <rect key="frame" x="62" y="534" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="action2:forEvent:" destination="9qe-zh-Y9C" eventType="touchUpInside" id="VkZ-Oo-cBO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="VQ8-FK-EFx" firstAttribute="centerX" secondItem="SbX-bM-QCv" secondAttribute="centerX" id="rM4-Qd-8RD"/>
+                            <constraint firstItem="VQ8-FK-EFx" firstAttribute="centerY" secondItem="SbX-bM-QCv" secondAttribute="centerY" id="xdd-CX-AVr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SbX-bM-QCv"/>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="VQ8-FK-EFx" id="8Gy-QR-ngz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rs2-FG-rtD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-172" y="127"/>
+        </scene>
+    </scenes>
+</document>
