@@ -8,33 +8,31 @@
 
 import Foundation
 import UIKit
-class NhacOnlineController: UICollectionViewCell, CellSetting {
-    func setViewController(viewController: UIViewController) {
-        self.viewController = viewController
-    }
+class NhacOnlineController: UICollectionViewCell {
+    
+    private var presenter: NhacOnlinePresenter?
     private var viewController: UIViewController?
-    private var datasNhacOnline: NhacOnline?
-    func getDataForCellCon(data: ModelHome, _ collectionView: UICollectionView, sizeForItemAt indexPath: IndexPath) {
-        self.datasNhacOnline = data as? NhacOnline ?? NhacOnline(data: [:])
-        titleCellDanhChoNguoiMoiBatDau.text = datasNhacOnline?.title
+    func inject(presenter: NhacOnlinePresenter, viewController: UIViewController) {
+        self.presenter = presenter
+        self.viewController = viewController
+        titleCellDanhChoNguoiMoiBatDau.text = presenter.getTitleForCell()
+    
     }
     
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     private var viewHeader: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
         return view
     }()
+    
     private var titleCellDanhChoNguoiMoiBatDau: UILabel = {
         let txtTitle = UILabel()
         txtTitle.translatesAutoresizingMaskIntoConstraints = false
         txtTitle.font = UIFont(name: "TimesNewRomanPS-BoldMT", size: 18)
         return txtTitle
     }()
+    
     private lazy var collectionViewDanhChoNguoiMoiBatDau: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let clsview = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -49,6 +47,10 @@ class NhacOnlineController: UICollectionViewCell, CellSetting {
         return clsview
     }()
     
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.backgroundColor = .green
@@ -56,6 +58,7 @@ class NhacOnlineController: UICollectionViewCell, CellSetting {
         autoLayoutTitleCellLocall()
         autoLayoutCollectionViewDanhChoNguoiBatDau()
     }
+    
     private func autoLayoutCollectionViewDanhChoNguoiBatDau() {
         contentView.addSubview(collectionViewDanhChoNguoiMoiBatDau)
         collectionViewDanhChoNguoiMoiBatDau.topAnchor.constraint(equalTo: viewHeader.bottomAnchor, constant: 0).isActive = true
@@ -63,6 +66,7 @@ class NhacOnlineController: UICollectionViewCell, CellSetting {
         collectionViewDanhChoNguoiMoiBatDau.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 0).isActive = true
         collectionViewDanhChoNguoiMoiBatDau.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 0).isActive = true
     }
+    
     private func autoLayoutViewHeader() {
         contentView.addSubview(viewHeader)
         viewHeader.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
@@ -70,56 +74,51 @@ class NhacOnlineController: UICollectionViewCell, CellSetting {
         viewHeader.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 0).isActive = true
         viewHeader.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
+    
     private func autoLayoutTitleCellLocall() {
         viewHeader.addSubview(titleCellDanhChoNguoiMoiBatDau)
         titleCellDanhChoNguoiMoiBatDau.centerYAnchor.constraint(equalTo: viewHeader.centerYAnchor).isActive = true
         titleCellDanhChoNguoiMoiBatDau.leftAnchor.constraint(equalTo: viewHeader.leftAnchor, constant: 10).isActive = true
     }
+    
 }
+
 extension NhacOnlineController: UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return datasNhacOnline?.arrayNhacOnline.count ?? 0
+        return presenter?.numberOfItemsInSection(section: section) ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionViewDanhChoNguoiMoiBatDau.dequeueReusableCell(withReuseIdentifier: "CellTopImageBottomTitle", for: indexPath) as? CellTopImageBottomTitle else {
-            return UICollectionViewCell()
-        }
-        switch datasNhacOnline?.title {
+        guard let dataCell = presenter?.dataForRowAt(indexPath: indexPath) ,
+              let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellTopImageBottomTitle", for: indexPath) as? CellTopImageBottomTitle
+            else { return UICollectionViewCell() }
+        switch dataCell.title {
         case "Nhạc Việt":
-            let dataNhacViet = datasNhacOnline?.arrayNhacOnline[indexPath.row] ?? ArrayNhacOnline(object: [:])
+            let dataNhacViet = dataCell.arrayNhacOnline[indexPath.row]
             cell.config(imageSong: dataNhacViet.imageSong, titleSong: dataNhacViet.nameSong)
         case "Nhạc Trung Quốc":
-            let dataNhacTrungQuoc = datasNhacOnline?.arrayNhacOnline[indexPath.row] ?? ArrayNhacOnline(object: [:])
-            cell.config(imageSong: dataNhacTrungQuoc.imageSong, titleSong: dataNhacTrungQuoc.nameSong)
+            cell.config(imageSong: dataCell.arrayNhacOnline[indexPath.row].imageSong, titleSong: dataCell.arrayNhacOnline[indexPath.row].nameSong)
         case "Dành cho người mới bắt đầu":
-            let dataNhacDanhChoNguoiMoiBatDau = datasNhacOnline?.arrayNhacOnline[indexPath.row] ?? ArrayNhacOnline(object: [:])
-            cell.config(imageSong: dataNhacDanhChoNguoiMoiBatDau.imageSong, titleSong: dataNhacDanhChoNguoiMoiBatDau.nameSong)
-        default: break
+            cell.config(imageSong: dataCell.arrayNhacOnline[indexPath.row].imageSong, titleSong: dataCell.arrayNhacOnline[indexPath.row].nameSong)
+        default: return UICollectionViewCell()
         }
         return cell
     }
     
-    
 }
 extension NhacOnlineController: UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        switch datasNhacOnline?.arrayNhacOnline[indexPath.row] {
-        case is ArrayNhacOnline:
-            return CGSize(width: (datasNhacOnline?.arrayNhacOnline[indexPath.row].widthSize ?? 0), height: (datasNhacOnline?.arrayNhacOnline[indexPath.row].heighthSize ?? 0))
-        default:
-            return CGSize()
-        }
+        guard let height = presenter?.collectionViewLayoutHeightSize(sizeForItemAt: indexPath),
+              let width = presenter?.collectionViewLayoutWitdhSize(sizeForItemAt: indexPath)
+              else { return CGSize() }
+        return CGSize(width: CGFloat.init(width), height: CGFloat.init(height))
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        switch datasNhacOnline?.arrayNhacOnline[indexPath.row] {
-        case is ArrayNhacOnline:
-            let vcInfoSong = InfoSong()
-            vcInfoSong.config(data: datasNhacOnline?.arrayNhacOnline[indexPath.row] ?? ArrayNhacOnline(object: [:]))
-            viewController?.present(vcInfoSong, animated: true, completion: nil)
-        default: break
-        }
     }
+    
 }
 extension NhacOnlineController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -127,7 +126,6 @@ extension NhacOnlineController: UICollectionViewDelegateFlowLayout {
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 10
-        
     }
 }
 

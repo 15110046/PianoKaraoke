@@ -9,11 +9,9 @@
 import Foundation
 import UIKit
 
-
-
 class HomeController: UIViewController {
     //presenter
-    var presenter: HomeControllerPresenter?
+    private var presenter: HomeControllerPresenter?
     // bien
     private var viewHeader: UIView = {
         let view = UIView()
@@ -45,10 +43,7 @@ class HomeController: UIViewController {
         layout.scrollDirection = .vertical
         clsview.backgroundColor = .white
         clsview.register(LocalSongsController.self, forCellWithReuseIdentifier: "LocalSongs")
-//        clsview.register(NhacVietController.self, forCellWithReuseIdentifier: "NhacViet")
-        clsview.register(NhacOnlineController.self, forCellWithReuseIdentifier: "DanhChoNguoiMoiBatDau")
-//        clsview.register(NhacTrungQuocController.self, forCellWithReuseIdentifier: "NhacTrungQuoc")
-//        clsview.register(TopBaiHatDuocYeuThichNhatController.self, forCellWithReuseIdentifier: "TopBaiHatYeuThichNhat")
+        clsview.register(NhacOnlineController.self, forCellWithReuseIdentifier: "OnlineSongs")
         clsview.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         return clsview
     }()
@@ -84,15 +79,16 @@ class HomeController: UIViewController {
         autoLayoutViewHeader()
         autoLayoutCollectionViewHome()
         presenter = HomeControllerPresenterImp()
-        presenter?.viewDidload(collectionViewHome)
+        presenter?.viewDidload(self, router: self)
         
     }
 }
 extension HomeController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return presenter?.collectionViewLayout(collectionViewHome, layout: collectionViewLayout, sizeForItemAt: indexPath) ?? CGSize()
+        let width = presenter?.collectionViewLayoutWidth(self, sizeForItemAt: indexPath)
+        let height = presenter?.collectionViewLayoutHeight(self, sizeForItemAt: indexPath)
+        return CGSize(width: CGFloat(width ?? 0), height: CGFloat(height ?? 0))
     }
-    
 }
 extension HomeController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -100,10 +96,27 @@ extension HomeController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return presenter?.cellForItemAt(collectionViewHome, indexPath: indexPath, viewController: self) ?? UICollectionViewCell()
+        guard let dataCell = presenter?.dataForRowAt(indexPath: indexPath) else {
+            return UICollectionViewCell()
+        }
+        switch dataCell {
+        case is SongsLocal:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LocalSongs", for: indexPath) as? LocalSongsController else { return UICollectionViewCell() }
+            let interactor = LocalSongsInteractorIml(data: dataCell)
+            let presenter = LocalSongsPresenterIml(interactor: interactor, router: self)
+            cell.inject(presenter: presenter)
+            return cell
+        case is NhacOnline:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OnlineSongs", for: indexPath) as? NhacOnlineController else {
+                return UICollectionViewCell()
+            }
+            let interactor = NhacOnlineInteracterImp(data: dataCell)
+            cell.inject(presenter: NhacOnlinePresenterImp(interacter: interactor), viewController: self)
+            return cell
+        default:
+             return UICollectionViewCell()
+        }
     }
-    
-    
 }
 extension HomeController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -111,15 +124,21 @@ extension HomeController: UICollectionViewDelegateFlowLayout {
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
-        
     }
 }
-
-
 extension Dictionary {
     mutating func merge(dict: [Key: Value]){
         for (k, v) in dict {
             updateValue(v, forKey: k)
         }
+    }
+}
+
+protocol CollectionHomeViewController {
+    func reloadDataCollectionView()
+}
+extension HomeController: CollectionHomeViewController {
+    func reloadDataCollectionView() {
+        collectionViewHome.reloadData()
     }
 }

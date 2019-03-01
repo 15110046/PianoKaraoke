@@ -7,55 +7,59 @@
 //
 
 import Foundation
-import UIKit
 
 protocol HomeControllerPresenter {
-      func cellForItemAt(_ collectionView: UICollectionView, indexPath: IndexPath, viewController: UIViewController?) -> UICollectionViewCell 
+    func dataForRowAt(indexPath: IndexPath) -> ModelHome?
     
     func numberOfItems(in section: Int) -> Int
     
-    func collectionViewLayout(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    func collectionViewLayoutHeight(_ collectionView: CollectionHomeViewController, sizeForItemAt indexPath: IndexPath) -> Float
     
-    func viewDidload(_ collectionView: UICollectionView)
+    func collectionViewLayoutWidth(_ collectionView: CollectionHomeViewController, sizeForItemAt indexPath: IndexPath) -> Float
+    
+    func viewDidload(_ collectionView: CollectionHomeViewController, router: Router)
 }
 class HomeControllerPresenterImp: HomeControllerPresenter {
     var interacter: Interacter?
+    var router: Router?
     
-    func viewDidload(_ collectionView: UICollectionView){
-        interacter = InteracterImp()
-        interacter?.getDataFromFirebase(collectionView)
+    func dataForRowAt(indexPath: IndexPath) -> ModelHome? {
+        return interacter?.data[indexPath.row]
     }
+    
+    func inject(interacter: Interacter, router: Router) {
+        self.interacter = interacter
+        self.router = router
+    }
+    
+    func viewDidload(_ collectionView: CollectionHomeViewController, router: Router) {
+        inject(interacter: InteracterImp(), router: router)
+        interacter?.getData(collectionView: collectionView)
+    }
+    
     func numberOfItems(in section: Int) -> Int {
         return interacter?.data.count ?? 0
     }
     
-    func cellForItemAt(_ collectionView: UICollectionView, indexPath: IndexPath, viewController: UIViewController?) -> UICollectionViewCell {
-        let cell: CellSetting?
-        switch interacter?.data[indexPath.row] {
-        case _ as SongsLocal:
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LocalSongs", for: indexPath) as? CellSetting
-        case _ as NhacOnline:
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DanhChoNguoiMoiBatDau", for: indexPath) as? CellSetting
-        default:
-            return UICollectionViewCell()
-        }
-        cell?.getDataForCellCon(data: interacter?.data[indexPath.row] ?? NhacOnline(data: [:]), collectionView, sizeForItemAt: indexPath)
-        cell?.setViewController(viewController: viewController ?? UIViewController())
-        return cell as? UICollectionViewCell ?? UICollectionViewCell()
-    }
-    
-     func collectionViewLayout(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionViewLayoutWidth(_ collectionView: CollectionHomeViewController,sizeForItemAt indexPath: IndexPath) -> Float {
         switch interacter?.data[indexPath.row] {
         case is SongsLocal:
-            return CGSize(width:interacter?.data[indexPath.row].widthSize ?? 0, height: interacter?.data[indexPath.row].heighthSize ?? 0)
+            return interacter?.data[indexPath.row].widthSize ?? 0
         case is NhacOnline:
-            return CGSize(width: interacter?.data[indexPath.row].widthSize ?? 0, height: interacter?.data[indexPath.row].heighthSize ?? 0)
+            return interacter?.data[indexPath.row].widthSize ?? 0
         default:
-            return CGSize()
+            return 0
         }
     }
-}
-protocol CellSetting {
-    func getDataForCellCon(data: ModelHome,_ collectionView: UICollectionView, sizeForItemAt indexPath: IndexPath)
-   func setViewController(viewController: UIViewController)
+    
+    func collectionViewLayoutHeight(_ collectionView: CollectionHomeViewController, sizeForItemAt indexPath: IndexPath) -> Float {
+        switch interacter?.data[indexPath.row] {
+        case is SongsLocal:
+            return interacter?.data[indexPath.row].heighthSize ?? 0
+        case is NhacOnline:
+            return interacter?.data[indexPath.row].heighthSize ?? 0
+        default:
+            return 0
+        }
+    }
 }

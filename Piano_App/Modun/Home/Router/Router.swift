@@ -7,14 +7,25 @@
 //
 
 import Foundation
+import UIKit
 protocol Router {
-    
+     func present(manHinh: ListScreen, data: ModelDetailCellSongs)
 }
-class RouterImp: Router {
-//    present(bool) {
-//    sừithc
-//    true
-//       prsent
-//    fasle
-//    }
+
+extension HomeController: Router {
+    func present(manHinh: ListScreen, data: ModelDetailCellSongs) {
+        switch manHinh {
+        case ListScreen.InfoSong:
+            let vc = InfoSong()
+            vc.inject(presnter: InfoSongPresenterImp.init(interacter: InfoSongInteracterImp.init(dataInfoSong: data)))
+            self.present(vc, animated: false, completion: nil)
+        default:
+            break
+        }
+    }
+}
+
+enum ListScreen: Int {
+    case InfoSong = 1
+    case ListSongs = 2
 }

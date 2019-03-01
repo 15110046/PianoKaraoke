@@ -10,21 +10,15 @@ import Foundation
 import UIKit
 
 struct SongsLocal: ModelHome {
-    var viewController: UIViewController? {
-        return nil
+    var heighthSize: Float? {
+        return GetFramUIScreen.share.getHeightUIScreen()/4
     }
     
-    var heighthSize: CGFloat? {
-        return UIScreen.main.bounds.size.height/4
+    var widthSize: Float? {
+        return GetFramUIScreen.share.getWitdhUIScreen()
     }
     
-    var widthSize: CGFloat? {
-        return UIScreen.main.bounds.size.width
-    }
-    
-    var background: UIColor? {
-        return .white
-    }
+
     
     let arraySongs: [ModelDetailCellSongs]
     let title: String?
@@ -35,21 +29,14 @@ struct SongsLocal: ModelHome {
 }
 
 struct SongsLocalDetail: ModelDetailCellSongs {
-    var viewController: UIViewController? {
-        return nil
-    }
-    var heighthSize: CGFloat? {
-        return UIScreen.main.bounds.size.height/4-50
+    var heighthSize: Float? {
+        return GetFramUIScreen.share.getHeightUIScreen()/4 - 50
     }
     
-    var widthSize: CGFloat? {
-        return 0.7*UIScreen.main.bounds.size.width
+    var widthSize: Float? {
+        return 0.7*GetFramUIScreen.share.getWitdhUIScreen()
     }
-    
-    var background: UIColor? {
-        return .red
-    }
-    
+
     private let image: UIImage?
     private let nameSong: String?
     init(image: String, nameSong: String) {
