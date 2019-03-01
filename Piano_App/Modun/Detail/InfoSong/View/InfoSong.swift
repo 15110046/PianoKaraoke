@@ -10,15 +10,15 @@ import Foundation
 import UIKit
 
 class InfoSong: UIViewController {
-    private var dataInfoSong: ModelDetailCellSongs?
-    func config(data: ModelDetailCellSongs) {
-        self.dataInfoSong = data
-        
+    private var presenter: InfoSongPresenter?
+    
+    func inject(presnter: InfoSongPresenter) {
+        self.presenter = presnter
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        print(dataInfoSong)
-        // Do any additional setup after loading the view.
+        let testData = presenter?.getData()
+        print(testData)
     }
 }

@@ -7,16 +7,16 @@
 //
 
 import Foundation
-import UIKit
+//import UIKit
 protocol ModelHome {
-    var viewController: UIViewController? { get }
-    var heighthSize: CGFloat?             { get }
-    var widthSize: CGFloat?               { get }
-    var background : UIColor?             { get }
+//    var viewController: UIViewController? { get }
+    var heighthSize: Float?             { get }
+    var widthSize: Float?               { get }
+//    var background : UIColor?             { get }
 }
 protocol ModelDetailCellSongs {
-    var heighthSize: CGFloat?             { get }
-    var widthSize: CGFloat?               { get }
-    var background : UIColor?             { get }
-    var viewController: UIViewController? { get }
+    var heighthSize: Float?             { get }
+    var widthSize: Float?               { get }
+//    var background : UIColor?             { get }
+//    var viewController: UIViewController? { get }
 }

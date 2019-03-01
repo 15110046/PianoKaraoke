@@ -7,23 +7,15 @@
 //
 
 import Foundation
-import UIKit
+//import UIKit
 
 struct NhacOnline: ModelHome {
-    var viewController: UIViewController? {
-       return nil
+    var heighthSize: Float? {
+        return Float(LayoutDanhChoNguoiMoiBatDau.heightDanhChoNguoiMoiBatDau.rawValue)
     }
     
-    var heighthSize: CGFloat? {
-        return LayoutDanhChoNguoiMoiBatDau.heightDanhChoNguoiMoiBatDau.rawValue
-    }
-    
-    var widthSize: CGFloat? {
-        return LayoutDanhChoNguoiMoiBatDau.widthDanhChoNguoiMoiBatDau.rawValue
-    }
-    
-    var background: UIColor? {
-        return .white
+    var widthSize: Float? {
+        return Float(LayoutDanhChoNguoiMoiBatDau.widthDanhChoNguoiMoiBatDau.rawValue)
     }
     
     var arrayNhacOnline: [ArrayNhacOnline] = []
@@ -41,19 +33,14 @@ struct NhacOnline: ModelHome {
     }
 }
 struct ArrayNhacOnline: ModelDetailCellSongs {
-    var viewController: UIViewController? {
-        return InfoSong()
-    }
-    
-    var heighthSize: CGFloat? {
+    var heighthSize: Float? {
         return LayoutDanhChoNguoiMoiBatDau.heightCellDanhChoNguoiMoiBatDau.rawValue
     }
     
-    var widthSize: CGFloat? {
+    var widthSize: Float? {
         return LayoutDanhChoNguoiMoiBatDau.widthCellDanhChoNguoiMoiBatDau.rawValue
     }
     
-    var background: UIColor?
     
     var nameSong: String
     var imageSong: String

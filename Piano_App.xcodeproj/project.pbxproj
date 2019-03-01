@@ -8,44 +8,39 @@
 
 /* Begin PBXBuildFile section */
 		5D06704F117AC7CD9BE40DB9 /* Pods_Piano_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2380D5AEAD19D09545102FC0 /* Pods_Piano_App.framework */; };
-		CC1530022182EF2E00B83816 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC1530012182EF2E00B83816 /* Menu.storyboard */; };
 		CC19D78A217BB66400CAEE1B /* ModelCategoryInstrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC19D789217BB66400CAEE1B /* ModelCategoryInstrument.swift */; };
 		CC19D78C217BB7FD00CAEE1B /* TableViewCategoryInstrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC19D78B217BB7FD00CAEE1B /* TableViewCategoryInstrument.swift */; };
 		CC19D78E217BB83600CAEE1B /* TableViewListSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC19D78D217BB83600CAEE1B /* TableViewListSong.swift */; };
 		CC22DA7721773A1300BA6030 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC22DA7621773A1300BA6030 /* Storyboard.storyboard */; };
 		CC22DA7921773A3400BA6030 /* ViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22DA7821773A3400BA6030 /* ViewControllerTest.swift */; };
-		CC4B941621751C9500284909 /* Đồng Thoại.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CC4B941321751C4000284909 /* Đồng Thoại.mp4 */; };
-		CC4B941721751C9500284909 /* Chờ Em Trong Đêm.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CC4B941521751C4000284909 /* Chờ Em Trong Đêm.mp4 */; };
-		CC4B941821751C9500284909 /* Kiếp Đỏ Đen.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CC4B941221751C4000284909 /* Kiếp Đỏ Đen.mp4 */; };
-		CC4B941921751C9500284909 /* Trăm Năm Không Quên.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CC4B941121751C4000284909 /* Trăm Năm Không Quên.mp4 */; };
-		CC4B941A21751C9500284909 /* Yêu Là Tha Thu.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CC4B941421751C4000284909 /* Yêu Là Tha Thu.mp4 */; };
-		CC4B941C21751C9500284909 /* Chờ Người Nơi Ấy.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CC4B940F21751C4000284909 /* Chờ Người Nơi Ấy.mp4 */; };
-		CC4B941D21751C9500284909 /* Em Gái Mưa.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CC4B941021751C4000284909 /* Em Gái Mưa.mp4 */; };
-		CC4B942121751E1600284909 /* Chắc Ai Đó Sẽ Về.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CC4B942021751E0500284909 /* Chắc Ai Đó Sẽ Về.mp4 */; };
-		CC4B942221751E1600284909 /* Ánh Trăng Nói Hộ Lòng Tôi.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CC4B941F21751DF600284909 /* Ánh Trăng Nói Hộ Lòng Tôi.mp4 */; };
+		CC39791822271F1F003496CD /* GetFrameUIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC39791722271F1F003496CD /* GetFrameUIScreen.swift */; };
 		CC63C2AE2219C5A800780259 /* ModelSongLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC63C2AD2219C5A800780259 /* ModelSongLocal.swift */; };
 		CC63C2B02219C5E400780259 /* ModelNhacViet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC63C2AF2219C5E400780259 /* ModelNhacViet.swift */; };
 		CC63C2B22219C60600780259 /* ModelNhacTrungQuoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC63C2B12219C60600780259 /* ModelNhacTrungQuoc.swift */; };
 		CC63C2B42219C64600780259 /* ProtocolModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC63C2B32219C64600780259 /* ProtocolModel.swift */; };
-		CC63C2B62219C68A00780259 /* ModelDanhChoNguoiMoiBatDau.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC63C2B52219C68A00780259 /* ModelDanhChoNguoiMoiBatDau.swift */; };
+		CC63C2B62219C68A00780259 /* ModelNhacOnline.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC63C2B52219C68A00780259 /* ModelNhacOnline.swift */; };
 		CC63C2B82219CEBD00780259 /* LoadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC63C2B72219CEBD00780259 /* LoadImage.swift */; };
 		CC63C2BA2219D09A00780259 /* CellConLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC63C2B92219D09A00780259 /* CellConLocal.swift */; };
 		CC63C2BE2219D2D700780259 /* InfoSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC63C2BD2219D2D700780259 /* InfoSong.swift */; };
 		CC80FF92221277BF004E3C79 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80FF91221277BF004E3C79 /* HomeController.swift */; };
 		CC80FF9422128253004E3C79 /* LocalSongsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80FF9322128253004E3C79 /* LocalSongsController.swift */; };
-		CC80FF96221283C5004E3C79 /* ModelHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80FF95221283C5004E3C79 /* ModelHome.swift */; };
+		CC80FF96221283C5004E3C79 /* ModelLayoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80FF95221283C5004E3C79 /* ModelLayoutCell.swift */; };
 		CC80FF98221289A3004E3C79 /* HomeControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80FF97221289A3004E3C79 /* HomeControllerPresenter.swift */; };
 		CC80FF9C2212B946004E3C79 /* NhacOnlineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80FF9B2212B946004E3C79 /* NhacOnlineController.swift */; };
 		CC80FFA42212C060004E3C79 /* CellTopImageBottomTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80FFA32212C060004E3C79 /* CellTopImageBottomTitle.swift */; };
 		CC80FFA622154502004E3C79 /* CellImageViewFull.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80FFA522154502004E3C79 /* CellImageViewFull.swift */; };
 		CC80FFA822154A7A004E3C79 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC80FFA722154A7A004E3C79 /* GoogleService-Info.plist */; };
-		CC9435EB2179108C00B081C3 /* Nếu Lúc Trước Em Đừng Tới.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CC9435E72179100D00B081C3 /* Nếu Lúc Trước Em Đừng Tới.mp4 */; };
-		CC9435EC2179108C00B081C3 /* Ảo Mộng Tình Yêu.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CC9435E82179101C00B081C3 /* Ảo Mộng Tình Yêu.mp4 */; };
-		CC9435ED2179108C00B081C3 /* Lạc Trôi.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CC9435E92179102A00B081C3 /* Lạc Trôi.mp4 */; };
+		CC96EE8D2226B77C00663CE1 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC96EE8C2226B77C00663CE1 /* Enum.swift */; };
+		CC96EE8F2226CB3D00663CE1 /* LocalSongsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC96EE8E2226CB3D00663CE1 /* LocalSongsPresenter.swift */; };
+		CC96EE912226CB8300663CE1 /* LocalSongsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC96EE902226CB8300663CE1 /* LocalSongsInteractor.swift */; };
+		CC96EE9E2226CE4600663CE1 /* NhacOnlinePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC96EE9D2226CE4600663CE1 /* NhacOnlinePresenter.swift */; };
+		CC96EEA02226CEFC00663CE1 /* NhacOnlineInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC96EE9F2226CEFC00663CE1 /* NhacOnlineInteracter.swift */; };
 		CCAC39CD2215AAE800D89162 /* ServiceFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAC39CC2215AAE800D89162 /* ServiceFirebase.swift */; };
+		CCB0931322283E50000FE5D3 /* InfoSongPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB0931222283E50000FE5D3 /* InfoSongPresenter.swift */; };
+		CCB0931522283E81000FE5D3 /* InfoSongInteracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB0931422283E81000FE5D3 /* InfoSongInteracter.swift */; };
 		CCBFFBA92223EB0100036745 /* Interacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBFFBA82223EB0100036745 /* Interacter.swift */; };
 		CCBFFBAB2223F72300036745 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBFFBAA2223F72300036745 /* Router.swift */; };
-		CCC5574D21739E7C0021844A /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC5574C21739E7C0021844A /* Extension.swift */; };
+		CCC5574D21739E7C0021844A /* ExtensionUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC5574C21739E7C0021844A /* ExtensionUIButton.swift */; };
 		CCC5574F2173C6B20021844A /* LocalSong.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCC5574E2173C6B20021844A /* LocalSong.storyboard */; };
 		CCC557512173C6D50021844A /* LocalSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC557502173C6D50021844A /* LocalSong.swift */; };
 		CCC557532173C74D0021844A /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCC557522173C74D0021844A /* HomeCell.xib */; };
@@ -121,8 +116,6 @@
 		CCC882732171B6F400DC6CB7 /* A5Shap.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CCC882722171B6F400DC6CB7 /* A5Shap.mp3 */; };
 		CCC882752171B70100DC6CB7 /* A6Shap.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CCC882742171B70100DC6CB7 /* A6Shap.mp3 */; };
 		CCC882792171B81500DC6CB7 /* E5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CCC882782171B81400DC6CB7 /* E5.mp3 */; };
-		CCC8827B2171B82F00DC6CB7 /* G5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CCC8827A2171B82F00DC6CB7 /* G5.mp3 */; };
-		CCC88283217226DE00DC6CB7 /* Thần Thoại.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CCC8827E2172268400DC6CB7 /* Thần Thoại.mp4 */; };
 		CCC882862172375400DC6CB7 /* KeyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC882842172375300DC6CB7 /* KeyButton.swift */; };
 		CCC882872172375400DC6CB7 /* PianoSounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC882852172375300DC6CB7 /* PianoSounds.swift */; };
 		CCC882972172476A00DC6CB7 /* CShap5.aiff in Resources */ = {isa = PBXBuildFile; fileRef = CCC882892172476A00DC6CB7 /* CShap5.aiff */; };
@@ -139,56 +132,49 @@
 		CCC882A22172476A00DC6CB7 /* B4.aiff in Resources */ = {isa = PBXBuildFile; fileRef = CCC882942172476A00DC6CB7 /* B4.aiff */; };
 		CCC882A32172476A00DC6CB7 /* F4.aiff in Resources */ = {isa = PBXBuildFile; fileRef = CCC882952172476A00DC6CB7 /* F4.aiff */; };
 		CCC882A42172476A00DC6CB7 /* A4.aiff in Resources */ = {isa = PBXBuildFile; fileRef = CCC882962172476A00DC6CB7 /* A4.aiff */; };
-		CCC882A621725C9A00DC6CB7 /* Sứ Thanh Hoa.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CCC882A521725C7B00DC6CB7 /* Sứ Thanh Hoa.mp4 */; };
 		CCC882A8217272C900DC6CB7 /* Tangent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC882A7217272C800DC6CB7 /* Tangent.swift */; };
-		CCC882AD217283DA00DC6CB7 /* Forever.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CCC882AB2172837600DC6CB7 /* Forever.mp4 */; };
-		CCC882AE217283DA00DC6CB7 /* Vén Rèm Châu.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CCC882AC217283C900DC6CB7 /* Vén Rèm Châu.mp4 */; };
 		CCE27CDB2209BD7E00A781BC /* ListSongController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE27CDA2209BD7E00A781BC /* ListSongController.swift */; };
 		CCE27CDD2209C01900A781BC /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE27CDC2209C01900A781BC /* TableViewCell.swift */; };
+		CCE93F76222951A100AB9583 /* LocalSongsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE93F75222951A100AB9583 /* LocalSongsRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2380D5AEAD19D09545102FC0 /* Pods_Piano_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Piano_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E46A6F8C463E060E1CF3EDA /* Pods-Piano_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Piano_App.debug.xcconfig"; path = "Target Support Files/Pods-Piano_App/Pods-Piano_App.debug.xcconfig"; sourceTree = "<group>"; };
 		B4BD7F963C1452793738AABB /* Pods-Piano_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Piano_App.release.xcconfig"; path = "Target Support Files/Pods-Piano_App/Pods-Piano_App.release.xcconfig"; sourceTree = "<group>"; };
-		CC1530012182EF2E00B83816 /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		CC19D789217BB66400CAEE1B /* ModelCategoryInstrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCategoryInstrument.swift; sourceTree = "<group>"; };
 		CC19D78B217BB7FD00CAEE1B /* TableViewCategoryInstrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCategoryInstrument.swift; sourceTree = "<group>"; };
 		CC19D78D217BB83600CAEE1B /* TableViewListSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewListSong.swift; sourceTree = "<group>"; };
 		CC22DA7621773A1300BA6030 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		CC22DA7821773A3400BA6030 /* ViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTest.swift; sourceTree = "<group>"; };
-		CC4B940F21751C4000284909 /* Chờ Người Nơi Ấy.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Chờ Người Nơi Ấy.mp4"; sourceTree = "<group>"; };
-		CC4B941021751C4000284909 /* Em Gái Mưa.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Em Gái Mưa.mp4"; sourceTree = "<group>"; };
-		CC4B941121751C4000284909 /* Trăm Năm Không Quên.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Trăm Năm Không Quên.mp4"; sourceTree = "<group>"; };
-		CC4B941221751C4000284909 /* Kiếp Đỏ Đen.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kiếp Đỏ Đen.mp4"; sourceTree = "<group>"; };
-		CC4B941321751C4000284909 /* Đồng Thoại.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Đồng Thoại.mp4"; sourceTree = "<group>"; };
-		CC4B941421751C4000284909 /* Yêu Là Tha Thu.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yêu Là Tha Thu.mp4"; sourceTree = "<group>"; };
-		CC4B941521751C4000284909 /* Chờ Em Trong Đêm.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Chờ Em Trong Đêm.mp4"; sourceTree = "<group>"; };
-		CC4B941F21751DF600284909 /* Ánh Trăng Nói Hộ Lòng Tôi.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ánh Trăng Nói Hộ Lòng Tôi.mp4"; sourceTree = "<group>"; };
-		CC4B942021751E0500284909 /* Chắc Ai Đó Sẽ Về.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Chắc Ai Đó Sẽ Về.mp4"; sourceTree = "<group>"; };
+		CC39791722271F1F003496CD /* GetFrameUIScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFrameUIScreen.swift; sourceTree = "<group>"; };
 		CC63C2AD2219C5A800780259 /* ModelSongLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSongLocal.swift; sourceTree = "<group>"; };
 		CC63C2AF2219C5E400780259 /* ModelNhacViet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelNhacViet.swift; sourceTree = "<group>"; };
 		CC63C2B12219C60600780259 /* ModelNhacTrungQuoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelNhacTrungQuoc.swift; sourceTree = "<group>"; };
 		CC63C2B32219C64600780259 /* ProtocolModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolModel.swift; sourceTree = "<group>"; };
-		CC63C2B52219C68A00780259 /* ModelDanhChoNguoiMoiBatDau.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDanhChoNguoiMoiBatDau.swift; sourceTree = "<group>"; };
+		CC63C2B52219C68A00780259 /* ModelNhacOnline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelNhacOnline.swift; sourceTree = "<group>"; };
 		CC63C2B72219CEBD00780259 /* LoadImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadImage.swift; sourceTree = "<group>"; };
 		CC63C2B92219D09A00780259 /* CellConLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConLocal.swift; sourceTree = "<group>"; };
 		CC63C2BD2219D2D700780259 /* InfoSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSong.swift; sourceTree = "<group>"; };
 		CC80FF91221277BF004E3C79 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		CC80FF9322128253004E3C79 /* LocalSongsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSongsController.swift; sourceTree = "<group>"; };
-		CC80FF95221283C5004E3C79 /* ModelHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelHome.swift; sourceTree = "<group>"; };
+		CC80FF95221283C5004E3C79 /* ModelLayoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLayoutCell.swift; sourceTree = "<group>"; };
 		CC80FF97221289A3004E3C79 /* HomeControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeControllerPresenter.swift; sourceTree = "<group>"; };
 		CC80FF9B2212B946004E3C79 /* NhacOnlineController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NhacOnlineController.swift; sourceTree = "<group>"; };
 		CC80FFA32212C060004E3C79 /* CellTopImageBottomTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTopImageBottomTitle.swift; sourceTree = "<group>"; };
 		CC80FFA522154502004E3C79 /* CellImageViewFull.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellImageViewFull.swift; sourceTree = "<group>"; };
 		CC80FFA722154A7A004E3C79 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		CC9435E72179100D00B081C3 /* Nếu Lúc Trước Em Đừng Tới.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nếu Lúc Trước Em Đừng Tới.mp4"; sourceTree = "<group>"; };
-		CC9435E82179101C00B081C3 /* Ảo Mộng Tình Yêu.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ảo Mộng Tình Yêu.mp4"; sourceTree = "<group>"; };
-		CC9435E92179102A00B081C3 /* Lạc Trôi.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lạc Trôi.mp4"; sourceTree = "<group>"; };
+		CC96EE8C2226B77C00663CE1 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		CC96EE8E2226CB3D00663CE1 /* LocalSongsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSongsPresenter.swift; sourceTree = "<group>"; };
+		CC96EE902226CB8300663CE1 /* LocalSongsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSongsInteractor.swift; sourceTree = "<group>"; };
+		CC96EE9D2226CE4600663CE1 /* NhacOnlinePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NhacOnlinePresenter.swift; sourceTree = "<group>"; };
+		CC96EE9F2226CEFC00663CE1 /* NhacOnlineInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NhacOnlineInteracter.swift; sourceTree = "<group>"; };
 		CCAC39CC2215AAE800D89162 /* ServiceFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFirebase.swift; sourceTree = "<group>"; };
+		CCB0931222283E50000FE5D3 /* InfoSongPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSongPresenter.swift; sourceTree = "<group>"; };
+		CCB0931422283E81000FE5D3 /* InfoSongInteracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSongInteracter.swift; sourceTree = "<group>"; };
 		CCBFFBA82223EB0100036745 /* Interacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interacter.swift; sourceTree = "<group>"; };
 		CCBFFBAA2223F72300036745 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		CCC5574C21739E7C0021844A /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		CCC5574C21739E7C0021844A /* ExtensionUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIButton.swift; sourceTree = "<group>"; };
 		CCC5574E2173C6B20021844A /* LocalSong.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LocalSong.storyboard; sourceTree = "<group>"; };
 		CCC557502173C6D50021844A /* LocalSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSong.swift; sourceTree = "<group>"; };
 		CCC557522173C74D0021844A /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
@@ -266,8 +252,6 @@
 		CCC882722171B6F400DC6CB7 /* A5Shap.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = A5Shap.mp3; sourceTree = "<group>"; };
 		CCC882742171B70100DC6CB7 /* A6Shap.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = A6Shap.mp3; sourceTree = "<group>"; };
 		CCC882782171B81400DC6CB7 /* E5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = E5.mp3; sourceTree = "<group>"; };
-		CCC8827A2171B82F00DC6CB7 /* G5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = G5.mp3; path = ../../../mp3/G5.mp3; sourceTree = "<group>"; };
-		CCC8827E2172268400DC6CB7 /* Thần Thoại.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Thần Thoại.mp4"; sourceTree = "<group>"; };
 		CCC882842172375300DC6CB7 /* KeyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyButton.swift; sourceTree = "<group>"; };
 		CCC882852172375300DC6CB7 /* PianoSounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PianoSounds.swift; sourceTree = "<group>"; };
 		CCC882892172476A00DC6CB7 /* CShap5.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = CShap5.aiff; sourceTree = "<group>"; };
@@ -284,12 +268,10 @@
 		CCC882942172476A00DC6CB7 /* B4.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = B4.aiff; sourceTree = "<group>"; };
 		CCC882952172476A00DC6CB7 /* F4.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = F4.aiff; sourceTree = "<group>"; };
 		CCC882962172476A00DC6CB7 /* A4.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = A4.aiff; sourceTree = "<group>"; };
-		CCC882A521725C7B00DC6CB7 /* Sứ Thanh Hoa.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sứ Thanh Hoa.mp4"; sourceTree = "<group>"; };
 		CCC882A7217272C800DC6CB7 /* Tangent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tangent.swift; sourceTree = "<group>"; };
-		CCC882AB2172837600DC6CB7 /* Forever.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Forever.mp4; sourceTree = "<group>"; };
-		CCC882AC217283C900DC6CB7 /* Vén Rèm Châu.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Vén Rèm Châu.mp4"; sourceTree = "<group>"; };
 		CCE27CDA2209BD7E00A781BC /* ListSongController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSongController.swift; sourceTree = "<group>"; };
 		CCE27CDC2209C01900A781BC /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		CCE93F75222951A100AB9583 /* LocalSongsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSongsRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,12 +306,13 @@
 		CC63C2AC2219C58300780259 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				CC80FF95221283C5004E3C79 /* ModelHome.swift */,
+				CC63C2B52219C68A00780259 /* ModelNhacOnline.swift */,
+				CC80FF95221283C5004E3C79 /* ModelLayoutCell.swift */,
 				CC63C2AD2219C5A800780259 /* ModelSongLocal.swift */,
 				CC63C2AF2219C5E400780259 /* ModelNhacViet.swift */,
 				CC63C2B12219C60600780259 /* ModelNhacTrungQuoc.swift */,
-				CC63C2B52219C68A00780259 /* ModelDanhChoNguoiMoiBatDau.swift */,
 				CC63C2B32219C64600780259 /* ProtocolModel.swift */,
+				CC96EE8C2226B77C00663CE1 /* Enum.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -337,7 +320,11 @@
 		CC63C2BC2219D2B000780259 /* InfoSong */ = {
 			isa = PBXGroup;
 			children = (
-				CC63C2BD2219D2D700780259 /* InfoSong.swift */,
+				CCB0931122283E1D000FE5D3 /* Router */,
+				CCB0931022283E11000FE5D3 /* Entity */,
+				CCB0930F22283E05000FE5D3 /* Interactor */,
+				CCB0930E22283E00000FE5D3 /* Presenter */,
+				CCB0930D22283DFA000FE5D3 /* View */,
 			);
 			path = InfoSong;
 			sourceTree = "<group>";
@@ -357,9 +344,8 @@
 		CC80FFA12212BFC3004E3C79 /* CellCha */ = {
 			isa = PBXGroup;
 			children = (
-				CCED15CF222572C20029CC8C /* Presenter */,
-				CC80FF9322128253004E3C79 /* LocalSongsController.swift */,
-				CC80FF9B2212B946004E3C79 /* NhacOnlineController.swift */,
+				CC96EE932226CD6500663CE1 /* NhacOffline */,
+				CC96EE922226CD5D00663CE1 /* NhacOnline */,
 				CC80FFA22212BFD3004E3C79 /* CellCon */,
 			);
 			path = CellCha;
@@ -368,11 +354,290 @@
 		CC80FFA22212BFD3004E3C79 /* CellCon */ = {
 			isa = PBXGroup;
 			children = (
-				CC80FFA32212C060004E3C79 /* CellTopImageBottomTitle.swift */,
 				CC80FFA522154502004E3C79 /* CellImageViewFull.swift */,
-				CC63C2B92219D09A00780259 /* CellConLocal.swift */,
+				CCB0931722284229000FE5D3 /* CellDetailOnline */,
+				CCB093162228420C000FE5D3 /* CellDetailOffline */,
 			);
 			path = CellCon;
+			sourceTree = "<group>";
+		};
+		CC96EE922226CD5D00663CE1 /* NhacOnline */ = {
+			isa = PBXGroup;
+			children = (
+				CC96EE9B2226CDE800663CE1 /* Router */,
+				CC96EE992226CDD000663CE1 /* Interacter */,
+				CC96EE9A2226CDDF00663CE1 /* Presenter */,
+				CC96EE982226CDCB00663CE1 /* View */,
+			);
+			path = NhacOnline;
+			sourceTree = "<group>";
+		};
+		CC96EE932226CD6500663CE1 /* NhacOffline */ = {
+			isa = PBXGroup;
+			children = (
+				CC96EE972226CD9F00663CE1 /* Router */,
+				CC96EE962226CD8D00663CE1 /* Interacter */,
+				CC96EE952226CD8500663CE1 /* Presenter */,
+				CC96EE942226CD7E00663CE1 /* View */,
+			);
+			path = NhacOffline;
+			sourceTree = "<group>";
+		};
+		CC96EE942226CD7E00663CE1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CC80FF9322128253004E3C79 /* LocalSongsController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CC96EE952226CD8500663CE1 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CC96EE8E2226CB3D00663CE1 /* LocalSongsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		CC96EE962226CD8D00663CE1 /* Interacter */ = {
+			isa = PBXGroup;
+			children = (
+				CC96EE902226CB8300663CE1 /* LocalSongsInteractor.swift */,
+			);
+			path = Interacter;
+			sourceTree = "<group>";
+		};
+		CC96EE972226CD9F00663CE1 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				CCE93F75222951A100AB9583 /* LocalSongsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		CC96EE982226CDCB00663CE1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CC80FF9B2212B946004E3C79 /* NhacOnlineController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CC96EE992226CDD000663CE1 /* Interacter */ = {
+			isa = PBXGroup;
+			children = (
+				CC96EE9F2226CEFC00663CE1 /* NhacOnlineInteracter.swift */,
+			);
+			path = Interacter;
+			sourceTree = "<group>";
+		};
+		CC96EE9A2226CDDF00663CE1 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CC96EE9D2226CE4600663CE1 /* NhacOnlinePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		CC96EE9B2226CDE800663CE1 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		CCB0930D22283DFA000FE5D3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CC63C2BD2219D2D700780259 /* InfoSong.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CCB0930E22283E00000FE5D3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CCB0931222283E50000FE5D3 /* InfoSongPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		CCB0930F22283E05000FE5D3 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				CCB0931422283E81000FE5D3 /* InfoSongInteracter.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		CCB0931022283E11000FE5D3 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		CCB0931122283E1D000FE5D3 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		CCB093162228420C000FE5D3 /* CellDetailOffline */ = {
+			isa = PBXGroup;
+			children = (
+				CCB093212228428B000FE5D3 /* Router */,
+				CCB0932022284285000FE5D3 /* Entity */,
+				CCB0931F2228427D000FE5D3 /* Interacter */,
+				CCB0931E22284275000FE5D3 /* Pressenter */,
+				CCB0931D22284269000FE5D3 /* View */,
+			);
+			path = CellDetailOffline;
+			sourceTree = "<group>";
+		};
+		CCB0931722284229000FE5D3 /* CellDetailOnline */ = {
+			isa = PBXGroup;
+			children = (
+				CCB0931C2228425B000FE5D3 /* Router */,
+				CCB0931B22284257000FE5D3 /* Entity */,
+				CCB0931A22284251000FE5D3 /* Interacter */,
+				CCB093192228424B000FE5D3 /* Presenter */,
+				CCB0931822284245000FE5D3 /* View */,
+			);
+			path = CellDetailOnline;
+			sourceTree = "<group>";
+		};
+		CCB0931822284245000FE5D3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CC80FFA32212C060004E3C79 /* CellTopImageBottomTitle.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CCB093192228424B000FE5D3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		CCB0931A22284251000FE5D3 /* Interacter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interacter;
+			sourceTree = "<group>";
+		};
+		CCB0931B22284257000FE5D3 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		CCB0931C2228425B000FE5D3 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		CCB0931D22284269000FE5D3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CC63C2B92219D09A00780259 /* CellConLocal.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CCB0931E22284275000FE5D3 /* Pressenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pressenter;
+			sourceTree = "<group>";
+		};
+		CCB0931F2228427D000FE5D3 /* Interacter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interacter;
+			sourceTree = "<group>";
+		};
+		CCB0932022284285000FE5D3 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		CCB093212228428B000FE5D3 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		CCB0932222284656000FE5D3 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				CCC882882172473200DC6CB7 /* aiff */,
+				CCC8821921711F7100DC6CB7 /* mp4 */,
+				CCC881E621711DAC00DC6CB7 /* mp3 */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		CCB09324222846E2000FE5D3 /* CustomUIViewToPlaySound */ = {
+			isa = PBXGroup;
+			children = (
+				CCC882842172375300DC6CB7 /* KeyButton.swift */,
+				CCC882A7217272C800DC6CB7 /* Tangent.swift */,
+				CCC882852172375300DC6CB7 /* PianoSounds.swift */,
+			);
+			path = CustomUIViewToPlaySound;
+			sourceTree = "<group>";
+		};
+		CCB0932522284703000FE5D3 /* UICollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				CCC557632173CD8E0021844A /* ExtensionCollection.swift */,
+			);
+			path = UICollectionView;
+			sourceTree = "<group>";
+		};
+		CCB0932622284712000FE5D3 /* LoadImageUseNSCache */ = {
+			isa = PBXGroup;
+			children = (
+				CC63C2B72219CEBD00780259 /* LoadImage.swift */,
+			);
+			path = LoadImageUseNSCache;
+			sourceTree = "<group>";
+		};
+		CCB0932722284756000FE5D3 /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				CCC5574C21739E7C0021844A /* ExtensionUIButton.swift */,
+			);
+			path = UIButton;
+			sourceTree = "<group>";
+		};
+		CCB0932822284767000FE5D3 /* ServiceFirebase */ = {
+			isa = PBXGroup;
+			children = (
+				CCAC39CC2215AAE800D89162 /* ServiceFirebase.swift */,
+			);
+			path = ServiceFirebase;
+			sourceTree = "<group>";
+		};
+		CCB093292228477A000FE5D3 /* UIScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CC39791722271F1F003496CD /* GetFrameUIScreen.swift */,
+			);
+			path = UIScreen;
 			sourceTree = "<group>";
 		};
 		CCBFFBA42223EA7400036745 /* Interacter */ = {
@@ -411,15 +676,14 @@
 		CCC557562173C7F70021844A /* Modun */ = {
 			isa = PBXGroup;
 			children = (
+				CCE93F73222950E500AB9583 /* Detail */,
 				CC80FF90221277AE004E3C79 /* Home */,
-				CC63C2BC2219D2B000780259 /* InfoSong */,
-				CCC557572173C8040021844A /* LocalSong */,
-				CC1530012182EF2E00B83816 /* Menu.storyboard */,
+				CCC557572173C8040021844A /* FileTest */,
 			);
 			path = Modun;
 			sourceTree = "<group>";
 		};
-		CCC557572173C8040021844A /* LocalSong */ = {
+		CCC557572173C8040021844A /* FileTest */ = {
 			isa = PBXGroup;
 			children = (
 				CCC5575E2173C84A0021844A /* Entity */,
@@ -427,7 +691,7 @@
 				CCC5575C2173C8390021844A /* Presenter */,
 				CCC5575A2173C8270021844A /* ViewController */,
 			);
-			path = LocalSong;
+			path = FileTest;
 			sourceTree = "<group>";
 		};
 		CCC5575A2173C8270021844A /* ViewController */ = {
@@ -471,8 +735,12 @@
 		CCC557682173EF3B0021844A /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				CCAC39CC2215AAE800D89162 /* ServiceFirebase.swift */,
-				CC63C2B72219CEBD00780259 /* LoadImage.swift */,
+				CCB093292228477A000FE5D3 /* UIScreen */,
+				CCB0932822284767000FE5D3 /* ServiceFirebase */,
+				CCB0932722284756000FE5D3 /* UIButton */,
+				CCB0932622284712000FE5D3 /* LoadImageUseNSCache */,
+				CCB0932522284703000FE5D3 /* UICollectionView */,
+				CCB09324222846E2000FE5D3 /* CustomUIViewToPlaySound */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -498,11 +766,9 @@
 		CCC881CF21711D5F00DC6CB7 /* Piano_App */ = {
 			isa = PBXGroup;
 			children = (
+				CCB0932222284656000FE5D3 /* Resource */,
 				CCC557682173EF3B0021844A /* Common */,
 				CCC557562173C7F70021844A /* Modun */,
-				CCC882882172473200DC6CB7 /* aiff */,
-				CCC8821921711F7100DC6CB7 /* mp4 */,
-				CCC881E621711DAC00DC6CB7 /* mp3 */,
 				CCC881D021711D6000DC6CB7 /* AppDelegate.swift */,
 				CCC881D221711D6000DC6CB7 /* ViewController.swift */,
 				CC80FFA722154A7A004E3C79 /* GoogleService-Info.plist */,
@@ -511,11 +777,6 @@
 				CCC881D921711D6000DC6CB7 /* LaunchScreen.storyboard */,
 				CCC881DC21711D6000DC6CB7 /* Info.plist */,
 				CCC881E421711D9200DC6CB7 /* PianoViewController.swift */,
-				CCC882842172375300DC6CB7 /* KeyButton.swift */,
-				CCC882852172375300DC6CB7 /* PianoSounds.swift */,
-				CCC882A7217272C800DC6CB7 /* Tangent.swift */,
-				CCC5574C21739E7C0021844A /* Extension.swift */,
-				CCC557632173CD8E0021844A /* ExtensionCollection.swift */,
 				CC22DA7821773A3400BA6030 /* ViewControllerTest.swift */,
 				CC22DA7621773A1300BA6030 /* Storyboard.storyboard */,
 			);
@@ -580,7 +841,6 @@
 				CCC882502171AFDE00DC6CB7 /* F6.mp3 */,
 				CCC881E721711DB600DC6CB7 /* Fa6.mp3 */,
 				CCC8826A2171B69F00DC6CB7 /* G4.mp3 */,
-				CCC8827A2171B82F00DC6CB7 /* G5.mp3 */,
 				CCC881E821711DB600DC6CB7 /* Sol4.mp3 */,
 				CCC881FE21711DB700DC6CB7 /* Sol5.mp3 */,
 				CCC882522171AFE900DC6CB7 /* G6.mp3 */,
@@ -595,22 +855,6 @@
 		CCC8821921711F7100DC6CB7 /* mp4 */ = {
 			isa = PBXGroup;
 			children = (
-				CCC882AB2172837600DC6CB7 /* Forever.mp4 */,
-				CCC882AC217283C900DC6CB7 /* Vén Rèm Châu.mp4 */,
-				CCC8827E2172268400DC6CB7 /* Thần Thoại.mp4 */,
-				CCC882A521725C7B00DC6CB7 /* Sứ Thanh Hoa.mp4 */,
-				CC4B941321751C4000284909 /* Đồng Thoại.mp4 */,
-				CC4B942021751E0500284909 /* Chắc Ai Đó Sẽ Về.mp4 */,
-				CC4B941F21751DF600284909 /* Ánh Trăng Nói Hộ Lòng Tôi.mp4 */,
-				CC4B941521751C4000284909 /* Chờ Em Trong Đêm.mp4 */,
-				CC4B941221751C4000284909 /* Kiếp Đỏ Đen.mp4 */,
-				CC4B941121751C4000284909 /* Trăm Năm Không Quên.mp4 */,
-				CC4B941421751C4000284909 /* Yêu Là Tha Thu.mp4 */,
-				CC4B940F21751C4000284909 /* Chờ Người Nơi Ấy.mp4 */,
-				CC4B941021751C4000284909 /* Em Gái Mưa.mp4 */,
-				CC9435E72179100D00B081C3 /* Nếu Lúc Trước Em Đừng Tới.mp4 */,
-				CC9435E82179101C00B081C3 /* Ảo Mộng Tình Yêu.mp4 */,
-				CC9435E92179102A00B081C3 /* Lạc Trôi.mp4 */,
 			);
 			path = mp4;
 			sourceTree = "<group>";
@@ -645,11 +889,20 @@
 			path = ListSong;
 			sourceTree = "<group>";
 		};
-		CCED15CF222572C20029CC8C /* Presenter */ = {
+		CCE93F73222950E500AB9583 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				CCE93F74222950FC00AB9583 /* ListSongs */,
+				CC63C2BC2219D2B000780259 /* InfoSong */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		CCE93F74222950FC00AB9583 /* ListSongs */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Presenter;
+			path = ListSongs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -712,24 +965,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC9435EB2179108C00B081C3 /* Nếu Lúc Trước Em Đừng Tới.mp4 in Resources */,
-				CC9435EC2179108C00B081C3 /* Ảo Mộng Tình Yêu.mp4 in Resources */,
-				CC9435ED2179108C00B081C3 /* Lạc Trôi.mp4 in Resources */,
-				CC4B942121751E1600284909 /* Chắc Ai Đó Sẽ Về.mp4 in Resources */,
-				CC4B942221751E1600284909 /* Ánh Trăng Nói Hộ Lòng Tôi.mp4 in Resources */,
-				CC4B941621751C9500284909 /* Đồng Thoại.mp4 in Resources */,
-				CC4B941721751C9500284909 /* Chờ Em Trong Đêm.mp4 in Resources */,
-				CC4B941821751C9500284909 /* Kiếp Đỏ Đen.mp4 in Resources */,
-				CC4B941921751C9500284909 /* Trăm Năm Không Quên.mp4 in Resources */,
 				CC80FFA822154A7A004E3C79 /* GoogleService-Info.plist in Resources */,
-				CC4B941A21751C9500284909 /* Yêu Là Tha Thu.mp4 in Resources */,
-				CC4B941C21751C9500284909 /* Chờ Người Nơi Ấy.mp4 in Resources */,
-				CC4B941D21751C9500284909 /* Em Gái Mưa.mp4 in Resources */,
-				CCC882AD217283DA00DC6CB7 /* Forever.mp4 in Resources */,
-				CCC882AE217283DA00DC6CB7 /* Vén Rèm Châu.mp4 in Resources */,
-				CCC882A621725C9A00DC6CB7 /* Sứ Thanh Hoa.mp4 in Resources */,
 				CCC8829A2172476A00DC6CB7 /* G4.aiff in Resources */,
-				CCC88283217226DE00DC6CB7 /* Thần Thoại.mp4 in Resources */,
 				CCC8826D2171B6AD00DC6CB7 /* A4.mp3 in Resources */,
 				CCC882452171AB5A00DC6CB7 /* C5.mp3 in Resources */,
 				CCC882712171B6C800DC6CB7 /* B4.mp3 in Resources */,
@@ -763,7 +1000,6 @@
 				CCC882572171B0B200DC6CB7 /* B6.mp3 in Resources */,
 				CCC881DB21711D6000DC6CB7 /* LaunchScreen.storyboard in Resources */,
 				CCC882A32172476A00DC6CB7 /* F4.aiff in Resources */,
-				CCC8827B2171B82F00DC6CB7 /* G5.mp3 in Resources */,
 				CCC8820921711DB700DC6CB7 /* Do6.mp3 in Resources */,
 				CCC8829D2172476A00DC6CB7 /* C4.aiff in Resources */,
 				CCC8826F2171B6BC00DC6CB7 /* A4Shap.mp3 in Resources */,
@@ -776,7 +1012,6 @@
 				CCC882552171B0A800DC6CB7 /* A6.mp3 in Resources */,
 				CCC8829B2172476A00DC6CB7 /* CShap4.aiff in Resources */,
 				CCC8822721713C7E00DC6CB7 /* G4Shap.mp3 in Resources */,
-				CC1530022182EF2E00B83816 /* Menu.storyboard in Resources */,
 				CCC8822521713C7300DC6CB7 /* F4Shap.mp3 in Resources */,
 				CCC8820521711DB700DC6CB7 /* Mi5.mp3 in Resources */,
 				CCC882992172476A00DC6CB7 /* C5.aiff in Resources */,
@@ -874,14 +1109,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC96EE912226CB8300663CE1 /* LocalSongsInteractor.swift in Sources */,
 				CCC881D321711D6000DC6CB7 /* ViewController.swift in Sources */,
 				CCC557642173CD8E0021844A /* ExtensionCollection.swift in Sources */,
 				CC80FFA42212C060004E3C79 /* CellTopImageBottomTitle.swift in Sources */,
 				CC80FFA622154502004E3C79 /* CellImageViewFull.swift in Sources */,
 				CCBFFBAB2223F72300036745 /* Router.swift in Sources */,
+				CCB0931322283E50000FE5D3 /* InfoSongPresenter.swift in Sources */,
+				CCB0931522283E81000FE5D3 /* InfoSongInteracter.swift in Sources */,
 				CC63C2B42219C64600780259 /* ProtocolModel.swift in Sources */,
 				CCE27CDB2209BD7E00A781BC /* ListSongController.swift in Sources */,
-				CC63C2B62219C68A00780259 /* ModelDanhChoNguoiMoiBatDau.swift in Sources */,
+				CC63C2B62219C68A00780259 /* ModelNhacOnline.swift in Sources */,
+				CC96EEA02226CEFC00663CE1 /* NhacOnlineInteracter.swift in Sources */,
+				CC39791822271F1F003496CD /* GetFrameUIScreen.swift in Sources */,
 				CC80FF98221289A3004E3C79 /* HomeControllerPresenter.swift in Sources */,
 				CC63C2B22219C60600780259 /* ModelNhacTrungQuoc.swift in Sources */,
 				CC63C2B02219C5E400780259 /* ModelNhacViet.swift in Sources */,
@@ -893,7 +1133,7 @@
 				CCC882A8217272C900DC6CB7 /* Tangent.swift in Sources */,
 				CCAC39CD2215AAE800D89162 /* ServiceFirebase.swift in Sources */,
 				CCC557622173C98F0021844A /* ModelSongKaraokeLocal.swift in Sources */,
-				CCC5574D21739E7C0021844A /* Extension.swift in Sources */,
+				CCC5574D21739E7C0021844A /* ExtensionUIButton.swift in Sources */,
 				CCC881E521711D9200DC6CB7 /* PianoViewController.swift in Sources */,
 				CC80FF9C2212B946004E3C79 /* NhacOnlineController.swift in Sources */,
 				CC63C2B82219CEBD00780259 /* LoadImage.swift in Sources */,
@@ -901,11 +1141,15 @@
 				CC63C2BA2219D09A00780259 /* CellConLocal.swift in Sources */,
 				CC19D78E217BB83600CAEE1B /* TableViewListSong.swift in Sources */,
 				CCC557512173C6D50021844A /* LocalSong.swift in Sources */,
-				CC80FF96221283C5004E3C79 /* ModelHome.swift in Sources */,
+				CC80FF96221283C5004E3C79 /* ModelLayoutCell.swift in Sources */,
 				CCC881D121711D6000DC6CB7 /* AppDelegate.swift in Sources */,
 				CCC557552173C7DE0021844A /* LocalSongPresenter.swift in Sources */,
 				CC80FF9422128253004E3C79 /* LocalSongsController.swift in Sources */,
+				CC96EE8F2226CB3D00663CE1 /* LocalSongsPresenter.swift in Sources */,
+				CCE93F76222951A100AB9583 /* LocalSongsRouter.swift in Sources */,
+				CC96EE8D2226B77C00663CE1 /* Enum.swift in Sources */,
 				CCC882872172375400DC6CB7 /* PianoSounds.swift in Sources */,
+				CC96EE9E2226CE4600663CE1 /* NhacOnlinePresenter.swift in Sources */,
 				CC19D78A217BB66400CAEE1B /* ModelCategoryInstrument.swift in Sources */,
 				CCBFFBA92223EB0100036745 /* Interacter.swift in Sources */,
 				CC80FF92221277BF004E3C79 /* HomeController.swift in Sources */,

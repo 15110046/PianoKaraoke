@@ -33,6 +33,8 @@ class CellConLocal: UICollectionViewCell {
         txt.textAlignment = .center
         return txt
     }()
+
+    
     
     func config(imageSong: UIImage?, titleSong: String?) {
         self.titleSong.text = titleSong
@@ -52,5 +54,6 @@ class CellConLocal: UICollectionViewCell {
         imageSong.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
         autoLayoutTitleSong()
     }
+  
 }
 
