@@ -136,6 +136,8 @@
 		CCE27CDB2209BD7E00A781BC /* ListSongController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE27CDA2209BD7E00A781BC /* ListSongController.swift */; };
 		CCE27CDD2209C01900A781BC /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE27CDC2209C01900A781BC /* TableViewCell.swift */; };
 		CCE93F76222951A100AB9583 /* LocalSongsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE93F75222951A100AB9583 /* LocalSongsRouter.swift */; };
+		CCE93F78222963E200AB9583 /* InfoSongRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE93F77222963E200AB9583 /* InfoSongRouter.swift */; };
+		CCE93F7B222965BC00AB9583 /* PianoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE93F7A222965BC00AB9583 /* PianoController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -272,6 +274,8 @@
 		CCE27CDA2209BD7E00A781BC /* ListSongController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSongController.swift; sourceTree = "<group>"; };
 		CCE27CDC2209C01900A781BC /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		CCE93F75222951A100AB9583 /* LocalSongsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSongsRouter.swift; sourceTree = "<group>"; };
+		CCE93F77222963E200AB9583 /* InfoSongRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSongRouter.swift; sourceTree = "<group>"; };
+		CCE93F7A222965BC00AB9583 /* PianoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PianoController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -375,6 +379,7 @@
 		CC96EE932226CD6500663CE1 /* NhacOffline */ = {
 			isa = PBXGroup;
 			children = (
+				CCE93F7C22296C9E00AB9583 /* Entity */,
 				CC96EE972226CD9F00663CE1 /* Router */,
 				CC96EE962226CD8D00663CE1 /* Interacter */,
 				CC96EE952226CD8500663CE1 /* Presenter */,
@@ -450,6 +455,7 @@
 			isa = PBXGroup;
 			children = (
 				CC63C2BD2219D2D700780259 /* InfoSong.swift */,
+				CCE93F79222964D400AB9583 /* Piano */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -480,6 +486,7 @@
 		CCB0931122283E1D000FE5D3 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				CCE93F77222963E200AB9583 /* InfoSongRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -905,6 +912,21 @@
 			path = ListSongs;
 			sourceTree = "<group>";
 		};
+		CCE93F79222964D400AB9583 /* Piano */ = {
+			isa = PBXGroup;
+			children = (
+				CCE93F7A222965BC00AB9583 /* PianoController.swift */,
+			);
+			path = Piano;
+			sourceTree = "<group>";
+		};
+		CCE93F7C22296C9E00AB9583 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1124,6 +1146,7 @@
 				CC39791822271F1F003496CD /* GetFrameUIScreen.swift in Sources */,
 				CC80FF98221289A3004E3C79 /* HomeControllerPresenter.swift in Sources */,
 				CC63C2B22219C60600780259 /* ModelNhacTrungQuoc.swift in Sources */,
+				CCE93F78222963E200AB9583 /* InfoSongRouter.swift in Sources */,
 				CC63C2B02219C5E400780259 /* ModelNhacViet.swift in Sources */,
 				CCE27CDD2209C01900A781BC /* TableViewCell.swift in Sources */,
 				CC19D78C217BB7FD00CAEE1B /* TableViewCategoryInstrument.swift in Sources */,
@@ -1143,6 +1166,7 @@
 				CCC557512173C6D50021844A /* LocalSong.swift in Sources */,
 				CC80FF96221283C5004E3C79 /* ModelLayoutCell.swift in Sources */,
 				CCC881D121711D6000DC6CB7 /* AppDelegate.swift in Sources */,
+				CCE93F7B222965BC00AB9583 /* PianoController.swift in Sources */,
 				CCC557552173C7DE0021844A /* LocalSongPresenter.swift in Sources */,
 				CC80FF9422128253004E3C79 /* LocalSongsController.swift in Sources */,
 				CC96EE8F2226CB3D00663CE1 /* LocalSongsPresenter.swift in Sources */,
