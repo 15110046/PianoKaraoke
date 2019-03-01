@@ -12,10 +12,8 @@ import UIKit
 class LocalSongsController: UICollectionViewCell {
     
     private var presenter: LocalSongsPresenter?
-//    private var viewController: UIViewController?
     func inject(presenter: LocalSongsPresenter) {
         self.presenter = presenter
-//        self.viewController = viewController
         titleCellLocal.text = presenter.getTitleForCell()
     }
     
@@ -29,6 +27,7 @@ class LocalSongsController: UICollectionViewCell {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setTitle("Xem tat ca", for: .normal)
+        btn.backgroundColor = .red
         return btn
     }()
     private var titleCellLocal: UILabel = {
@@ -83,8 +82,12 @@ class LocalSongsController: UICollectionViewCell {
         btnViewAll.topAnchor.constraint(equalTo: viewHeader.topAnchor, constant: 0).isActive = true
         btnViewAll.leftAnchor.constraint(equalTo: viewHeader.leftAnchor, constant: 0).isActive = true
         btnViewAll.rightAnchor.constraint(equalTo: viewHeader.rightAnchor, constant: 0).isActive = true
+        btnViewAll.addTarget(self, action:#selector(self.clickViewAll), for: .touchUpInside)
     }
     
+    @objc func clickViewAll() {
+        print("a")
+    }
     private func autoLayoutColectionViewBaiHatOffline() {
         contentView.addSubview(collectionViewBaiHatOffline)
         collectionViewBaiHatOffline.topAnchor.constraint(equalTo: viewHeader.bottomAnchor, constant: 0).isActive = true

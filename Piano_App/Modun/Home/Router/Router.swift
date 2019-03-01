@@ -17,7 +17,7 @@ extension HomeController: Router {
         switch manHinh {
         case ListScreen.InfoSong:
             let vc = InfoSong()
-            vc.inject(presnter: InfoSongPresenterImp.init(interacter: InfoSongInteracterImp.init(dataInfoSong: data)))
+            vc.inject(presnter: InfoSongPresenterImp.init(interacter: InfoSongInteracterImp.init(dataInfoSong: data), router: InfoSongRouterImp(viewController: vc)))
             self.present(vc, animated: false, completion: nil)
         default:
             break
