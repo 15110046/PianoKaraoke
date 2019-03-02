@@ -18,17 +18,25 @@ protocol NhacOnlinePresenter {
     func collectionViewLayoutWitdhSize(sizeForItemAt indexPath: IndexPath) -> Float
     
     func getTitleForCell() -> String
+    
+    func present(from cell : TypeCell, manHinh: ListScreen, indexPath: IndexPath)
 }
 class NhacOnlinePresenterImp: NhacOnlinePresenter {
+    func present(from cell : TypeCell ,manHinh: ListScreen, indexPath: IndexPath) {
+        guard let interacter = interacter else { return }
+        router?.present(from: cell, to: manHinh, data: interacter.data.arrayNhacOnline[indexPath.row])
+    }
+    
     func getTitleForCell() -> String {
         return interacter?.data.title ?? ""
     }
+    private var router: Router?
     
+    private var interacter: NhacOnlineInteracter?
     
-    var interacter: NhacOnlineInteracter?
-    
-    init(interacter: NhacOnlineInteracter?) {
+    init(interacter: NhacOnlineInteracter?, router: Router?) {
         self.interacter = interacter
+        self.router = router
     }
     
     func numberOfItemsInSection(section: Int) -> Int {

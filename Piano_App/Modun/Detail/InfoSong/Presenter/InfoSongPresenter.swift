@@ -9,10 +9,13 @@
 import Foundation
 
 protocol InfoSongPresenter {
-    func getData() -> ModelDetailCellSongs
-    func present()
+    func present() 
+    func getData(completion: @escaping (Result) -> ())
 }
 class InfoSongPresenterImp: InfoSongPresenter {
+    func getData() {
+    }
+    
     private var interacter: InfoSongInteracter?
     private var router: InfoSongRouter?
     func present() {
@@ -23,7 +26,12 @@ class InfoSongPresenterImp: InfoSongPresenter {
         self.interacter = interacter
         self.router = router
     }
-    func getData() -> ModelDetailCellSongs {
-        return interacter?.dataInfoSong ?? SongsLocalDetail.init(image: "", nameSong: "")
+     func getData(completion: @escaping (Result) -> ()) {
+        interacter?.getData(completion: { (result) in
+            DispatchQueue.main.async {
+                completion(result)
+            }
+        })
     }
 }
+

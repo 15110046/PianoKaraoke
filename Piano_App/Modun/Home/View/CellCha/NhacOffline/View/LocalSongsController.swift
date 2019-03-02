@@ -123,11 +123,8 @@ extension LocalSongsController: UICollectionViewDelegate {
               else { return CGSize() }
         return CGSize(width: CGFloat(width), height: CGFloat(height))
     }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        guard let dataCell = presenter?.dataForRowAt(indexPath: indexPath),
-//            let dataDetailCell = dataCell as? SongsLocalDetail else { return }
-        
-        presenter?.present(manHinh: ListScreen.InfoSong, indexPath: indexPath)
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {        
+        presenter?.present(from: TypeCell.CellLocal, manHinh: ListScreen.InfoSong, indexPath: indexPath)
     }
 }
 extension LocalSongsController: UICollectionViewDelegateFlowLayout {

@@ -44,20 +44,19 @@ struct ArrayNhacOnline: ModelDetailCellSongs {
     
     var nameSong: String
     var imageSong: String
-    var urlMp4: String
-    var likes: Int
+    var idDetail: String
+//    var urlMp4: String
+//    var likes: Int
     init(object:[String: Any]) {
         if let dic = object as? Dictionary<String, Any> {
             self.nameSong = dic["nameSong"] as?     String ?? ""
             self.imageSong = dic["imageSong"] as?   String ?? ""
-            self.urlMp4 = dic["urlMp4"] as?         String ?? ""
-            self.likes = dic["likes"] as?           Int    ?? 0
+            self.idDetail = dic["idDetail"] as?         String ?? ""
         }
         else {
             self.nameSong = ""
             self.imageSong = ""
-            self.urlMp4 = ""
-            self.likes = 0
+            self.idDetail = ""
         }
     }
 }
