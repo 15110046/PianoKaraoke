@@ -20,20 +20,19 @@ protocol LocalSongsPresenter {
     
     func getTitleForCell() -> String
     
-    func present(manHinh: ListScreen, indexPath: IndexPath)
+    func present(from cell: TypeCell, manHinh: ListScreen, indexPath: IndexPath)
 }
 
 class LocalSongsPresenterIml: LocalSongsPresenter {
     private var router: Router?
     
-    
     func getTitleForCell() -> String {
         return interactor?.data.title ?? ""
     }
     
-    func present(manHinh: ListScreen, indexPath: IndexPath) {
+     func present(from cell: TypeCell, manHinh: ListScreen, indexPath: IndexPath) {
         guard let interactor = interactor else { return }
-        router?.present(manHinh: ListScreen.InfoSong, data: interactor.data.arraySongs[indexPath.row])
+        router?.present(from: cell, to: ListScreen.InfoSong, data: interactor.data.arraySongs[indexPath.row])
     }
     
     private var interactor: LocalSongsInteractor?

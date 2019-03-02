@@ -138,6 +138,8 @@
 		CCE93F76222951A100AB9583 /* LocalSongsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE93F75222951A100AB9583 /* LocalSongsRouter.swift */; };
 		CCE93F78222963E200AB9583 /* InfoSongRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE93F77222963E200AB9583 /* InfoSongRouter.swift */; };
 		CCE93F7B222965BC00AB9583 /* PianoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE93F7A222965BC00AB9583 /* PianoController.swift */; };
+		CCE93F7E222A25D300AB9583 /* NhacOnlineRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE93F7D222A25D300AB9583 /* NhacOnlineRouter.swift */; };
+		CCE93F80222A35FB00AB9583 /* ModelInfoSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE93F7F222A35FB00AB9583 /* ModelInfoSong.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -276,6 +278,8 @@
 		CCE93F75222951A100AB9583 /* LocalSongsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSongsRouter.swift; sourceTree = "<group>"; };
 		CCE93F77222963E200AB9583 /* InfoSongRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSongRouter.swift; sourceTree = "<group>"; };
 		CCE93F7A222965BC00AB9583 /* PianoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PianoController.swift; sourceTree = "<group>"; };
+		CCE93F7D222A25D300AB9583 /* NhacOnlineRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NhacOnlineRouter.swift; sourceTree = "<group>"; };
+		CCE93F7F222A35FB00AB9583 /* ModelInfoSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelInfoSong.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -447,6 +451,7 @@
 		CC96EE9B2226CDE800663CE1 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				CCE93F7D222A25D300AB9583 /* NhacOnlineRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -479,6 +484,7 @@
 		CCB0931022283E11000FE5D3 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				CCE93F7F222A35FB00AB9583 /* ModelInfoSong.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -667,7 +673,6 @@
 			isa = PBXGroup;
 			children = (
 				CC80FF97221289A3004E3C79 /* HomeControllerPresenter.swift */,
-				CC80FFA12212BFC3004E3C79 /* CellCha */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -676,6 +681,7 @@
 			isa = PBXGroup;
 			children = (
 				CC80FF91221277BF004E3C79 /* HomeController.swift */,
+				CC80FFA12212BFC3004E3C79 /* CellCha */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1132,8 +1138,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC96EE912226CB8300663CE1 /* LocalSongsInteractor.swift in Sources */,
+				CCE93F7E222A25D300AB9583 /* NhacOnlineRouter.swift in Sources */,
 				CCC881D321711D6000DC6CB7 /* ViewController.swift in Sources */,
 				CCC557642173CD8E0021844A /* ExtensionCollection.swift in Sources */,
+				CCE93F80222A35FB00AB9583 /* ModelInfoSong.swift in Sources */,
 				CC80FFA42212C060004E3C79 /* CellTopImageBottomTitle.swift in Sources */,
 				CC80FFA622154502004E3C79 /* CellImageViewFull.swift in Sources */,
 				CCBFFBAB2223F72300036745 /* Router.swift in Sources */,

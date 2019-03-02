@@ -111,7 +111,7 @@ extension HomeController: UICollectionViewDataSource {
                 return UICollectionViewCell()
             }
             let interactor = NhacOnlineInteracterImp(data: dataCell)
-            cell.inject(presenter: NhacOnlinePresenterImp(interacter: interactor), viewController: self)
+            cell.inject(presenter: NhacOnlinePresenterImp(interacter: interactor, router: self))
             return cell
         default:
              return UICollectionViewCell()

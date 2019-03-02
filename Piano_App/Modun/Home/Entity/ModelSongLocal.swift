@@ -39,6 +39,7 @@ struct SongsLocalDetail: ModelDetailCellSongs {
 
     private let image: UIImage?
     private let nameSong: String?
+    
     init(image: String, nameSong: String) {
         self.image = UIImage.init(named: image)
         self.nameSong = nameSong

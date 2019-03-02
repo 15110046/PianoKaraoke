@@ -11,12 +11,9 @@ import UIKit
 class NhacOnlineController: UICollectionViewCell {
     
     private var presenter: NhacOnlinePresenter?
-    private var viewController: UIViewController?
-    func inject(presenter: NhacOnlinePresenter, viewController: UIViewController) {
+    func inject(presenter: NhacOnlinePresenter) {
         self.presenter = presenter
-        self.viewController = viewController
         titleCellDanhChoNguoiMoiBatDau.text = presenter.getTitleForCell()
-    
     }
     
     private var viewHeader: UIView = {
@@ -117,6 +114,7 @@ extension NhacOnlineController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter?.present(from: TypeCell.CellOnline, manHinh: ListScreen.InfoSong, indexPath: indexPath)
     }
     
 }
