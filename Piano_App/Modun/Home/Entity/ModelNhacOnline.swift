@@ -21,15 +21,9 @@ struct NhacOnline: ModelHome {
     var arrayNhacOnline: [ArrayNhacOnline] = []
     let title: String?
     init(data: [String: Any]) {
-        if let dic = data as? Dictionary<String, Any> {
-            self.title = dic["title"] as? String ?? ""
-            let dicSongs = dic["arraySongs"] as? [String: [String: Any]] ?? ["":["":""]]
-            self.arrayNhacOnline = dicSongs.map{ArrayNhacOnline.init(object: $0.value)}
-        }
-        else {
-            self.arrayNhacOnline = [ArrayNhacOnline]()
-            self.title = ""
-        }
+        self.title = data["title"] as? String ?? ""
+        let dicSongs = data["arraySongs"] as? [String: [String: Any]] ?? ["":["":""]]
+        self.arrayNhacOnline = dicSongs.map{ArrayNhacOnline.init(object: $0.value)}
     }
 }
 struct ArrayNhacOnline: ModelDetailCellSongs {
