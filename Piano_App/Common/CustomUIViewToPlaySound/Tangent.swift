@@ -28,7 +28,7 @@ enum Tangent: String {
     case E5 = "E5"
     case F5 = "F5"
     case F5Shap = "F5Shap"
-    case G5 = "G5"
+    case G5 = "G5-2"
     case G5Shap = "G5Shap"
     case A5 = "A5"
     case A5Shap = "A5Shap"

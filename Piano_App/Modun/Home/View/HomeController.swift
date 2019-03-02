@@ -16,13 +16,14 @@ class HomeController: UIViewController {
     private var viewHeader: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor.hexStringToUIColor(hex: "17182C", alpha: 1)
         return view
     }()
     private var titleHeader1: UILabel = {
         let txtTitle = UILabel()
         txtTitle.translatesAutoresizingMaskIntoConstraints = false
         txtTitle.text = "Play"
+        txtTitle.textColor = .red
         txtTitle.font = UIFont(name: "AmericanTypewriter-Bold", size: 18)
         return txtTitle
     }()
@@ -31,7 +32,7 @@ class HomeController: UIViewController {
         txtTitle.translatesAutoresizingMaskIntoConstraints = false
         txtTitle.text = "Songs with Piano KeyBoard"
         txtTitle.font = UIFont(name: "AmericanTypewriter-Bold", size: 18)
-        txtTitle.textColor = .red
+        txtTitle.textColor = .white
         return txtTitle
     }()
     private lazy var collectionViewHome: UICollectionView = {
@@ -41,7 +42,7 @@ class HomeController: UIViewController {
         clsview.delegate = self
         clsview.dataSource = self
         layout.scrollDirection = .vertical
-        clsview.backgroundColor = .white
+        clsview.backgroundColor = UIColor.hexStringToUIColor(hex: "17182C", alpha: 1)
         clsview.register(LocalSongsController.self, forCellWithReuseIdentifier: "LocalSongs")
         clsview.register(NhacOnlineController.self, forCellWithReuseIdentifier: "OnlineSongs")
         clsview.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -50,16 +51,16 @@ class HomeController: UIViewController {
     //auto layout
     private func autoLayoutViewHeader() {
         view.addSubview(viewHeader)
-        viewHeader.topAnchor.constraint(equalTo: topLayoutGuide.topAnchor, constant: 0).isActive = true
+        viewHeader.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 0).isActive = true
         viewHeader.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
         viewHeader.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
-        viewHeader.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        viewHeader.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.height/10).isActive = true
         autoLayoutTitleHeader1()
         autoLayoutTitleHeader2()
     }
     private func autoLayoutTitleHeader1() {
         viewHeader.addSubview(titleHeader1)
-        titleHeader1.centerYAnchor.constraint(equalTo: viewHeader.centerYAnchor, constant: 20).isActive = true
+        titleHeader1.centerYAnchor.constraint(equalTo: viewHeader.centerYAnchor, constant: 0).isActive = true
         titleHeader1.leftAnchor.constraint(equalTo: viewHeader.leftAnchor, constant: 20).isActive = true
     }
     private func autoLayoutTitleHeader2() {
@@ -77,11 +78,18 @@ class HomeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         autoLayoutViewHeader()
+        view.backgroundColor = .white
         autoLayoutCollectionViewHome()
         presenter = HomeControllerPresenterImp()
         presenter?.viewDidload(self, router: self)
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        self.navigationController?.isNavigationBarHidden = true
+//    }
 }
 extension HomeController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -120,7 +128,7 @@ extension HomeController: UICollectionViewDataSource {
 }
 extension HomeController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
+        return 10
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0

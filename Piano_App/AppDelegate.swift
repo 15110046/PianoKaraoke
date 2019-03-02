@@ -12,12 +12,15 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var navigationController: UINavigationController?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        window?.rootViewController = HomeController()
+        let mainVC = HomeController()
+        navigationController = UINavigationController(rootViewController: mainVC)
+        navigationController?.navigationBar.barTintColor = UIColor.hexStringToUIColor(hex: "17182C", alpha: 1)
+        window?.rootViewController = navigationController
         return true
     }
 

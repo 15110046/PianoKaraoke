@@ -18,18 +18,18 @@ class CellTopImageBottomTitle: UICollectionViewCell {
         contentView.layoutIfNeeded()
         autoLayoutViewImage()
         autoLayoutViewTitle()
-        contentView.backgroundColor = .black
+        contentView.backgroundColor = UIColor.hexStringToUIColor(hex: "1D1F35", alpha: 1)
     }
     private var areaViewImage: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor.hexStringToUIColor(hex: "1D1F35", alpha: 1)
         return view
     }()
     private var areaViewTitle: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .white
+        view.backgroundColor =  UIColor.hexStringToUIColor(hex: "1D1F35", alpha: 1)
         return view
     }()
     private var imageSong: UIImageView = {
@@ -43,7 +43,7 @@ class CellTopImageBottomTitle: UICollectionViewCell {
         let txt = UILabel()
         txt.translatesAutoresizingMaskIntoConstraints = false
         txt.font = UIFont(name: "TimesNewRomanPSMT", size: 18)
-        txt.textColor = .black
+        txt.textColor = .white
         txt.numberOfLines = 0
         txt.textAlignment = .center
         return txt

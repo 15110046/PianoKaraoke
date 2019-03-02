@@ -16,14 +16,15 @@ extension HomeController: Router {
     func present(from cell : TypeCell ,to manHinh: ListScreen, data: ModelDetailCellSongs) {
         switch cell {
         case TypeCell.CellLocal: 
-                    switch manHinh {
-                    case ListScreen.InfoSong:
-                        let vc = InfoSong()
-                        vc.inject(presnter: InfoSongPresenterImp.init(interacter: InfoSongInteracterImp.init(keyIdDetail: nil, dataLocal: data), router: InfoSongRouterImp(viewController: vc)))
-                        self.present(vc, animated: false, completion: nil)
-                    default:
-                        break
-                }
+            switch manHinh {
+            case ListScreen.InfoSong:
+                let vc = InfoSong()
+                vc.inject(presnter: InfoSongPresenterImp.init(interacter: InfoSongInteracterImp.init(keyIdDetail: nil, dataLocal: data), router: InfoSongRouterImp(navtionController: self.navigationController)))
+                self.navigationController?.pushViewController(vc, animated: true)
+                self.navigationController?.isNavigationBarHidden = false
+            default:
+                break
+            }
         case TypeCell.CellOnline:
             guard let keyIdDetailInfoSong = data as? ArrayNhacOnline else {
                 return
@@ -31,8 +32,9 @@ extension HomeController: Router {
             switch manHinh {
             case ListScreen.InfoSong:
                 let vc = InfoSong()
-                vc.inject(presnter: InfoSongPresenterImp.init(interacter: InfoSongInteracterImp.init(keyIdDetail: keyIdDetailInfoSong.idDetail, dataLocal: nil), router: InfoSongRouterImp(viewController: vc)))
-                self.present(vc, animated: false, completion: nil)
+                vc.inject(presnter: InfoSongPresenterImp.init(interacter: InfoSongInteracterImp.init(keyIdDetail: keyIdDetailInfoSong.idDetail, dataLocal: nil), router: InfoSongRouterImp(navtionController: self.navigationController)))
+                self.navigationController?.pushViewController(vc, animated: true)
+                self.navigationController?.isNavigationBarHidden = false
             default:
                 break
             }

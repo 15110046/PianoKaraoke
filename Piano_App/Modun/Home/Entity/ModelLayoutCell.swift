@@ -53,11 +53,11 @@ enum LayoutDanhChoNguoiMoiBatDau {
     var rawValue: Float {
         switch self {
         case .heightDanhChoNguoiMoiBatDau:
-            return GetFramUIScreen.share.getHeightUIScreen()/4
+            return GetFramUIScreen.share.getHeightUIScreen()/3
         case .widthDanhChoNguoiMoiBatDau:
             return GetFramUIScreen.share.getWitdhUIScreen()
         case .heightCellDanhChoNguoiMoiBatDau:
-            return GetFramUIScreen.share.getHeightUIScreen()/4 - 50
+            return GetFramUIScreen.share.getHeightUIScreen()/3 - 50
         case .widthCellDanhChoNguoiMoiBatDau:
             return GetFramUIScreen.share.getWitdhUIScreen()/3
         }
