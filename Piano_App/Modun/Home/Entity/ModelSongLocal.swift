@@ -11,7 +11,7 @@ import UIKit
 
 struct SongsLocal: ModelHome {
     var heighthSize: Float? {
-        return GetFramUIScreen.share.getHeightUIScreen()/4
+        return GetFramUIScreen.share.getHeightUIScreen()/3
     }
     
     var widthSize: Float? {
@@ -30,7 +30,7 @@ struct SongsLocal: ModelHome {
 
 struct SongsLocalDetail: ModelDetailCellSongs {
     var heighthSize: Float? {
-        return GetFramUIScreen.share.getHeightUIScreen()/4 - 50
+        return GetFramUIScreen.share.getHeightUIScreen()/3 - 50
     }
     
     var widthSize: Float? {

@@ -10,17 +10,18 @@ import Foundation
 import UIKit
 
 protocol InfoSongRouter {
-    var viewController: UIViewController? { get set}
+    var navtionController: UINavigationController? { get set}
     func present()
 }
 class InfoSongRouterImp: InfoSongRouter {
-    var viewController: UIViewController?
+    var navtionController: UINavigationController?
     
-    init(viewController: UIViewController) {
-        self.viewController = viewController
+    init(navtionController: UINavigationController?) {
+        self.navtionController = navtionController
     }
     func present() {
-        let vc = PianoController()
-        viewController?.present(vc, animated: false, completion: nil)
+        let vc = instantiate(ViewController.self)
+        navtionController?.pushViewController(vc, animated: true)
+        navtionController?.isNavigationBarHidden = false
     }
 }

@@ -19,7 +19,7 @@ class NhacOnlineController: UICollectionViewCell {
     private var viewHeader: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor.hexStringToUIColor(hex: "1D1F35", alpha: 1)
         return view
     }()
     
@@ -27,6 +27,7 @@ class NhacOnlineController: UICollectionViewCell {
         let txtTitle = UILabel()
         txtTitle.translatesAutoresizingMaskIntoConstraints = false
         txtTitle.font = UIFont(name: "TimesNewRomanPS-BoldMT", size: 18)
+        txtTitle.textColor = .white
         return txtTitle
     }()
     
@@ -37,7 +38,7 @@ class NhacOnlineController: UICollectionViewCell {
         clsview.delegate = self
         clsview.dataSource = self
         layout.scrollDirection = .horizontal
-        clsview.backgroundColor = .white
+        clsview.backgroundColor = UIColor.hexStringToUIColor(hex: "1D1F35", alpha: 1)
         clsview.register(CellTopImageBottomTitle.self, forCellWithReuseIdentifier: "CellTopImageBottomTitle")
         clsview.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         clsview.showsHorizontalScrollIndicator = false

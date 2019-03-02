@@ -20,20 +20,21 @@ class LocalSongsController: UICollectionViewCell {
     private var viewHeader: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor.hexStringToUIColor(hex: "1D1F35", alpha: 1)
         return view
     }()
     private var btnViewAll: UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setTitle("Xem tat ca", for: .normal)
-        btn.backgroundColor = .red
+        btn.backgroundColor = UIColor.hexStringToUIColor(hex: "1D1F35", alpha: 1)
         return btn
     }()
     private var titleCellLocal: UILabel = {
         let txtTitle = UILabel()
         txtTitle.translatesAutoresizingMaskIntoConstraints = false
         txtTitle.font = UIFont(name: "TimesNewRomanPS-BoldMT", size: 18)
+        txtTitle.textColor = .white
         return txtTitle
     }()
     
@@ -44,7 +45,7 @@ class LocalSongsController: UICollectionViewCell {
         clsview.delegate = self
         clsview.dataSource = self
         layout.scrollDirection = .horizontal
-        clsview.backgroundColor = .white
+        clsview.backgroundColor = UIColor.hexStringToUIColor(hex: "1D1F35", alpha: 1)
         clsview.register(CellConLocal.self, forCellWithReuseIdentifier: "CellConLocal")
         clsview.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         clsview.showsHorizontalScrollIndicator = false
@@ -69,7 +70,7 @@ class LocalSongsController: UICollectionViewCell {
         viewHeader.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 0).isActive = true
         viewHeader.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 0).isActive = true
         viewHeader.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        autoLayoutButton()
+//        autoLayoutButton()
     }
     
     private func autoLayoutTitleCellLocall() {

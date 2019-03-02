@@ -51,7 +51,7 @@ class CellConLocal: UICollectionViewCell {
         imageSong.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
         imageSong.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 0).isActive = true
         imageSong.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 0).isActive = true
-        imageSong.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
+        imageSong.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
         autoLayoutTitleSong()
     }
   

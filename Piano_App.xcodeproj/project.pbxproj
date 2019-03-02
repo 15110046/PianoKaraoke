@@ -50,7 +50,7 @@
 		CCC557642173CD8E0021844A /* ExtensionCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC557632173CD8E0021844A /* ExtensionCollection.swift */; };
 		CCC881D121711D6000DC6CB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC881D021711D6000DC6CB7 /* AppDelegate.swift */; };
 		CCC881D321711D6000DC6CB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC881D221711D6000DC6CB7 /* ViewController.swift */; };
-		CCC881D621711D6000DC6CB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCC881D421711D6000DC6CB7 /* Main.storyboard */; };
+		CCC881D621711D6000DC6CB7 /* ViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCC881D421711D6000DC6CB7 /* ViewController.storyboard */; };
 		CCC881D821711D6000DC6CB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCC881D721711D6000DC6CB7 /* Assets.xcassets */; };
 		CCC881DB21711D6000DC6CB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCC881D921711D6000DC6CB7 /* LaunchScreen.storyboard */; };
 		CCC881E521711D9200DC6CB7 /* PianoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC881E421711D9200DC6CB7 /* PianoViewController.swift */; };
@@ -135,6 +135,9 @@
 		CCC882A8217272C900DC6CB7 /* Tangent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC882A7217272C800DC6CB7 /* Tangent.swift */; };
 		CCE27CDB2209BD7E00A781BC /* ListSongController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE27CDA2209BD7E00A781BC /* ListSongController.swift */; };
 		CCE27CDD2209C01900A781BC /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE27CDC2209C01900A781BC /* TableViewCell.swift */; };
+		CCE328C9222AD9F20039CE67 /* KeyBoardPiano.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCE328C8222AD9F20039CE67 /* KeyBoardPiano.xib */; };
+		CCE328CB222ADA760039CE67 /* KeyBoardPiano.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE328CA222ADA760039CE67 /* KeyBoardPiano.swift */; };
+		CCE328D2222AFB2C0039CE67 /* G5-2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CCE328D1222AFB2C0039CE67 /* G5-2.mp3 */; };
 		CCE93F76222951A100AB9583 /* LocalSongsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE93F75222951A100AB9583 /* LocalSongsRouter.swift */; };
 		CCE93F78222963E200AB9583 /* InfoSongRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE93F77222963E200AB9583 /* InfoSongRouter.swift */; };
 		CCE93F7B222965BC00AB9583 /* PianoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE93F7A222965BC00AB9583 /* PianoController.swift */; };
@@ -189,7 +192,7 @@
 		CCC881CD21711D5F00DC6CB7 /* Piano_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Piano_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCC881D021711D6000DC6CB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCC881D221711D6000DC6CB7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CCC881D521711D6000DC6CB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CCC881D521711D6000DC6CB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ViewController.storyboard; sourceTree = "<group>"; };
 		CCC881D721711D6000DC6CB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCC881DA21711D6000DC6CB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CCC881DC21711D6000DC6CB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -275,6 +278,9 @@
 		CCC882A7217272C800DC6CB7 /* Tangent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tangent.swift; sourceTree = "<group>"; };
 		CCE27CDA2209BD7E00A781BC /* ListSongController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSongController.swift; sourceTree = "<group>"; };
 		CCE27CDC2209C01900A781BC /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		CCE328C8222AD9F20039CE67 /* KeyBoardPiano.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyBoardPiano.xib; sourceTree = "<group>"; };
+		CCE328CA222ADA760039CE67 /* KeyBoardPiano.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardPiano.swift; sourceTree = "<group>"; };
+		CCE328D1222AFB2C0039CE67 /* G5-2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "G5-2.mp3"; sourceTree = "<group>"; };
 		CCE93F75222951A100AB9583 /* LocalSongsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSongsRouter.swift; sourceTree = "<group>"; };
 		CCE93F77222963E200AB9583 /* InfoSongRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSongRouter.swift; sourceTree = "<group>"; };
 		CCE93F7A222965BC00AB9583 /* PianoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PianoController.swift; sourceTree = "<group>"; };
@@ -783,9 +789,9 @@
 				CCC557682173EF3B0021844A /* Common */,
 				CCC557562173C7F70021844A /* Modun */,
 				CCC881D021711D6000DC6CB7 /* AppDelegate.swift */,
-				CCC881D221711D6000DC6CB7 /* ViewController.swift */,
+				CCE328CA222ADA760039CE67 /* KeyBoardPiano.swift */,
 				CC80FFA722154A7A004E3C79 /* GoogleService-Info.plist */,
-				CCC881D421711D6000DC6CB7 /* Main.storyboard */,
+				CCE328C8222AD9F20039CE67 /* KeyBoardPiano.xib */,
 				CCC881D721711D6000DC6CB7 /* Assets.xcassets */,
 				CCC881D921711D6000DC6CB7 /* LaunchScreen.storyboard */,
 				CCC881DC21711D6000DC6CB7 /* Info.plist */,
@@ -808,6 +814,7 @@
 				CCC8826C2171B6AD00DC6CB7 /* A4.mp3 */,
 				CCC881F821711DB700DC6CB7 /* La4.mp3 */,
 				CCC8825E2171B32000DC6CB7 /* A5.mp3 */,
+				CCE328D1222AFB2C0039CE67 /* G5-2.mp3 */,
 				CCC881EB21711DB600DC6CB7 /* La5.mp3 */,
 				CCC882542171B0A700DC6CB7 /* A6.mp3 */,
 				CCC881F321711DB700DC6CB7 /* La6.mp3 */,
@@ -902,6 +909,43 @@
 			path = ListSong;
 			sourceTree = "<group>";
 		};
+		CCE328CC222AE6230039CE67 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CCC881D421711D6000DC6CB7 /* ViewController.storyboard */,
+				CCC881D221711D6000DC6CB7 /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CCE328CD222AE62D0039CE67 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		CCE328CE222AE63A0039CE67 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		CCE328CF222AE6400039CE67 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		CCE328D0222AE6470039CE67 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		CCE93F73222950E500AB9583 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -922,6 +966,11 @@
 			isa = PBXGroup;
 			children = (
 				CCE93F7A222965BC00AB9583 /* PianoController.swift */,
+				CCE328D0222AE6470039CE67 /* Entity */,
+				CCE328CF222AE6400039CE67 /* Router */,
+				CCE328CE222AE63A0039CE67 /* Presenter */,
+				CCE328CD222AE62D0039CE67 /* Interactor */,
+				CCE328CC222AE6230039CE67 /* View */,
 			);
 			path = Piano;
 			sourceTree = "<group>";
@@ -1030,11 +1079,13 @@
 				CCC882A32172476A00DC6CB7 /* F4.aiff in Resources */,
 				CCC8820921711DB700DC6CB7 /* Do6.mp3 in Resources */,
 				CCC8829D2172476A00DC6CB7 /* C4.aiff in Resources */,
+				CCE328D2222AFB2C0039CE67 /* G5-2.mp3 in Resources */,
 				CCC8826F2171B6BC00DC6CB7 /* A4Shap.mp3 in Resources */,
 				CCC8821121711DB700DC6CB7 /* Si4.mp3 in Resources */,
 				CCC882792171B81500DC6CB7 /* E5.mp3 in Resources */,
 				CC22DA7721773A1300BA6030 /* Storyboard.storyboard in Resources */,
 				CCC881D821711D6000DC6CB7 /* Assets.xcassets in Resources */,
+				CCE328C9222AD9F20039CE67 /* KeyBoardPiano.xib in Resources */,
 				CCC8823221713DF200DC6CB7 /* G5Shap.mp3 in Resources */,
 				CCC8829E2172476A00DC6CB7 /* D4.aiff in Resources */,
 				CCC882552171B0A800DC6CB7 /* A6.mp3 in Resources */,
@@ -1060,7 +1111,7 @@
 				CCC8829C2172476A00DC6CB7 /* FShap4.aiff in Resources */,
 				CCC882492171AC8700DC6CB7 /* D5.mp3 in Resources */,
 				CCC882692171B68F00DC6CB7 /* F4.mp3 in Resources */,
-				CCC881D621711D6000DC6CB7 /* Main.storyboard in Resources */,
+				CCC881D621711D6000DC6CB7 /* ViewController.storyboard in Resources */,
 				CCC8821521711DB700DC6CB7 /* Fa4.mp3 in Resources */,
 				CCC8821221711DB700DC6CB7 /* Re4.mp3 in Resources */,
 				CCC882972172476A00DC6CB7 /* CShap5.aiff in Resources */,
@@ -1165,6 +1216,7 @@
 				CCAC39CD2215AAE800D89162 /* ServiceFirebase.swift in Sources */,
 				CCC557622173C98F0021844A /* ModelSongKaraokeLocal.swift in Sources */,
 				CCC5574D21739E7C0021844A /* ExtensionUIButton.swift in Sources */,
+				CCE328CB222ADA760039CE67 /* KeyBoardPiano.swift in Sources */,
 				CCC881E521711D9200DC6CB7 /* PianoViewController.swift in Sources */,
 				CC80FF9C2212B946004E3C79 /* NhacOnlineController.swift in Sources */,
 				CC63C2B82219CEBD00780259 /* LoadImage.swift in Sources */,
@@ -1192,12 +1244,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CCC881D421711D6000DC6CB7 /* Main.storyboard */ = {
+		CCC881D421711D6000DC6CB7 /* ViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				CCC881D521711D6000DC6CB7 /* Base */,
 			);
-			name = Main.storyboard;
+			name = ViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		CCC881D921711D6000DC6CB7 /* LaunchScreen.storyboard */ = {
