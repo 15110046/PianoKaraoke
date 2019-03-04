@@ -19,16 +19,20 @@ protocol NhacOnlinePresenter {
     
     func getTitleForCell() -> String
     
-    func present(from cell : TypeCell, manHinh: ListScreen, indexPath: IndexPath)
+    func present(from cell : TypeCell, manHinh: ListScreen, indexPath: IndexPath?)
+    
+//    func presentOfViewAll(from cell : TypeCell, manHinh: ListScreen)
 }
 class NhacOnlinePresenterImp: NhacOnlinePresenter {
-    func present(from cell : TypeCell ,manHinh: ListScreen, indexPath: IndexPath) {
+    func present(from cell : TypeCell ,manHinh: ListScreen, indexPath: IndexPath?) {
         guard let interacter = interacter else { return }
-        router?.present(from: cell, to: manHinh, data: interacter.data.arrayNhacOnline[indexPath.row])
+        router?.present(from: cell, to: manHinh, data: interacter.data.arrayNhacOnline[indexPath?.row ?? 0])
     }
     
+    
     func getTitleForCell() -> String {
-        return interacter?.data.title ?? ""
+        guard let interacter = interacter else { return "" }
+        return interacter.data.category.rawValue
     }
     private var router: Router?
     
@@ -40,7 +44,17 @@ class NhacOnlinePresenterImp: NhacOnlinePresenter {
     }
     
     func numberOfItemsInSection(section: Int) -> Int {
-        return interacter?.data.arrayNhacOnline.count ?? 0
+        guard let data = interacter?.data else { return 0 }
+        switch data.category {
+        case .newbiew:
+            return data.arrayNhacOnline.count
+        case .chinaSong:
+            return data.arrayNhacOnline.count
+        case .vietnameseSong:
+            return data.arrayNhacOnline.count
+        case .unknown:
+            return 0
+        }
     }
     
     func dataForRowAt(indexPath: IndexPath) -> NhacOnline? {

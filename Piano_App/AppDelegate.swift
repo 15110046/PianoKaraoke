@@ -26,7 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     private func setUpUINaviationItem() {
-        //        navigationItem.title = "Thông tin bài hát"
         let nav = self.navigationController?.navigationBar
         nav?.barStyle = .blackOpaque
         nav?.tintColor = UIColor.white

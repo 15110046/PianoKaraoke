@@ -30,9 +30,7 @@ class InfoSongInteracterImp: InfoSongInteracter {
             completion(Result.succesWithCellLocal(value: dataLocal))
         }
     }
-    
     var keyIdDetail: String?
-    
     
     init(keyIdDetail: String?, dataLocal: ModelDetailCellSongs?) {
         if keyIdDetail != nil {

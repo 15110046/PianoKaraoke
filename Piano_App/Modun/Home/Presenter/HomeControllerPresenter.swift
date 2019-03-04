@@ -18,10 +18,15 @@ protocol HomeControllerPresenter {
     func collectionViewLayoutWidth(_ collectionView: CollectionHomeViewController, sizeForItemAt indexPath: IndexPath) -> Float
     
     func viewDidload(_ collectionView: CollectionHomeViewController, router: Router)
+    
+    func printData()
 }
 class HomeControllerPresenterImp: HomeControllerPresenter {
     var interacter: Interacter?
     var router: Router?
+    func printData() {
+        print(interacter?.data)
+    }
     
     func dataForRowAt(indexPath: IndexPath) -> ModelHome? {
         return interacter?.data[indexPath.row]
