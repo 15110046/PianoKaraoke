@@ -25,8 +25,9 @@ class LoadImageFromService {
             completion(defaultImage ?? UIImage())
             return
         }
-        URLSession.shared.dataTask(with: link, completionHandler: { (data, res, err) in
+        URLSession.shared.dataTask(with: link, completionHandler: { [weak self] (data, res, err) in
             DispatchQueue.main.async {
+                guard let self = self else { return }
                 guard let data = data, let imageToCache = UIImage(data: data) else {
                     completion(self.defaultImage ?? UIImage())
                     return

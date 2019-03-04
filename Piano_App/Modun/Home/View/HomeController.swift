@@ -16,7 +16,7 @@ class HomeController: UIViewController {
     private var viewHeader: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.hexStringToUIColor(hex: "17182C", alpha: 1)
+        view.backgroundColor = UIColor.hexStringToUIColor(hex: "272838", alpha: 1)
         return view
     }()
     private var titleHeader1: UILabel = {
@@ -44,17 +44,17 @@ class HomeController: UIViewController {
         layout.scrollDirection = .vertical
         clsview.backgroundColor = UIColor.hexStringToUIColor(hex: "17182C", alpha: 1)
         clsview.register(LocalSongsController.self, forCellWithReuseIdentifier: "LocalSongs")
-        clsview.register(NhacOnlineController.self, forCellWithReuseIdentifier: "OnlineSongs")
+        clsview.register(NhacOnlineCell.self, forCellWithReuseIdentifier: "OnlineSongs")
         clsview.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         return clsview
     }()
     //auto layout
     private func autoLayoutViewHeader() {
         view.addSubview(viewHeader)
-        viewHeader.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 0).isActive = true
+        viewHeader.topAnchor.constraint(equalTo: topLayoutGuide.topAnchor, constant: 20).isActive = true
         viewHeader.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
         viewHeader.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
-        viewHeader.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.height/10).isActive = true
+        viewHeader.heightAnchor.constraint(equalToConstant: navigationController?.navigationBar.bounds.size.height ?? 0 + 20).isActive = true
         autoLayoutTitleHeader1()
         autoLayoutTitleHeader2()
     }
@@ -85,12 +85,15 @@ class HomeController: UIViewController {
         
     }
     override func viewWillAppear(_ animated: Bool) {
+         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
     }
-//    override func viewDidAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
 //        self.navigationController?.isNavigationBarHidden = true
-//               collectionViewHome.reloadData()
-//    }
+        super.viewDidAppear(animated)
+        collectionViewHome.reloadData()
+//        presenter?.printData()
+    }
 }
 extension HomeController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -116,11 +119,12 @@ extension HomeController: UICollectionViewDataSource {
             cell.inject(presenter: presenter)
             return cell
         case is NhacOnline:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OnlineSongs", for: indexPath) as? NhacOnlineController else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OnlineSongs", for: indexPath) as? NhacOnlineCell else {
                 return UICollectionViewCell()
             }
             let interactor = NhacOnlineInteracterImp(data: dataCell)
             cell.inject(presenter: NhacOnlinePresenterImp(interacter: interactor, router: self))
+            cell.configure()
             return cell
         default:
              return UICollectionViewCell()

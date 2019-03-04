@@ -9,11 +9,12 @@
 import Foundation
 import UIKit
 protocol Router {
-    func present(from screen : TypeCell ,to manHinh: ListScreen, data: ModelDetailCellSongs)
+    func present(from screen: TypeCell, to manHinh: ListScreen, data: ModelDetailCellSongs)
 }
 
 extension HomeController: Router {
-    func present(from cell : TypeCell ,to manHinh: ListScreen, data: ModelDetailCellSongs) {
+
+    func present(from cell: TypeCell, to manHinh: ListScreen, data: ModelDetailCellSongs) {
         switch cell {
         case TypeCell.CellLocal: 
             switch manHinh {
@@ -33,10 +34,14 @@ extension HomeController: Router {
             case ListScreen.InfoSong:
                 let vc = InfoSong()
                 vc.inject(presnter: InfoSongPresenterImp.init(interacter: InfoSongInteracterImp.init(keyIdDetail: keyIdDetailInfoSong.idDetail, dataLocal: nil), router: InfoSongRouterImp(navtionController: self.navigationController)))
+                self.navigationController?.isNavigationBarHidden = false
+                self.navigationController?.pushViewController(vc, animated: true)
+            case ListScreen.ListSongs:
+                let vc = ListSongs()
+               
+                vc.inject(presenter: ListSongsPresenterImp(interactor: ListSongsInteractorImp.init(key:"test"), router: ListSongsRouterImp.init(navtionController: self.navigationController)))
                 self.navigationController?.pushViewController(vc, animated: true)
                 self.navigationController?.isNavigationBarHidden = false
-            default:
-                break
             }
         }
     }

@@ -10,6 +10,14 @@ import Foundation
 //import UIKit
 
 struct NhacOnline: ModelHome {
+    
+    enum Category: String {
+        case newbiew = "Dành cho người mới bắt đầu"
+        case chinaSong = "Nhạc Trung Quốc"
+        case vietnameseSong = "Nhạc Việt"
+        case unknown = ""
+    }
+    
     var heighthSize: Float? {
         return Float(LayoutDanhChoNguoiMoiBatDau.heightDanhChoNguoiMoiBatDau.rawValue)
     }
@@ -19,9 +27,9 @@ struct NhacOnline: ModelHome {
     }
     
     var arrayNhacOnline: [ArrayNhacOnline] = []
-    let title: String?
+    let category: Category
     init(data: [String: Any]) {
-        self.title = data["title"] as? String ?? ""
+        self.category = Category(rawValue: data["title"] as? String ?? "") ?? .unknown
         let dicSongs = data["arraySongs"] as? [String: [String: Any]] ?? ["":["":""]]
         self.arrayNhacOnline = dicSongs.map{ArrayNhacOnline.init(object: $0.value)}
     }
@@ -34,7 +42,6 @@ struct ArrayNhacOnline: ModelDetailCellSongs {
     var widthSize: Float? {
         return LayoutDanhChoNguoiMoiBatDau.widthCellDanhChoNguoiMoiBatDau.rawValue
     }
-    
     
     var nameSong: String
     var imageSong: String

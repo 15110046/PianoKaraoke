@@ -26,7 +26,7 @@
 		CC80FF9422128253004E3C79 /* LocalSongsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80FF9322128253004E3C79 /* LocalSongsController.swift */; };
 		CC80FF96221283C5004E3C79 /* ModelLayoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80FF95221283C5004E3C79 /* ModelLayoutCell.swift */; };
 		CC80FF98221289A3004E3C79 /* HomeControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80FF97221289A3004E3C79 /* HomeControllerPresenter.swift */; };
-		CC80FF9C2212B946004E3C79 /* NhacOnlineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80FF9B2212B946004E3C79 /* NhacOnlineController.swift */; };
+		CC80FF9C2212B946004E3C79 /* NhacOnlineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80FF9B2212B946004E3C79 /* NhacOnlineCell.swift */; };
 		CC80FFA42212C060004E3C79 /* CellTopImageBottomTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80FFA32212C060004E3C79 /* CellTopImageBottomTitle.swift */; };
 		CC80FFA622154502004E3C79 /* CellImageViewFull.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80FFA522154502004E3C79 /* CellImageViewFull.swift */; };
 		CC80FFA822154A7A004E3C79 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC80FFA722154A7A004E3C79 /* GoogleService-Info.plist */; };
@@ -141,6 +141,10 @@
 		CCE328D4222B97330039CE67 /* Cam Am Than Thoai C5.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CCE328D3222B92BC0039CE67 /* Cam Am Than Thoai C5.mp4 */; };
 		CCE328D8222BB1CC0039CE67 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE328D7222BB1CC0039CE67 /* Level.swift */; };
 		CCE328DC222BC3A60039CE67 /* Level.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCE328DB222BC3A60039CE67 /* Level.xib */; };
+		CCE328E3222D140D0039CE67 /* ListSongs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE328E2222D140D0039CE67 /* ListSongs.swift */; };
+		CCE328E5222D14320039CE67 /* ListSongsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE328E4222D14320039CE67 /* ListSongsPresenter.swift */; };
+		CCE328E7222D14620039CE67 /* ListSongsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE328E6222D14620039CE67 /* ListSongsInteractor.swift */; };
+		CCE328E9222D14910039CE67 /* ListSongsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE328E8222D14910039CE67 /* ListSongsRouter.swift */; };
 		CCE93F76222951A100AB9583 /* LocalSongsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE93F75222951A100AB9583 /* LocalSongsRouter.swift */; };
 		CCE93F78222963E200AB9583 /* InfoSongRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE93F77222963E200AB9583 /* InfoSongRouter.swift */; };
 		CCE93F7B222965BC00AB9583 /* PianoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE93F7A222965BC00AB9583 /* PianoController.swift */; };
@@ -170,7 +174,7 @@
 		CC80FF9322128253004E3C79 /* LocalSongsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSongsController.swift; sourceTree = "<group>"; };
 		CC80FF95221283C5004E3C79 /* ModelLayoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLayoutCell.swift; sourceTree = "<group>"; };
 		CC80FF97221289A3004E3C79 /* HomeControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeControllerPresenter.swift; sourceTree = "<group>"; };
-		CC80FF9B2212B946004E3C79 /* NhacOnlineController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NhacOnlineController.swift; sourceTree = "<group>"; };
+		CC80FF9B2212B946004E3C79 /* NhacOnlineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NhacOnlineCell.swift; sourceTree = "<group>"; };
 		CC80FFA32212C060004E3C79 /* CellTopImageBottomTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTopImageBottomTitle.swift; sourceTree = "<group>"; };
 		CC80FFA522154502004E3C79 /* CellImageViewFull.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellImageViewFull.swift; sourceTree = "<group>"; };
 		CC80FFA722154A7A004E3C79 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -287,6 +291,10 @@
 		CCE328D3222B92BC0039CE67 /* Cam Am Than Thoai C5.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cam Am Than Thoai C5.mp4"; sourceTree = "<group>"; };
 		CCE328D7222BB1CC0039CE67 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		CCE328DB222BC3A60039CE67 /* Level.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Level.xib; sourceTree = "<group>"; };
+		CCE328E2222D140D0039CE67 /* ListSongs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSongs.swift; sourceTree = "<group>"; };
+		CCE328E4222D14320039CE67 /* ListSongsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSongsPresenter.swift; sourceTree = "<group>"; };
+		CCE328E6222D14620039CE67 /* ListSongsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSongsInteractor.swift; sourceTree = "<group>"; };
+		CCE328E8222D14910039CE67 /* ListSongsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSongsRouter.swift; sourceTree = "<group>"; };
 		CCE93F75222951A100AB9583 /* LocalSongsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSongsRouter.swift; sourceTree = "<group>"; };
 		CCE93F77222963E200AB9583 /* InfoSongRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSongRouter.swift; sourceTree = "<group>"; };
 		CCE93F7A222965BC00AB9583 /* PianoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PianoController.swift; sourceTree = "<group>"; };
@@ -439,7 +447,7 @@
 		CC96EE982226CDCB00663CE1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CC80FF9B2212B946004E3C79 /* NhacOnlineController.swift */,
+				CC80FF9B2212B946004E3C79 /* NhacOnlineCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -955,6 +963,45 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
+		CCE328DD222D13C00039CE67 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CCE328E2222D140D0039CE67 /* ListSongs.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CCE328DE222D13CE0039CE67 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CCE328E4222D14320039CE67 /* ListSongsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		CCE328DF222D13D50039CE67 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				CCE328E6222D14620039CE67 /* ListSongsInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		CCE328E0222D13DE0039CE67 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				CCE328E8222D14910039CE67 /* ListSongsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		CCE328E1222D13EA0039CE67 /* Enity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Enity;
+			sourceTree = "<group>";
+		};
 		CCE93F73222950E500AB9583 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -967,6 +1014,11 @@
 		CCE93F74222950FC00AB9583 /* ListSongs */ = {
 			isa = PBXGroup;
 			children = (
+				CCE328E1222D13EA0039CE67 /* Enity */,
+				CCE328E0222D13DE0039CE67 /* Router */,
+				CCE328DF222D13D50039CE67 /* Interactor */,
+				CCE328DE222D13CE0039CE67 /* Presenter */,
+				CCE328DD222D13C00039CE67 /* View */,
 			);
 			path = ListSongs;
 			sourceTree = "<group>";
@@ -1214,13 +1266,16 @@
 				CCE27CDB2209BD7E00A781BC /* ListSongController.swift in Sources */,
 				CC63C2B62219C68A00780259 /* ModelNhacOnline.swift in Sources */,
 				CC96EEA02226CEFC00663CE1 /* NhacOnlineInteracter.swift in Sources */,
+				CCE328E7222D14620039CE67 /* ListSongsInteractor.swift in Sources */,
 				CC39791822271F1F003496CD /* GetFrameUIScreen.swift in Sources */,
 				CC80FF98221289A3004E3C79 /* HomeControllerPresenter.swift in Sources */,
 				CC63C2B22219C60600780259 /* ModelNhacTrungQuoc.swift in Sources */,
 				CCE93F78222963E200AB9583 /* InfoSongRouter.swift in Sources */,
+				CCE328E9222D14910039CE67 /* ListSongsRouter.swift in Sources */,
 				CC63C2B02219C5E400780259 /* ModelNhacViet.swift in Sources */,
 				CCE27CDD2209C01900A781BC /* TableViewCell.swift in Sources */,
 				CC19D78C217BB7FD00CAEE1B /* TableViewCategoryInstrument.swift in Sources */,
+				CCE328E5222D14320039CE67 /* ListSongsPresenter.swift in Sources */,
 				CC63C2BE2219D2D700780259 /* InfoSong.swift in Sources */,
 				CC22DA7921773A3400BA6030 /* ViewControllerTest.swift in Sources */,
 				CC63C2AE2219C5A800780259 /* ModelSongLocal.swift in Sources */,
@@ -1230,7 +1285,7 @@
 				CCC5574D21739E7C0021844A /* ExtensionUIButton.swift in Sources */,
 				CCE328CB222ADA760039CE67 /* KeyBoardPiano.swift in Sources */,
 				CCC881E521711D9200DC6CB7 /* PianoViewController.swift in Sources */,
-				CC80FF9C2212B946004E3C79 /* NhacOnlineController.swift in Sources */,
+				CC80FF9C2212B946004E3C79 /* NhacOnlineCell.swift in Sources */,
 				CC63C2B82219CEBD00780259 /* LoadImage.swift in Sources */,
 				CCC557602173C8AA0021844A /* HomeCell.swift in Sources */,
 				CC63C2BA2219D09A00780259 /* CellConLocal.swift in Sources */,
@@ -1247,6 +1302,7 @@
 				CCC882872172375400DC6CB7 /* PianoSounds.swift in Sources */,
 				CC96EE9E2226CE4600663CE1 /* NhacOnlinePresenter.swift in Sources */,
 				CC19D78A217BB66400CAEE1B /* ModelCategoryInstrument.swift in Sources */,
+				CCE328E3222D140D0039CE67 /* ListSongs.swift in Sources */,
 				CCBFFBA92223EB0100036745 /* Interacter.swift in Sources */,
 				CC80FF92221277BF004E3C79 /* HomeController.swift in Sources */,
 				CCC882862172375400DC6CB7 /* KeyButton.swift in Sources */,

@@ -8,12 +8,18 @@
 
 import Foundation
 import UIKit
-class NhacOnlineController: UICollectionViewCell {
+class NhacOnlineCell: UICollectionViewCell {
     
     private var presenter: NhacOnlinePresenter?
     func inject(presenter: NhacOnlinePresenter) {
         self.presenter = presenter
         titleCellDanhChoNguoiMoiBatDau.text = presenter.getTitleForCell()
+        if titleCellDanhChoNguoiMoiBatDau.text == "Dành cho người mới bắt đầu" {
+            btnViewAll.isHidden = true
+        }
+        else {
+            btnViewAll.isHidden = false
+        }
     }
     
     private var viewHeader: UIView = {
@@ -21,6 +27,14 @@ class NhacOnlineController: UICollectionViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = UIColor.hexStringToUIColor(hex: "1D1F35", alpha: 1)
         return view
+    }()
+    private var btnViewAll: UIButton = {
+       let btn = UIButton()
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.setTitle("Xem tất cả", for: .normal)
+        btn.titleLabel?.font = UIFont(name: "AmericanTypewriter", size: 15)
+        btn.titleLabel?.textColor = .white
+        return btn
     }()
     
     private var titleCellDanhChoNguoiMoiBatDau: UILabel = {
@@ -53,10 +67,25 @@ class NhacOnlineController: UICollectionViewCell {
         super.init(frame: frame)
         contentView.backgroundColor = .green
         autoLayoutViewHeader()
-        autoLayoutTitleCellLocall()
+//        autoLayoutTitleCellLocall()
         autoLayoutCollectionViewDanhChoNguoiBatDau()
+       
     }
     
+    func configure() {
+        collectionViewDanhChoNguoiMoiBatDau.reloadData()
+    }
+    
+    private func autoLayoutbtnViewAll() {
+        viewHeader.addSubview(btnViewAll)
+        btnViewAll.bottomAnchor.constraint(equalTo: titleCellDanhChoNguoiMoiBatDau.bottomAnchor, constant: 0).isActive = true
+        btnViewAll.rightAnchor.constraint(equalTo: viewHeader.rightAnchor, constant: -5).isActive = true
+        btnViewAll.addTarget(self, action:#selector(self.clickViewAll), for: .touchUpInside)
+    }
+    @objc func clickViewAll() {
+        btnViewAll.flash()
+        presenter?.present(from: TypeCell.CellOnline, manHinh: ListScreen.ListSongs, indexPath: nil)
+    }
     private func autoLayoutCollectionViewDanhChoNguoiBatDau() {
         contentView.addSubview(collectionViewDanhChoNguoiMoiBatDau)
         collectionViewDanhChoNguoiMoiBatDau.topAnchor.constraint(equalTo: viewHeader.bottomAnchor, constant: 0).isActive = true
@@ -71,6 +100,8 @@ class NhacOnlineController: UICollectionViewCell {
         viewHeader.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 0).isActive = true
         viewHeader.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 0).isActive = true
         viewHeader.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        autoLayoutTitleCellLocall()
+        autoLayoutbtnViewAll()
     }
     
     private func autoLayoutTitleCellLocall() {
@@ -81,9 +112,10 @@ class NhacOnlineController: UICollectionViewCell {
     
 }
 
-extension NhacOnlineController: UICollectionViewDataSource {
+extension NhacOnlineCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    
         return presenter?.numberOfItemsInSection(section: section) ?? 0
     }
     
@@ -91,21 +123,22 @@ extension NhacOnlineController: UICollectionViewDataSource {
         guard let dataCell = presenter?.dataForRowAt(indexPath: indexPath) ,
               let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellTopImageBottomTitle", for: indexPath) as? CellTopImageBottomTitle
             else { return UICollectionViewCell() }
-        switch dataCell.title {
-        case "Nhạc Việt":
+        switch dataCell.category {
+        case .vietnameseSong:
             let dataNhacViet = dataCell.arrayNhacOnline[indexPath.row]
             cell.config(imageSong: dataNhacViet.imageSong, titleSong: dataNhacViet.nameSong)
-        case "Nhạc Trung Quốc":
-            cell.config(imageSong: dataCell.arrayNhacOnline[indexPath.row].imageSong, titleSong: dataCell.arrayNhacOnline[indexPath.row].nameSong)
-        case "Dành cho người mới bắt đầu":
-            cell.config(imageSong: dataCell.arrayNhacOnline[indexPath.row].imageSong, titleSong: dataCell.arrayNhacOnline[indexPath.row].nameSong)
-        default: return UICollectionViewCell()
+        case .chinaSong:
+            cell.config(imageSong: dataCell.arrayNhacOnline[indexPath.row].imageSong ?? "", titleSong: dataCell.arrayNhacOnline[indexPath.row].nameSong)
+        case .newbiew:
+            cell.config(imageSong: dataCell.arrayNhacOnline[indexPath.row].imageSong ?? "", titleSong: dataCell.arrayNhacOnline[indexPath.row].nameSong)
+        case .unknown:
+            return UICollectionViewCell()
         }
         return cell
     }
     
 }
-extension NhacOnlineController: UICollectionViewDelegate {
+extension NhacOnlineCell: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         guard let height = presenter?.collectionViewLayoutHeightSize(sizeForItemAt: indexPath),
@@ -119,7 +152,7 @@ extension NhacOnlineController: UICollectionViewDelegate {
     }
     
 }
-extension NhacOnlineController: UICollectionViewDelegateFlowLayout {
+extension NhacOnlineCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }

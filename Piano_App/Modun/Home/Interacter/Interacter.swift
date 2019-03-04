@@ -18,43 +18,48 @@ class InteracterImp: Interacter {
                                         arraySongs: [SongsLocalDetail(image: "ThanThoai", nameSong: "Sứ Thanh Hoa", urlSong: "Cam Am Than Thoai C5"),
                                                      SongsLocalDetail(image: "ThanThoai", nameSong: "Thần Thoai", urlSong: "Cam Am Than Thoai C5")])
     ]
+    
     func getData(collectionView: CollectionHomeViewController) {
         getDataCategoryNhacViet(collectionView: collectionView)
         getDataCategoryNhacTrungQuoc(collectionView: collectionView)
         getDataCategoryDanhChoNguoiMoiBatDau(collectionView: collectionView)
     }
     private func getDataCategoryNhacViet(collectionView: CollectionHomeViewController) {
-        ServiceFirebase.share.ref.child("OverViewCategoryApp").child("NhacTrungQuoc").observe(.value) { (snapshot) in
+        ServiceFirebase.share.ref.child("OverViewCategoryApp").child("NhacTrungQuoc").observeSingleEvent(of: .value, with: { [weak self] (snapshot) in
+            guard let self = self else { return }
             let data = snapshot.value as? NSDictionary
             let dataDanhChoNguoiMoi = NhacOnline(data: data as? [String : Any] ?? [:])
             self.data.append(dataDanhChoNguoiMoi)
             DispatchQueue.main.async {
                 collectionView.reloadDataCollectionView()
             }
+        })
+        
+        
             
-        }
+        
     }
     
     private func getDataCategoryNhacTrungQuoc(collectionView: CollectionHomeViewController) {
-        ServiceFirebase.share.ref.child("OverViewCategoryApp").child("NhacViet").observe(.value) { (snapshot) in
+         ServiceFirebase.share.ref.child("OverViewCategoryApp").child("NhacViet").observeSingleEvent(of: .value, with: { [weak self] (snapshot) in
+            guard let self = self else { return }
             let data = snapshot.value as? NSDictionary
             let dataDanhChoNguoiMoi = NhacOnline(data: data as? [String : Any] ?? [:])
             self.data.append(dataDanhChoNguoiMoi)
             DispatchQueue.main.async {
                 collectionView.reloadDataCollectionView()
             }
-
-        }
+        })
     }
     private func getDataCategoryDanhChoNguoiMoiBatDau(collectionView: CollectionHomeViewController){
-        ServiceFirebase.share.ref.child("OverViewCategoryApp").child("DanhChoNguoiMoiBatDau").observe(.value) { (snapshot) in
+        ServiceFirebase.share.ref.child("OverViewCategoryApp").child("DanhChoNguoiMoiBatDau").observeSingleEvent(of: .value, with: { [weak self] (snapshot) in
+            guard let self = self else { return }
             let data = snapshot.value as? NSDictionary
             let dataDanhChoNguoiMoi = NhacOnline(data: data as? [String : Any] ?? [:])
             self.data.append(dataDanhChoNguoiMoi)
             DispatchQueue.main.async {
                 collectionView.reloadDataCollectionView()
             }
-
-        }
+        })
     }
 }

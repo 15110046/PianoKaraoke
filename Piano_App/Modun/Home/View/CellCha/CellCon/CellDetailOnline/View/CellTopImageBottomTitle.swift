@@ -50,8 +50,9 @@ class CellTopImageBottomTitle: UICollectionViewCell {
     }()
     func config(imageSong: String, titleSong: String?) {
         self.titleSong.text = titleSong
-        LoadImageFromService.share.loadPhotoFromService(imageSong, completion: { (img) in
-            self.imageSong.image = img
+        LoadImageFromService.share.loadPhotoFromService(imageSong, completion: { [weak self] (img) in
+            guard let strongSelf = self else { return }
+            strongSelf.imageSong.image = img
         })
     }
     private func autoLayoutTitleSong() {
