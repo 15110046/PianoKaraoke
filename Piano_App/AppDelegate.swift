@@ -21,9 +21,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationController = UINavigationController(rootViewController: mainVC)
         navigationController?.navigationBar.barTintColor = UIColor.hexStringToUIColor(hex: "17182C", alpha: 1)
         window?.rootViewController = navigationController
+        customBackButtonNavigation()
+        setUpUINaviationItem()
         return true
     }
-
+    private func setUpUINaviationItem() {
+        //        navigationItem.title = "Thông tin bài hát"
+        let nav = self.navigationController?.navigationBar
+        nav?.barStyle = .blackOpaque
+        nav?.tintColor = UIColor.white
+        nav?.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "AmericanTypewriter-Bold", size: 20)!,NSAttributedString.Key.foregroundColor: UIColor.hexStringToUIColor(hex: "D48A5E", alpha: 1)]
+    }
+    private func customBackButtonNavigation() {
+        let yourBackImage = UIImage(named: "backBtn")
+        self.navigationController?.navigationBar.backIndicatorImage = yourBackImage
+//        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = yourBackImage
+        self.navigationController?.navigationBar.backItem?.title = ""
+    }
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

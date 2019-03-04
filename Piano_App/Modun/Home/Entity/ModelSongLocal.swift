@@ -34,15 +34,16 @@ struct SongsLocalDetail: ModelDetailCellSongs {
     }
     
     var widthSize: Float? {
-        return 0.7*GetFramUIScreen.share.getWitdhUIScreen()
+        return 0.6*GetFramUIScreen.share.getWitdhUIScreen()
     }
-
+    var urlSong: String?
     private let image: UIImage?
     private let nameSong: String?
     
-    init(image: String, nameSong: String) {
+    init(image: String, nameSong: String, urlSong: String) {
         self.image = UIImage.init(named: image)
         self.nameSong = nameSong
+        self.urlSong = urlSong
     }
     
     func getImageSong() -> UIImage? {

@@ -546,7 +546,7 @@
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8aP-Tu-wVO" userLabel="G5" customClass="KeyButton" customModule="Piano_App" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="44.5" height="120.5"/>
-                                                        <state key="normal" image="KeyWhite" backgroundImage="KeyWhitePressed"/>
+                                                        <state key="normal" backgroundImage="KeyWhite"/>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sol5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0I-pU-Wsd" userLabel="Sol5">
                                                         <rect key="frame" x="0.0" y="95" width="44.5" height="20.5"/>
@@ -577,7 +577,7 @@
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wtR-Bx-Tel" userLabel="A5" customClass="KeyButton" customModule="Piano_App" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="44" height="120.5"/>
-                                                        <state key="normal" image="KeyWhite" backgroundImage="KeyWhitePressed"/>
+                                                        <state key="normal" backgroundImage="KeyWhite"/>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="La5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HtV-aO-tf1" userLabel="La5">
                                                         <rect key="frame" x="0.0" y="95" width="44" height="20.5"/>

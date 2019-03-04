@@ -138,6 +138,9 @@
 		CCE328C9222AD9F20039CE67 /* KeyBoardPiano.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCE328C8222AD9F20039CE67 /* KeyBoardPiano.xib */; };
 		CCE328CB222ADA760039CE67 /* KeyBoardPiano.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE328CA222ADA760039CE67 /* KeyBoardPiano.swift */; };
 		CCE328D2222AFB2C0039CE67 /* G5-2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CCE328D1222AFB2C0039CE67 /* G5-2.mp3 */; };
+		CCE328D4222B97330039CE67 /* Cam Am Than Thoai C5.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CCE328D3222B92BC0039CE67 /* Cam Am Than Thoai C5.mp4 */; };
+		CCE328D8222BB1CC0039CE67 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE328D7222BB1CC0039CE67 /* Level.swift */; };
+		CCE328DC222BC3A60039CE67 /* Level.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCE328DB222BC3A60039CE67 /* Level.xib */; };
 		CCE93F76222951A100AB9583 /* LocalSongsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE93F75222951A100AB9583 /* LocalSongsRouter.swift */; };
 		CCE93F78222963E200AB9583 /* InfoSongRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE93F77222963E200AB9583 /* InfoSongRouter.swift */; };
 		CCE93F7B222965BC00AB9583 /* PianoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE93F7A222965BC00AB9583 /* PianoController.swift */; };
@@ -281,6 +284,9 @@
 		CCE328C8222AD9F20039CE67 /* KeyBoardPiano.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyBoardPiano.xib; sourceTree = "<group>"; };
 		CCE328CA222ADA760039CE67 /* KeyBoardPiano.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardPiano.swift; sourceTree = "<group>"; };
 		CCE328D1222AFB2C0039CE67 /* G5-2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "G5-2.mp3"; sourceTree = "<group>"; };
+		CCE328D3222B92BC0039CE67 /* Cam Am Than Thoai C5.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cam Am Than Thoai C5.mp4"; sourceTree = "<group>"; };
+		CCE328D7222BB1CC0039CE67 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		CCE328DB222BC3A60039CE67 /* Level.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Level.xib; sourceTree = "<group>"; };
 		CCE93F75222951A100AB9583 /* LocalSongsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSongsRouter.swift; sourceTree = "<group>"; };
 		CCE93F77222963E200AB9583 /* InfoSongRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSongRouter.swift; sourceTree = "<group>"; };
 		CCE93F7A222965BC00AB9583 /* PianoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PianoController.swift; sourceTree = "<group>"; };
@@ -466,6 +472,8 @@
 			isa = PBXGroup;
 			children = (
 				CC63C2BD2219D2D700780259 /* InfoSong.swift */,
+				CCE328DB222BC3A60039CE67 /* Level.xib */,
+				CCE328D7222BB1CC0039CE67 /* Level.swift */,
 				CCE93F79222964D400AB9583 /* Piano */,
 			);
 			path = View;
@@ -875,6 +883,7 @@
 		CCC8821921711F7100DC6CB7 /* mp4 */ = {
 			isa = PBXGroup;
 			children = (
+				CCE328D3222B92BC0039CE67 /* Cam Am Than Thoai C5.mp4 */,
 			);
 			path = mp4;
 			sourceTree = "<group>";
@@ -1042,11 +1051,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCE328D4222B97330039CE67 /* Cam Am Than Thoai C5.mp4 in Resources */,
 				CC80FFA822154A7A004E3C79 /* GoogleService-Info.plist in Resources */,
 				CCC8829A2172476A00DC6CB7 /* G4.aiff in Resources */,
 				CCC8826D2171B6AD00DC6CB7 /* A4.mp3 in Resources */,
 				CCC882452171AB5A00DC6CB7 /* C5.mp3 in Resources */,
 				CCC882712171B6C800DC6CB7 /* B4.mp3 in Resources */,
+				CCE328DC222BC3A60039CE67 /* Level.xib in Resources */,
 				CCC882652171B66F00DC6CB7 /* D4.mp3 in Resources */,
 				CCC8822121713C3E00DC6CB7 /* C4Shap.mp3 in Resources */,
 				CCC882732171B6F400DC6CB7 /* A5Shap.mp3 in Resources */,
@@ -1188,6 +1199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCE328D8222BB1CC0039CE67 /* Level.swift in Sources */,
 				CC96EE912226CB8300663CE1 /* LocalSongsInteractor.swift in Sources */,
 				CCE93F7E222A25D300AB9583 /* NhacOnlineRouter.swift in Sources */,
 				CCC881D321711D6000DC6CB7 /* ViewController.swift in Sources */,

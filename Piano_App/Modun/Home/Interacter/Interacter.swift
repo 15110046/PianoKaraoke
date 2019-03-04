@@ -15,8 +15,8 @@ protocol Interacter {
 class InteracterImp: Interacter {
  
     var data: [ModelHome] = [SongsLocal(title: "Những bài hát Offline",
-                                        arraySongs: [SongsLocalDetail(image: "ThanThoai", nameSong: "Sứ Thanh Hoa"),
-                                                     SongsLocalDetail(image: "ThanThoai", nameSong: "Thần Thoai")])
+                                        arraySongs: [SongsLocalDetail(image: "ThanThoai", nameSong: "Sứ Thanh Hoa", urlSong: "Cam Am Than Thoai C5"),
+                                                     SongsLocalDetail(image: "ThanThoai", nameSong: "Thần Thoai", urlSong: "Cam Am Than Thoai C5")])
     ]
     func getData(collectionView: CollectionHomeViewController) {
         getDataCategoryNhacViet(collectionView: collectionView)
@@ -28,7 +28,10 @@ class InteracterImp: Interacter {
             let data = snapshot.value as? NSDictionary
             let dataDanhChoNguoiMoi = NhacOnline(data: data as? [String : Any] ?? [:])
             self.data.append(dataDanhChoNguoiMoi)
-            collectionView.reloadDataCollectionView()
+            DispatchQueue.main.async {
+                collectionView.reloadDataCollectionView()
+            }
+            
         }
     }
     
@@ -37,7 +40,10 @@ class InteracterImp: Interacter {
             let data = snapshot.value as? NSDictionary
             let dataDanhChoNguoiMoi = NhacOnline(data: data as? [String : Any] ?? [:])
             self.data.append(dataDanhChoNguoiMoi)
-            collectionView.reloadDataCollectionView()
+            DispatchQueue.main.async {
+                collectionView.reloadDataCollectionView()
+            }
+
         }
     }
     private func getDataCategoryDanhChoNguoiMoiBatDau(collectionView: CollectionHomeViewController){
@@ -45,7 +51,10 @@ class InteracterImp: Interacter {
             let data = snapshot.value as? NSDictionary
             let dataDanhChoNguoiMoi = NhacOnline(data: data as? [String : Any] ?? [:])
             self.data.append(dataDanhChoNguoiMoi)
-            collectionView.reloadDataCollectionView()
+            DispatchQueue.main.async {
+                collectionView.reloadDataCollectionView()
+            }
+
         }
     }
 }
