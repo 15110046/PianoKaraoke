@@ -45,6 +45,15 @@ class InfoSong: UIViewController {
         lbl.textAlignment = NSTextAlignment.left
         return lbl
     }()
+    private var lblLikesContent: UILabel = {
+        let lbl = UILabel()
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.textColor = .gray
+        lbl.numberOfLines = 0
+        lbl.font = UIFont(name: "AmericanTypewriter", size: 15)
+        lbl.textAlignment = NSTextAlignment.left
+        return lbl
+    }()
     private var lblAuthor: UILabel = {
         let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
@@ -55,6 +64,15 @@ class InfoSong: UIViewController {
         lbl.textAlignment = NSTextAlignment.left
         return lbl
     }()
+    private var lblAuthorContent: UILabel = {
+        let lbl = UILabel()
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.textColor = .gray
+        lbl.numberOfLines = 0
+        lbl.font = UIFont(name: "AmericanTypewriter", size: 15)
+        lbl.textAlignment = NSTextAlignment.left
+        return lbl
+    }()
     private var lblSongCatelogy: UILabel = {
         let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
@@ -62,6 +80,15 @@ class InfoSong: UIViewController {
         lbl.numberOfLines = 0
         lbl.text = "Thể loại:"
         lbl.font = UIFont(name: "AmericanTypewriter-Bold", size: 15)
+        lbl.textAlignment = NSTextAlignment.left
+        return lbl
+    }()
+    private var lblSongCatelogyContent: UILabel = {
+        let lbl = UILabel()
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.textColor = .gray
+        lbl.numberOfLines = 0
+        lbl.font = UIFont(name: "AmericanTypewriter", size: 15)
         lbl.textAlignment = NSTextAlignment.left
         return lbl
     }()
@@ -78,35 +105,47 @@ class InfoSong: UIViewController {
     private var lblContentAcousticsNote: UILabel = {
         let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
-        lbl.textColor = .gray
+        lbl.textColor = UIColor.hexStringToUIColor(hex: "F8D44B", alpha: 1)
         lbl.numberOfLines = 0
 //        lbl.text = "Anh tìm nỗi nhớ, anh tìm quá khứ \n mi re mi sol, mi re mi sol \n Nhớ lắm, kí ức anh và em \n la la, la la sol fa sol "
         lbl.font = UIFont(name: "AmericanTypewriter", size: 15)
-        lbl.textAlignment = NSTextAlignment.justified
+        lbl.textAlignment = NSTextAlignment.left
         return lbl
     }()
     private var viewContent: UIView = {
        let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.hexStringToUIColor(hex: "1D1F35", alpha: 1)
+//        view.layer.shadowOffset = CGSize(width: -10, height: 10)
+//        view.layer.shadowRadius = 1
+//        view.layer.shadowOpacity = 0.9
+        view.layer.borderColor = UIColor.hexStringToUIColor(hex: "1A103D", alpha: 1).cgColor
+//        view.layer.borderWidth = 2
+        view.layer.cornerRadius = 25
+        view.layer.shadowColor = UIColor.hexStringToUIColor(hex: "000000", alpha: 1).cgColor
+        view.layer.shadowOffset = CGSize(width: -7, height: 7)
+        view.layer.shadowOpacity = 0.7
+        view.backgroundColor = .clear
         return view
     }()
     private var buttonPiano: UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setTitle("Vào chơi", for: .normal)
-        btn.titleLabel?.font = UIFont(name: "AmericanTypewriter-Bold", size: 18)
-        btn.backgroundColor = .white
-        btn.setTitleColor(UIColor.hexStringToUIColor(hex: "D48A5E", alpha: 1), for: .normal)
-        btn.layer.cornerRadius = 22
+        btn.titleLabel?.font = UIFont(name: "AmericanTypewriter-Bold", size: 23)
+        btn.backgroundColor = UIColor.hexStringToUIColor(hex: "D48A5E", alpha: 1)
+        
+//        btn.layer.borderColor = UIColor.hexStringToUIColor(hex: "D48A5E", alpha: 1).cgColor
+//        btn.layer.borderWidth = 2
+////        btn.layer.cornerRadius = 25
+//        btn.layer.shadowColor = UIColor.hexStringToUIColor(hex: "000000", alpha: 1).cgColor
+//        btn.layer.shadowOffset = CGSize(width: -3, height: 3)
+//        btn.layer.shadowOpacity = 0.7
+//
+        btn.setTitleColor(UIColor.hexStringToUIColor(hex: "000000", alpha: 1), for: .normal)
+//        btn.layer.cornerRadius = 22
         return btn
     }()
-//    private var viewHeader: UIView = {
-//        let view = UIView()
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.backgroundColor = UIColor.hexStringToUIColor(hex: "1D1F35", alpha: 1)
-//        return view
-//    }()
+
     private var viewImage: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -116,7 +155,7 @@ class InfoSong: UIViewController {
     private var imageKhung: UIImageView = {
         let img = UIImageView()
         img.translatesAutoresizingMaskIntoConstraints = false
-        img.image = UIImage.init(named: "backgroundPiano")
+        img.image = UIImage.init(named: "background123456")
         return img
     }()
     private var imageSong: UIImageView = {
@@ -124,25 +163,29 @@ class InfoSong: UIViewController {
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
     }()
+    private var viewNgoiSao: Level = {
+        let view = Level()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
 
     private var scrollViewGenerality: UIScrollView = {
         let scrollview = UIScrollView()
         scrollview.translatesAutoresizingMaskIntoConstraints = false
-        scrollview.backgroundColor = .clear
+        scrollview.backgroundColor = UIColor.hexStringToUIColor(hex: "1D1F35", alpha: 1)
         scrollview.showsHorizontalScrollIndicator = false
         scrollview.showsVerticalScrollIndicator = false
+        scrollview.layer.cornerRadius = 10
         return scrollview
     }()
-//        override func viewWillAppear(_ animated: Bool) {
-//                    self.navigationController?.isNavigationBarHidden = false
-//                }
-    private func setUpUINaviationItem() {
-        navigationItem.title = "Thông tin bài hát"
-        let nav = self.navigationController?.navigationBar
-        nav?.barStyle = .blackOpaque
-        nav?.tintColor = UIColor.white
-        nav?.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "AmericanTypewriter-Bold", size: 20)!,NSAttributedString.Key.foregroundColor: UIColor.hexStringToUIColor(hex: "D48A5E", alpha: 1)]
-    }
+//
+//    private func setUpUINaviationItem() {
+////        navigationItem.title = "Thông tin bài hát"
+//        let nav = self.navigationController?.navigationBar
+//        nav?.barStyle = .blackOpaque
+//        nav?.tintColor = UIColor.white
+//        nav?.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "AmericanTypewriter-Bold", size: 20)!,NSAttributedString.Key.foregroundColor: UIColor.hexStringToUIColor(hex: "D48A5E", alpha: 1)]
+//    }
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.hexStringToUIColor(hex: "17182C", alpha: 1)
@@ -163,22 +206,55 @@ class InfoSong: UIViewController {
                 print(dataOnline.nameSong)
                 self.nameSonglbl.text = dataOnline.nameSong
                 self.lblContentAcousticsNote.text = dataOnline.contentKaraoke
+                self.lblSongCatelogyContent.text = dataOnline.category
+                self.lblLikesContent.text = String(dataOnline.likes)
+                self.lblAuthorContent.text = dataOnline.author
+              
+                self.viewNgoiSao.config(numberStars: dataOnline.level)
             }
-//            self.autoLayoutViewHeader()
             self.autoLayoutViewContent()
         })
-        setUpUINaviationItem()
+//        setUpUINaviationItem()
+        self.navigationItem.title = "Thông tin bài hát"
+       
     }
     private func autoContentAcousticsNote() {
         scrollViewGenerality.addSubview(lblContentAcousticsNote)
-        lblContentAcousticsNote.topAnchor.constraint(equalTo: lblAcousticsNote.bottomAnchor, constant: 20).isActive = true
+        lblContentAcousticsNote.topAnchor.constraint(equalTo: lblAcousticsNote.bottomAnchor, constant: 15).isActive = true
         lblContentAcousticsNote.leadingAnchor.constraint(equalTo: viewContent.leadingAnchor, constant: 3).isActive = true
         lblContentAcousticsNote.trailingAnchor.constraint(equalTo: viewContent.trailingAnchor, constant: -3).isActive = true
         lblContentAcousticsNote.bottomAnchor.constraint(equalTo: scrollViewGenerality.bottomAnchor, constant: -50).isActive = true
     }
+   
+    private func autoLayoutviewNgoiSao() {
+        lblLevelSong.layoutIfNeeded()
+        scrollViewGenerality.addSubview(viewNgoiSao)
+        viewNgoiSao.topAnchor.constraint(equalTo: lblLevelSong.topAnchor, constant: 0).isActive = true
+        viewNgoiSao.leftAnchor.constraint(equalTo: lblLevelSong.rightAnchor, constant: 20).isActive = true
+        viewNgoiSao.heightAnchor.constraint(equalToConstant: lblLevelSong.bounds.size.height).isActive = true
+    }
+    private func autoLayoutlblAuthorContent() {
+        scrollViewGenerality.addSubview(lblAuthorContent)
+        lblAuthorContent.topAnchor.constraint(equalTo: lblAuthor.topAnchor, constant: 0).isActive = true
+        lblAuthorContent.leftAnchor.constraint(equalTo: lblAuthor.rightAnchor, constant: 20).isActive = true
+        lblAuthorContent.bottomAnchor.constraint(equalTo: lblAuthor.bottomAnchor, constant: 0).isActive = true
+    }
+    private func autoLayoutlblLikesContent() {
+        scrollViewGenerality.addSubview(lblLikesContent)
+        lblLikesContent.topAnchor.constraint(equalTo: lblLikes.topAnchor, constant: 0).isActive = true
+        lblLikesContent.bottomAnchor.constraint(equalTo: lblLikes.bottomAnchor, constant: 0).isActive = true
+        lblLikesContent.leftAnchor.constraint(equalTo: lblLikes.rightAnchor, constant: 20).isActive = true
+    }
+    
+    private func autoLayoutlblSongCatelogyContent() {
+        scrollViewGenerality.addSubview(lblSongCatelogyContent)
+        lblSongCatelogyContent.topAnchor.constraint(equalTo: lblSongCatelogy.topAnchor, constant: 0).isActive = true
+        lblSongCatelogyContent.leftAnchor.constraint(equalTo: lblSongCatelogy.rightAnchor, constant: 20).isActive = true
+        lblSongCatelogyContent.bottomAnchor.constraint(equalTo: lblSongCatelogy.bottomAnchor, constant: 0).isActive = true
+    }
     private func autoAcousticsNote() {
         scrollViewGenerality.addSubview(lblAcousticsNote)
-        lblAcousticsNote.topAnchor.constraint(equalTo: lblAuthor.bottomAnchor, constant: 20).isActive = true
+        lblAcousticsNote.topAnchor.constraint(equalTo: lblAuthor.bottomAnchor, constant: 40).isActive = true
         lblAcousticsNote.centerXAnchor.constraint(equalTo: viewContent.centerXAnchor, constant: 0).isActive = true
     }
     private func autoAuthor() {
@@ -208,8 +284,8 @@ class InfoSong: UIViewController {
     private func autoLayoutNameSonglbl() {
         scrollViewGenerality.addSubview(nameSonglbl)
         nameSonglbl.topAnchor.constraint(equalTo: viewImage.bottomAnchor, constant: 0).isActive = true
-        nameSonglbl.leftAnchor.constraint(equalTo: scrollViewGenerality.leftAnchor, constant: 20).isActive = true
-        nameSonglbl.rightAnchor.constraint(equalTo: scrollViewGenerality.rightAnchor, constant: -20).isActive = true
+        nameSonglbl.leftAnchor.constraint(equalTo: viewContent.leftAnchor, constant: 20).isActive = true
+        nameSonglbl.rightAnchor.constraint(equalTo: viewContent.rightAnchor, constant: -20).isActive = true
     }
  
     private func autoLayoutViewImage() {
@@ -217,7 +293,7 @@ class InfoSong: UIViewController {
         viewImage.topAnchor.constraint(equalTo: scrollViewGenerality.topAnchor, constant: 0).isActive = true
         viewImage.rightAnchor.constraint(equalTo: viewContent.rightAnchor, constant: 0).isActive = true
         viewImage.leftAnchor.constraint(equalTo: viewContent.leftAnchor, constant: 0).isActive = true
-        viewImage.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.height/1.8).isActive = true
+        viewImage.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.height/2.2).isActive = true
         
         autoLayoutImageSong()
         autoLayoutImageKhung()
@@ -238,9 +314,13 @@ class InfoSong: UIViewController {
         autoLayoutViewImage()
         autoLayoutNameSonglbl()
         autoLayoutlblLevel()
+        autoLayoutviewNgoiSao()
         autoLayoutlblLikes()
+        autoLayoutlblLikesContent()
         autoSongCategory()
+        autoLayoutlblSongCatelogyContent()
         autoAuthor()
+        autoLayoutlblAuthorContent()
         autoAcousticsNote()
         autoContentAcousticsNote()
     }
@@ -258,36 +338,31 @@ class InfoSong: UIViewController {
         imageKhung.leftAnchor.constraint(equalTo: viewImage.leftAnchor, constant: 0).isActive = true
         imageKhung.bottomAnchor.constraint(equalTo: viewImage.bottomAnchor, constant: 0).isActive = true
     }
-//    private func autoLayoutViewHeader() {
-//        view.addSubview(viewHeader)
-//        viewHeader.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
-//        viewHeader.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
-//        viewHeader.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
-//        viewHeader.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.height/10).isActive = true
-//    }
-
-    
     
     private func autoLayoutbtnPiano() {
         viewContent.layoutIfNeeded()
-        let marginLeft = 0.25*viewContent.bounds.size.width
+        let marginLeft = 0.16*viewContent.bounds.size.width
         viewContent.addSubview(buttonPiano)
-        buttonPiano.bottomAnchor.constraint(equalTo: viewContent.bottomAnchor, constant: 22).isActive = true
+        buttonPiano.bottomAnchor.constraint(equalTo: viewContent.bottomAnchor, constant: marginLeft/2).isActive = true
         buttonPiano.centerXAnchor.constraint(equalTo: viewContent.centerXAnchor, constant: 0).isActive = true
-        buttonPiano.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        buttonPiano.heightAnchor.constraint(equalToConstant: marginLeft).isActive = true
         buttonPiano.leftAnchor.constraint(equalTo: viewContent.leftAnchor, constant: marginLeft).isActive = true
-
+        buttonPiano.layer.cornerRadius = marginLeft/2
         buttonPiano.addTarget(self, action:#selector(self.click), for: .touchUpInside)
     }
     @objc func click() {
+        buttonPiano.flash()
         presenter?.present()
     }
     private func autoLayoutViewContent() {
         view.addSubview(viewContent)
+        let marginLeftRight = UIScreen.main.bounds.size.width/17
+       
         viewContent.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor , constant: 0).isActive = true
-        viewContent.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30).isActive = true
-        viewContent.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30).isActive = true
-        viewContent.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -UIScreen.main.bounds.size.height/20).isActive = true
+        viewContent.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -marginLeftRight).isActive = true
+        viewContent.leftAnchor.constraint(equalTo: view.leftAnchor, constant: marginLeftRight).isActive = true
+        viewContent.layoutIfNeeded()
+        viewContent.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -0.2*viewContent.bounds.size.width).isActive = true
         
         autoLayoutScrollViewGenerality()
         autoLayoutbtnPiano()

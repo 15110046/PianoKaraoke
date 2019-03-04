@@ -22,17 +22,17 @@ class HomeController: UIViewController {
     private var titleHeader1: UILabel = {
         let txtTitle = UILabel()
         txtTitle.translatesAutoresizingMaskIntoConstraints = false
-        txtTitle.text = "Play"
-        txtTitle.textColor = .red
+        txtTitle.text = "Hát Karaoke với"
+        txtTitle.textColor = UIColor.hexStringToUIColor(hex: "D48A5E", alpha: 1)
         txtTitle.font = UIFont(name: "AmericanTypewriter-Bold", size: 18)
         return txtTitle
     }()
     private var titleHeader2: UILabel = {
         let txtTitle = UILabel()
         txtTitle.translatesAutoresizingMaskIntoConstraints = false
-        txtTitle.text = "Songs with Piano KeyBoard"
+        txtTitle.text = "bàn phím Piano"
         txtTitle.font = UIFont(name: "AmericanTypewriter-Bold", size: 18)
-        txtTitle.textColor = .white
+        txtTitle.textColor = UIColor.hexStringToUIColor(hex: "D48A5E", alpha: 1)
         return txtTitle
     }()
     private lazy var collectionViewHome: UICollectionView = {
@@ -61,7 +61,7 @@ class HomeController: UIViewController {
     private func autoLayoutTitleHeader1() {
         viewHeader.addSubview(titleHeader1)
         titleHeader1.centerYAnchor.constraint(equalTo: viewHeader.centerYAnchor, constant: 0).isActive = true
-        titleHeader1.leftAnchor.constraint(equalTo: viewHeader.leftAnchor, constant: 20).isActive = true
+        titleHeader1.leftAnchor.constraint(equalTo: viewHeader.leftAnchor, constant: 10).isActive = true
     }
     private func autoLayoutTitleHeader2() {
         viewHeader.addSubview(titleHeader2)
@@ -89,6 +89,7 @@ class HomeController: UIViewController {
     }
 //    override func viewDidAppear(_ animated: Bool) {
 //        self.navigationController?.isNavigationBarHidden = true
+//               collectionViewHome.reloadData()
 //    }
 }
 extension HomeController: UICollectionViewDelegate {

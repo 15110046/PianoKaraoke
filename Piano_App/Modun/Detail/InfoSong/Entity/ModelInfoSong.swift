@@ -14,6 +14,9 @@ struct DetailInfoSong {
     var contentKaraoke: String
     var nameSong: String
     var imageSong: String
+    var category: String
+    var author: String
+    var level: Int
     init(data: [String: Any]) {
         if let dic = data as? Dictionary<String, Any> {
             self.likes = dic["likes"] as? Int ?? 0
@@ -21,6 +24,9 @@ struct DetailInfoSong {
             self.contentKaraoke = dic["contentKaraoke"] as? String ?? ""
             self.nameSong = dic["nameSong"] as? String ?? ""
             self.imageSong = dic["imageSong"] as? String ?? ""
+            self.category = dic["kindMusic"] as? String ?? ""
+            self.author = dic["author"] as? String ?? "Chưa biết"
+            self.level = dic["level"] as? Int ?? 0
         }
         else {
             self.likes = 0
@@ -28,6 +34,9 @@ struct DetailInfoSong {
             self.contentKaraoke = ""
             self.nameSong = ""
             self.imageSong = ""
+            self.category = ""
+            self.author = "Chưa biết"
+            self.level = 0
         }
     }
 }

@@ -19,7 +19,16 @@ class InfoSongPresenterImp: InfoSongPresenter {
     private var interacter: InfoSongInteracter?
     private var router: InfoSongRouter?
     func present() {
-       router?.present()
+//        router?.present(link: inter)
+        getData { (result) in
+            switch result {
+            case .succesWithCellLocal(let dataOffline):
+                guard let data = dataOffline as? SongsLocalDetail else { return }
+                self.router?.present(link: data.urlSong, nameSong: data.getNameSong(), typeCellInit: TypeCell.CellLocal)
+            case .succesWithCellOnline(let dataOnline):
+                self.router?.present(link: dataOnline?.urlMp4, nameSong: dataOnline?.nameSong, typeCellInit: TypeCell.CellOnline)
+            }
+        }
     }
     
     init(interacter: InfoSongInteracter, router: InfoSongRouter) {

@@ -18,6 +18,12 @@ class PianoController: UIViewController {
 //        view.translatesAutoresizingMaskIntoConstraints = false
 //        return view
 //    }()
+    
+//    private var viewCustom: KeyBoardPiano! = {
+//        let view = KeyBoardPiano(coder: NSCoder.init())
+//        view?.translatesAutoresizingMaskIntoConstraints = false
+//        return view
+//    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         playvideo()
