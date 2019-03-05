@@ -145,6 +145,10 @@
 		CCE328E5222D14320039CE67 /* ListSongsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE328E4222D14320039CE67 /* ListSongsPresenter.swift */; };
 		CCE328E7222D14620039CE67 /* ListSongsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE328E6222D14620039CE67 /* ListSongsInteractor.swift */; };
 		CCE328E9222D14910039CE67 /* ListSongsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE328E8222D14910039CE67 /* ListSongsRouter.swift */; };
+		CCE328EB222D99DC0039CE67 /* UseCaseFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE328EA222D99DC0039CE67 /* UseCaseFirebase.swift */; };
+		CCE328ED222D9AB80039CE67 /* ModelListSongs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE328EC222D9AB80039CE67 /* ModelListSongs.swift */; };
+		CCE328EF222DA6950039CE67 /* CustomLayoutColectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE328EE222DA6950039CE67 /* CustomLayoutColectionView.swift */; };
+		CCE328F2222ED73C0039CE67 /* ListSongsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE328F1222ED73C0039CE67 /* ListSongsCell.swift */; };
 		CCE93F76222951A100AB9583 /* LocalSongsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE93F75222951A100AB9583 /* LocalSongsRouter.swift */; };
 		CCE93F78222963E200AB9583 /* InfoSongRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE93F77222963E200AB9583 /* InfoSongRouter.swift */; };
 		CCE93F7B222965BC00AB9583 /* PianoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE93F7A222965BC00AB9583 /* PianoController.swift */; };
@@ -295,6 +299,10 @@
 		CCE328E4222D14320039CE67 /* ListSongsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSongsPresenter.swift; sourceTree = "<group>"; };
 		CCE328E6222D14620039CE67 /* ListSongsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSongsInteractor.swift; sourceTree = "<group>"; };
 		CCE328E8222D14910039CE67 /* ListSongsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSongsRouter.swift; sourceTree = "<group>"; };
+		CCE328EA222D99DC0039CE67 /* UseCaseFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseFirebase.swift; sourceTree = "<group>"; };
+		CCE328EC222D9AB80039CE67 /* ModelListSongs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelListSongs.swift; sourceTree = "<group>"; };
+		CCE328EE222DA6950039CE67 /* CustomLayoutColectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayoutColectionView.swift; sourceTree = "<group>"; };
+		CCE328F1222ED73C0039CE67 /* ListSongsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSongsCell.swift; sourceTree = "<group>"; };
 		CCE93F75222951A100AB9583 /* LocalSongsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSongsRouter.swift; sourceTree = "<group>"; };
 		CCE93F77222963E200AB9583 /* InfoSongRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSongRouter.swift; sourceTree = "<group>"; };
 		CCE93F7A222965BC00AB9583 /* PianoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PianoController.swift; sourceTree = "<group>"; };
@@ -966,7 +974,9 @@
 		CCE328DD222D13C00039CE67 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CCE328F0222ED7070039CE67 /* ListSongsCollectionViewCell */,
 				CCE328E2222D140D0039CE67 /* ListSongs.swift */,
+				CCE328EE222DA6950039CE67 /* CustomLayoutColectionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -983,6 +993,7 @@
 			isa = PBXGroup;
 			children = (
 				CCE328E6222D14620039CE67 /* ListSongsInteractor.swift */,
+				CCE328EA222D99DC0039CE67 /* UseCaseFirebase.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -998,8 +1009,17 @@
 		CCE328E1222D13EA0039CE67 /* Enity */ = {
 			isa = PBXGroup;
 			children = (
+				CCE328EC222D9AB80039CE67 /* ModelListSongs.swift */,
 			);
 			path = Enity;
+			sourceTree = "<group>";
+		};
+		CCE328F0222ED7070039CE67 /* ListSongsCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CCE328F1222ED73C0039CE67 /* ListSongsCell.swift */,
+			);
+			path = ListSongsCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		CCE93F73222950E500AB9583 /* Detail */ = {
@@ -1260,6 +1280,7 @@
 				CC80FFA42212C060004E3C79 /* CellTopImageBottomTitle.swift in Sources */,
 				CC80FFA622154502004E3C79 /* CellImageViewFull.swift in Sources */,
 				CCBFFBAB2223F72300036745 /* Router.swift in Sources */,
+				CCE328F2222ED73C0039CE67 /* ListSongsCell.swift in Sources */,
 				CCB0931322283E50000FE5D3 /* InfoSongPresenter.swift in Sources */,
 				CCB0931522283E81000FE5D3 /* InfoSongInteracter.swift in Sources */,
 				CC63C2B42219C64600780259 /* ProtocolModel.swift in Sources */,
@@ -1289,6 +1310,7 @@
 				CC63C2B82219CEBD00780259 /* LoadImage.swift in Sources */,
 				CCC557602173C8AA0021844A /* HomeCell.swift in Sources */,
 				CC63C2BA2219D09A00780259 /* CellConLocal.swift in Sources */,
+				CCE328EF222DA6950039CE67 /* CustomLayoutColectionView.swift in Sources */,
 				CC19D78E217BB83600CAEE1B /* TableViewListSong.swift in Sources */,
 				CCC557512173C6D50021844A /* LocalSong.swift in Sources */,
 				CC80FF96221283C5004E3C79 /* ModelLayoutCell.swift in Sources */,
@@ -1301,8 +1323,10 @@
 				CC96EE8D2226B77C00663CE1 /* Enum.swift in Sources */,
 				CCC882872172375400DC6CB7 /* PianoSounds.swift in Sources */,
 				CC96EE9E2226CE4600663CE1 /* NhacOnlinePresenter.swift in Sources */,
+				CCE328EB222D99DC0039CE67 /* UseCaseFirebase.swift in Sources */,
 				CC19D78A217BB66400CAEE1B /* ModelCategoryInstrument.swift in Sources */,
 				CCE328E3222D140D0039CE67 /* ListSongs.swift in Sources */,
+				CCE328ED222D9AB80039CE67 /* ModelListSongs.swift in Sources */,
 				CCBFFBA92223EB0100036745 /* Interacter.swift in Sources */,
 				CC80FF92221277BF004E3C79 /* HomeController.swift in Sources */,
 				CCC882862172375400DC6CB7 /* KeyButton.swift in Sources */,

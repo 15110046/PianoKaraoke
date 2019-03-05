@@ -128,9 +128,9 @@ extension NhacOnlineCell: UICollectionViewDataSource {
             let dataNhacViet = dataCell.arrayNhacOnline[indexPath.row]
             cell.config(imageSong: dataNhacViet.imageSong, titleSong: dataNhacViet.nameSong)
         case .chinaSong:
-            cell.config(imageSong: dataCell.arrayNhacOnline[indexPath.row].imageSong ?? "", titleSong: dataCell.arrayNhacOnline[indexPath.row].nameSong)
+            cell.config(imageSong: dataCell.arrayNhacOnline[indexPath.row].imageSong, titleSong: dataCell.arrayNhacOnline[indexPath.row].nameSong)
         case .newbiew:
-            cell.config(imageSong: dataCell.arrayNhacOnline[indexPath.row].imageSong ?? "", titleSong: dataCell.arrayNhacOnline[indexPath.row].nameSong)
+            cell.config(imageSong: dataCell.arrayNhacOnline[indexPath.row].imageSong, titleSong: dataCell.arrayNhacOnline[indexPath.row].nameSong)
         case .unknown:
             return UICollectionViewCell()
         }
@@ -144,7 +144,7 @@ extension NhacOnlineCell: UICollectionViewDelegate {
         guard let height = presenter?.collectionViewLayoutHeightSize(sizeForItemAt: indexPath),
               let width = presenter?.collectionViewLayoutWitdhSize(sizeForItemAt: indexPath)
               else { return CGSize() }
-        return CGSize(width: CGFloat.init(width), height: CGFloat.init(height))
+        return CGSize(width: CGFloat(width), height: CGFloat(height))
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

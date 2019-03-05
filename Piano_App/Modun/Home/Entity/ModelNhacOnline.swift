@@ -28,8 +28,10 @@ struct NhacOnline: ModelHome {
     
     var arrayNhacOnline: [ArrayNhacOnline] = []
     let category: Category
+    var key: String = ""
     init(data: [String: Any]) {
         self.category = Category(rawValue: data["title"] as? String ?? "") ?? .unknown
+        self.key = data["key"] as? String ?? ""
         let dicSongs = data["arraySongs"] as? [String: [String: Any]] ?? ["":["":""]]
         self.arrayNhacOnline = dicSongs.map{ArrayNhacOnline.init(object: $0.value)}
     }

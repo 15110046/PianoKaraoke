@@ -10,12 +10,25 @@ import Foundation
 
 protocol ListSongsInteractor {
     var keyRoot: String? { get set }
+    var dataListSongs: [ModelListSongs]? { get set}
+
 }
 class ListSongsInteractorImp: ListSongsInteractor {
+
+    var dataListSongs: [ModelListSongs]?
+   
     var keyRoot: String?
     
-    init(key: String?) {
+    init(key: String?,clsView: CollectionHomeViewController) {
         self.keyRoot = key
+        UseCaseFirebase.getData(key: keyRoot ?? "") { [weak self] (arrayDataListSongs) in
+            guard let strongSelf = self else { return }
+            strongSelf.dataListSongs = arrayDataListSongs
+            DispatchQueue.main.async {
+                clsView.reloadDataCollectionView()
+            }
+        }
     }
+    
     
 }

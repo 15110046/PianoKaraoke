@@ -32,7 +32,7 @@ class LocalSongsPresenterIml: LocalSongsPresenter {
     
      func present(from cell: TypeCell, manHinh: ListScreen, indexPath: IndexPath) {
         guard let interactor = interactor else { return }
-        router?.present(from: cell, to: ListScreen.InfoSong, data: interactor.data.arraySongs[indexPath.row])
+        router?.present(from: cell, to: ListScreen.InfoSong, data: interactor.data.arraySongs[indexPath.row], dataOnline: nil)
     }
     
     private var interactor: LocalSongsInteractor?
