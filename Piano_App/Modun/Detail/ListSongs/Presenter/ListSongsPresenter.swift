@@ -8,13 +8,24 @@
 
 import Foundation
 protocol ListSongsPresenter {
-    
+    func getData() -> [ModelListSongs]
+    func numberOfItem() -> Int
 }
 class ListSongsPresenterImp : ListSongsPresenter {
-    private var interactor: ListSongsInteractor?
-    private var router: ListSongsRouter?
+    func getData() -> [ModelListSongs] {
+        return interactor?.dataListSongs ?? [ModelListSongs]()
+    }
+    func numberOfItem() -> Int {
+        return interactor?.dataListSongs?.count ?? 0
+    }
+    fileprivate var interactor: ListSongsInteractor?
+    fileprivate var router: ListSongsRouter?
     init(interactor: ListSongsInteractor?, router: ListSongsRouter?) {
         self.interactor = interactor
         self.router = router
     }
+ 
 }
+
+
+

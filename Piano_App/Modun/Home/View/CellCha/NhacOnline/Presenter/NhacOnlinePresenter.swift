@@ -21,15 +21,15 @@ protocol NhacOnlinePresenter {
     
     func present(from cell : TypeCell, manHinh: ListScreen, indexPath: IndexPath?)
     
-//    func presentOfViewAll(from cell : TypeCell, manHinh: ListScreen)
 }
 class NhacOnlinePresenterImp: NhacOnlinePresenter {
-    func present(from cell : TypeCell ,manHinh: ListScreen, indexPath: IndexPath?) {
-        guard let interacter = interacter else { return }
-        router?.present(from: cell, to: manHinh, data: interacter.data.arrayNhacOnline[indexPath?.row ?? 0])
+    
+    func present(from cell : TypeCell ,manHinh: ListScreen, indexPath: IndexPath?){
+        guard let interacter = interacter,
+                let dataOnline = dataForRowAt(indexPath: indexPath ?? IndexPath()) else { return }
+        router?.present(from: cell, to: manHinh, data: interacter.data.arrayNhacOnline[indexPath?.row ?? 0], dataOnline: dataOnline)
     }
-    
-    
+
     func getTitleForCell() -> String {
         guard let interacter = interacter else { return "" }
         return interacter.data.category.rawValue
@@ -62,16 +62,12 @@ class NhacOnlinePresenterImp: NhacOnlinePresenter {
     }
     
     func collectionViewLayoutHeightSize(sizeForItemAt indexPath: IndexPath) -> Float {
-        guard let frame = interacter?.data.arrayNhacOnline[indexPath.row] else {
-            return 0
-        }
+        guard let frame = interacter?.data.arrayNhacOnline[indexPath.row] else { return 0 }
         return frame.heighthSize ?? 0
     }
     
     func collectionViewLayoutWitdhSize(sizeForItemAt indexPath: IndexPath) -> Float {
-        guard let frame = interacter?.data.arrayNhacOnline[indexPath.row] else {
-            return 0
-        }
+        guard let frame = interacter?.data.arrayNhacOnline[indexPath.row] else { return 0 }
         return frame.widthSize ?? 0
     }
     

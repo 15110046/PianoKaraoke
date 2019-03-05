@@ -21,7 +21,7 @@ class LoadImageFromService {
             return
         }
         
-        guard let link = URL.init(string: url) else {
+        guard let link = URL(string: url) else {
             completion(defaultImage ?? UIImage())
             return
         }

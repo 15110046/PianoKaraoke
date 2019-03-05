@@ -14,7 +14,7 @@ extension UIImage {
     class func loadPhotoFromService(url: String, completion: @escaping (UIImage) -> ())  {
        
         
-        guard let link = URL.init(string: url) else {return}
+        guard let link = URL(string: url) else {return}
         
         //Chưa đa luồng
 //        guard let data = try? Data(contentsOf: link) else {return}

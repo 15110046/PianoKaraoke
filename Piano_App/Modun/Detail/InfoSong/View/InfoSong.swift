@@ -155,7 +155,7 @@ class InfoSong: UIViewController {
     private var imageKhung: UIImageView = {
         let img = UIImageView()
         img.translatesAutoresizingMaskIntoConstraints = false
-        img.image = UIImage.init(named: "background123456")
+        img.image = UIImage(named: "background123456")
         return img
     }()
     private var imageSong: UIImageView = {
