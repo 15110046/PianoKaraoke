@@ -10,7 +10,47 @@ import Foundation
 import Firebase
 import UIKit
 
-class ServiceFirebase {
-    static var share = ServiceFirebase()
-    var ref = Database.database().reference()
+class ServiceOnline {
+    static var share = ServiceOnline()
+    private var ref = Database.database().reference()
+    
+    func getData(param: String, comletion: @escaping (_ data: Any?) -> ()) {
+        ref.child("OverViewCategoryApp").child(param).observe(.value) { (snapShot) in
+            guard let value = snapShot.value else {
+                DispatchQueue.main.async {
+                    comletion(nil)
+                }
+                return
+            }
+            DispatchQueue.main.async {
+                comletion(value)
+            }
+        }
+    }
+    func getDataListSongs(param: String, comletion: @escaping (_ data: Any?) -> ()) {
+        ref.child("OverViewCategoryApp").child(param).child("arraySongs").observe(.value) { (snapShot) in
+            guard let value = snapShot.value else {
+                DispatchQueue.main.async {
+                    comletion(nil)
+                }
+                return
+            }
+            DispatchQueue.main.async {
+                comletion(value)
+            }
+        }
+    }
+    func getDataInfoSong(param: String, comletion: @escaping (_ data: Any?) -> ()) {
+        ref.child("DetailSong").child(param).observe(.value) { (snapShot) in
+            guard let value = snapShot.value else {
+                DispatchQueue.main.async {
+                    comletion(nil)
+                }
+                return
+            }
+            DispatchQueue.main.async {
+                comletion(value)
+            }
+        }
+    }
 }

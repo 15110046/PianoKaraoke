@@ -20,10 +20,15 @@ class InfoSongInteracterImp: InfoSongInteracter {
     
     func getData(completion: @escaping (Result) -> ())  {
         if keyIdDetail != nil {
-            ServiceFirebase.share.ref.child("DetailSong").child(keyIdDetail ?? "").observe(.value) { (snapshot) in
-                let data = snapshot.value as? NSDictionary
-                let dataDetailInfoSong = DetailInfoSong(data: data as? [String : Any] ?? [:])
-                completion(Result.succesWithCellOnline(value: dataDetailInfoSong))
+//            ServiceFirebase.share.ref.child("DetailSong").child(keyIdDetail ?? "").observe(.value) { (snapshot) in
+//                let data = snapshot.value as? NSDictionary
+//                let dataDetailInfoSong = DetailInfoSong(data: data as? [String : Any] ?? [:])
+//                completion(Result.succesWithCellOnline(value: dataDetailInfoSong))
+//            }
+            ServiceOnline.share.getDataInfoSong(param: keyIdDetail ?? "") { (snapShot) in
+                let data = snapShot as? NSDictionary
+                let dataDetailInfoSOng = DetailInfoSong(data: data as? [String : Any] ?? [:])
+                completion(Result.succesWithCellOnline(value: dataDetailInfoSOng))
             }
         }
         else {

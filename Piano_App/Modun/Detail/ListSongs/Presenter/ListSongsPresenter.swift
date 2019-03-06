@@ -10,6 +10,7 @@ import Foundation
 protocol ListSongsPresenter {
     func getData() -> [ModelListSongs]
     func numberOfItem() -> Int
+    func present(keyIdDetail: String?)
 }
 class ListSongsPresenterImp : ListSongsPresenter {
     func getData() -> [ModelListSongs] {
@@ -23,6 +24,9 @@ class ListSongsPresenterImp : ListSongsPresenter {
     init(interactor: ListSongsInteractor?, router: ListSongsRouter?) {
         self.interactor = interactor
         self.router = router
+    }
+     func present(keyIdDetail: String?) {
+        router?.present(keyIdDetail: keyIdDetail)
     }
  
 }
