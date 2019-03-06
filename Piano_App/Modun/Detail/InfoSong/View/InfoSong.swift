@@ -138,8 +138,8 @@ class InfoSong: UIViewController {
 //        btn.layer.borderWidth = 2
 ////        btn.layer.cornerRadius = 25
 //        btn.layer.shadowColor = UIColor.hexStringToUIColor(hex: "000000", alpha: 1).cgColor
-//        btn.layer.shadowOffset = CGSize(width: -3, height: 3)
 //        btn.layer.shadowOpacity = 0.7
+//         btn.layer.shadowOffset = CGSize(width: -3, height: 3)
 //
         btn.setTitleColor(UIColor.hexStringToUIColor(hex: "000000", alpha: 1), for: .normal)
 //        btn.layer.cornerRadius = 22

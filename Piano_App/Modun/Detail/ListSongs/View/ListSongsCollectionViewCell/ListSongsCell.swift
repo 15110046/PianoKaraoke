@@ -17,12 +17,21 @@ class ListSongsCell: UICollectionViewCell {
     private var nameSong: UILabel = {
         let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
-        lbl.textColor = .black
+        lbl.textColor = .white
         lbl.numberOfLines = 0
-        lbl.font = UIFont(name: "AmericanTypewriter-Bold", size: 23)
+        lbl.textAlignment = .left
+        
+        lbl.font = UIFont(name: "AmericanTypewriter", size: 18)
         return lbl
     }()
-    
+    private var btnViewDetail: UIButton = {
+       let btn = UIButton()
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.setTitle("Xem thêm", for: .normal)
+        btn.titleLabel?.font = UIFont(name: "AmericanTypewriter-CondensedLight", size: 12)
+        btn.titleLabel?.textColor = .white
+        return btn
+    }()
     func config(nameSong: String, nameImageSong: String, completion: @escaping (CGFloat) -> ())  {
         self.nameSong.text = nameSong
         LoadImageFromService.share.loadPhotoFromService(nameImageSong) { [weak self] (image) in
@@ -34,30 +43,41 @@ class ListSongsCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-//        self.layer.cornerRadius = 10
+        //        self.layer.cornerRadius = 10
         contentView.layoutIfNeeded()
-        self.backgroundColor = .yellow
+        self.backgroundColor = UIColor.hexStringToUIColor(hex: "1D1F35", alpha: 1)
+
         autoLayoutImageSong()
         autoLayoutNameSong()
+        autoLayoutbtnViewDetail()
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    private func autoLayoutbtnViewDetail() {
+        contentView.addSubview(btnViewDetail)
+        btnViewDetail.topAnchor.constraint(equalTo: nameSong.bottomAnchor, constant: 0).isActive = true
+        btnViewDetail.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 2).isActive = true
+        btnViewDetail.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
+    }
     private func autoLayoutNameSong() {
         contentView.addSubview(nameSong)
         nameSong.topAnchor.constraint(equalTo: imageSong.bottomAnchor, constant: 0).isActive = true
-        nameSong.centerXAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 0).isActive = true
-        nameSong.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
         nameSong.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 0).isActive = true
+        nameSong.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 0).isActive = true
+        
     }
-
+    
     private func autoLayoutImageSong() {
         contentView.addSubview(imageSong)
+        contentView.addSubview(nameSong)
         imageSong.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
         imageSong.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 0).isActive = true
         imageSong.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 0).isActive = true
-        imageSong.heightAnchor.constraint(equalToConstant: 100).isActive = true
-//        imageSong.heightAnchor.constraint(equalTo: imageSong.widthAnchor, multiplier: 1).isActive = true
+        imageSong.bottomAnchor.constraint(equalTo: nameSong.topAnchor, constant: 0).isActive = true
+//                imageSong.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        //        imageSong.heightAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
+        //        imageSong.heightAnchor.constraint(equalTo: imageSong.widthAnchor, multiplier: 1).isActive = true
     }
 }
 

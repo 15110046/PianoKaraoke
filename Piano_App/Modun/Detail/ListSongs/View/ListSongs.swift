@@ -22,7 +22,7 @@ class ListSongs: UIViewController {
         cls.dataSource = self
         cls.delegate = self
         cls.register(ListSongsCell.self, forCellWithReuseIdentifier: "ListSongsCell")
-        cls.backgroundColor = .green
+        cls.backgroundColor = UIColor.hexStringToUIColor(hex: "17182C", alpha: 1)
         return cls
     }()
     override func viewDidLoad() {
@@ -54,7 +54,10 @@ extension ListSongs: UICollectionViewDataSource {
     }
 }
 extension ListSongs: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let data = presenter?.getData() else { return }
+        presenter?.present(keyIdDetail: data[indexPath.item].idDetail)
+    }
 }
 extension ListSongs: UICollectionViewDelegateFlowLayout {}
 
@@ -73,7 +76,7 @@ extension ListSongs: CustomLayoutColectionViewDelegate {
     
     func heightForText(atIndexPath indexPath: IndexPath) -> CGFloat {
         guard let data = presenter?.getData() else { return 0 }
-        return data[indexPath.item].nameSong.height(constraintedWidth: collectionViewListSongs.bounds.size.width/2 - 15, font: UIFont(name: "AmericanTypewriter-Bold", size: 23) ?? UIFont())
+        return data[indexPath.item].nameSong.height(constraintedWidth: collectionViewListSongs.bounds.size.width/2 - 15, font: UIFont(name: "AmericanTypewriter", size: 18) ?? UIFont())
     }
     
     func heightForImage(atIndexPath indexPath: IndexPath) -> CGFloat {

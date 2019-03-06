@@ -11,7 +11,7 @@ import UIKit
 
 protocol ListSongsRouter {
     var navtionController: UINavigationController? { get set}
-    func present(link: String?, nameSong: String?, typeCellInit: TypeCell?)
+    func present(keyIdDetail: String?)
 }
 class ListSongsRouterImp: ListSongsRouter {
     var navtionController: UINavigationController?
@@ -19,10 +19,10 @@ class ListSongsRouterImp: ListSongsRouter {
     init(navtionController: UINavigationController?) {
         self.navtionController = navtionController
     }
-    func present(link: String?,nameSong: String?, typeCellInit: TypeCell?) {
-        let vc = instantiate(ViewController.self)
-        vc.config(link: link, nameSong: nameSong, typeCellInitViewController: typeCellInit)
-        navtionController?.pushViewController(vc, animated: true)
+    func present(keyIdDetail: String?) {
+        let vc = InfoSong()
+        vc.inject(presnter: InfoSongPresenterImp(interacter: InfoSongInteracterImp(keyIdDetail: keyIdDetail, dataLocal: nil), router: InfoSongRouterImp(navtionController: navtionController)))
+        navtionController?.pushViewController(vc, animated: false)
         navtionController?.isNavigationBarHidden = false
     }
 }

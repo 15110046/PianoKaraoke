@@ -974,9 +974,9 @@
 		CCE328DD222D13C00039CE67 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CCE328F0222ED7070039CE67 /* ListSongsCollectionViewCell */,
 				CCE328E2222D140D0039CE67 /* ListSongs.swift */,
 				CCE328EE222DA6950039CE67 /* CustomLayoutColectionView.swift */,
+				CCE328F0222ED7070039CE67 /* ListSongsCollectionViewCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
