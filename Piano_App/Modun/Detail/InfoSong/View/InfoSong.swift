@@ -229,7 +229,7 @@ class InfoSong: UIViewController {
         segment.heightAnchor.constraint(equalToConstant: 50).isActive = true
         segment.layoutIfNeeded()
         
-        segment.addTarget(self, action: #selector(changeValue(_:)), for: .valueChanged)
+        segment.addTarget(self, action: #selector(self.changeValue(_:)), for: .valueChanged)
     }
     private func autoContentAcousticsNote() {
         scrollViewGenerality.addSubview(lblContentAcousticsNote)

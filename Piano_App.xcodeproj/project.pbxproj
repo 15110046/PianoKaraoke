@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5D06704F117AC7CD9BE40DB9 /* Pods_Piano_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2380D5AEAD19D09545102FC0 /* Pods_Piano_App.framework */; };
 		CC00A7622235904900B261FE /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC00A7612235904900B261FE /* CustomSegmentedControl.swift */; };
-		CC00A7642235A77000B261FE /* CustomUISegment.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC00A7632235A77000B261FE /* CustomUISegment.xib */; };
 		CC19D78A217BB66400CAEE1B /* ModelCategoryInstrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC19D789217BB66400CAEE1B /* ModelCategoryInstrument.swift */; };
 		CC19D78C217BB7FD00CAEE1B /* TableViewCategoryInstrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC19D78B217BB7FD00CAEE1B /* TableViewCategoryInstrument.swift */; };
 		CC19D78E217BB83600CAEE1B /* TableViewListSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC19D78D217BB83600CAEE1B /* TableViewListSong.swift */; };
@@ -163,7 +162,6 @@
 		6E46A6F8C463E060E1CF3EDA /* Pods-Piano_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Piano_App.debug.xcconfig"; path = "Target Support Files/Pods-Piano_App/Pods-Piano_App.debug.xcconfig"; sourceTree = "<group>"; };
 		B4BD7F963C1452793738AABB /* Pods-Piano_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Piano_App.release.xcconfig"; path = "Target Support Files/Pods-Piano_App/Pods-Piano_App.release.xcconfig"; sourceTree = "<group>"; };
 		CC00A7612235904900B261FE /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
-		CC00A7632235A77000B261FE /* CustomUISegment.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomUISegment.xib; sourceTree = "<group>"; };
 		CC19D789217BB66400CAEE1B /* ModelCategoryInstrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCategoryInstrument.swift; sourceTree = "<group>"; };
 		CC19D78B217BB7FD00CAEE1B /* TableViewCategoryInstrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCategoryInstrument.swift; sourceTree = "<group>"; };
 		CC19D78D217BB83600CAEE1B /* TableViewListSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewListSong.swift; sourceTree = "<group>"; };
@@ -783,7 +781,6 @@
 			isa = PBXGroup;
 			children = (
 				CC00A7612235904900B261FE /* CustomSegmentedControl.swift */,
-				CC00A7632235A77000B261FE /* CustomUISegment.xib */,
 				CCB093292228477A000FE5D3 /* UIScreen */,
 				CCB0932822284767000FE5D3 /* ServiceFirebase */,
 				CCB0932722284756000FE5D3 /* UIButton */,
@@ -1145,7 +1142,6 @@
 				CCC882672171B67C00DC6CB7 /* E4.mp3 in Resources */,
 				CCC882512171AFDE00DC6CB7 /* F6.mp3 in Resources */,
 				CCC8823921713EF700DC6CB7 /* G6Shap.mp3 in Resources */,
-				CC00A7642235A77000B261FE /* CustomUISegment.xib in Resources */,
 				CCC5574F2173C6B20021844A /* LocalSong.storyboard in Resources */,
 				CCC882A12172476A00DC6CB7 /* DShap4.aiff in Resources */,
 				CCC8823121713DF200DC6CB7 /* C#5.mp3 in Resources */,
