@@ -10,8 +10,11 @@ import UIKit
 
 class ViewControllerTest: UIViewController {
 
-    @IBOutlet weak var button: UIButton!
     
+    
+    
+    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var imgTest: UIImageView!
     @IBAction func action2(_ sender: UIButton, forEvent event: UIEvent) {
         guard let location = event.allTouches?.first?.location(in: sender) else {return}
         if sender.bounds.contains(location) {
@@ -64,6 +67,8 @@ class ViewControllerTest: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+//        imgTest.layer.masksToBounds = true
+//        imgTest.layer.cornerRadius  = 20
     }
     
 

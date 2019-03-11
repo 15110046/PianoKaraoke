@@ -9,7 +9,7 @@
 import Foundation
 
 protocol NhacOnlineInteracter {
-    var data: NhacOnline { get set }
+    var data: NhacOnline { get }
 }
 
 class NhacOnlineInteracterImp: NhacOnlineInteracter {

@@ -10,32 +10,15 @@ import Foundation
 
 protocol InfoSongInteracter {
     //var dataInfoSong: ModelDetailCellSongs? { get set }
-    var keyIdDetail: String? { get set }
+    var keyIdDetail: String? { get }
     func getData(completion: @escaping (Result) -> ())
-    var dataLocal: ModelDetailCellSongs? { get set}
+    var dataLocal: ModelDetailCellSongs? { get }
 }
 
-class InfoSongInteracterImp: InfoSongInteracter {
+class InfoSongInteracterImp {
     var dataLocal: ModelDetailCellSongs?
-    
-    func getData(completion: @escaping (Result) -> ())  {
-        if keyIdDetail != nil {
-//            ServiceFirebase.share.ref.child("DetailSong").child(keyIdDetail ?? "").observe(.value) { (snapshot) in
-//                let data = snapshot.value as? NSDictionary
-//                let dataDetailInfoSong = DetailInfoSong(data: data as? [String : Any] ?? [:])
-//                completion(Result.succesWithCellOnline(value: dataDetailInfoSong))
-//            }
-            ServiceOnline.share.getDataInfoSong(param: keyIdDetail ?? "") { (snapShot) in
-                let data = snapShot as? NSDictionary
-                let dataDetailInfoSOng = DetailInfoSong(data: data as? [String : Any] ?? [:])
-                completion(Result.succesWithCellOnline(value: dataDetailInfoSOng))
-            }
-        }
-        else {
-            completion(Result.succesWithCellLocal(value: dataLocal))
-        }
-    }
     var keyIdDetail: String?
+    
     
     init(keyIdDetail: String?, dataLocal: ModelDetailCellSongs?) {
         if keyIdDetail != nil {
@@ -47,9 +30,23 @@ class InfoSongInteracterImp: InfoSongInteracter {
             self.dataLocal = dataLocal
         }
     }
-
+}
+extension InfoSongInteracterImp: InfoSongInteracter {
+    func getData(completion: @escaping (Result) -> ())  {
+        if keyIdDetail != nil {
+            ServiceOnline.share.getDataInfoSong(param: keyIdDetail ?? "") { (snapShot) in
+                let data = snapShot as? NSDictionary
+                let dataDetailInfoSOng = DetailInfoSong(data: data as? [String : Any] ?? [:])
+                completion(Result.succesWithCellOnline(value: dataDetailInfoSOng))
+            }
+        }
+        else {
+            completion(Result.succesWithCellLocal(value: dataLocal))
+        }
+    }
     
 }
+
 enum Result {
     case succesWithCellLocal(value: ModelDetailCellSongs?)
     case succesWithCellOnline(value: DetailInfoSong?)

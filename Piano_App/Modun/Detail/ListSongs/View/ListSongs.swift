@@ -85,7 +85,7 @@ extension ListSongs: CustomLayoutColectionViewDelegate {
     }
 }
 
-extension ListSongs: CollectionHomeViewController {
+extension ListSongs: HomeControllerInterface {
     func reloadDataCollectionView() {
         collectionViewListSongs.reloadData()
     }

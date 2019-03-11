@@ -6,13 +6,21 @@
 //  Copyright © 2019 com.nguyenhieu.demo. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
+protocol HomeControllerInterface {
+    func reloadDataCollectionView()
+}
 class HomeController: UIViewController {
     //presenter
     private var presenter: HomeControllerPresenter?
     // bien
+    private var btnSearch: UIButton = {
+        let btn = UIButton()
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        return btn
+    }()
+    
     private var viewHeader: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -49,18 +57,30 @@ class HomeController: UIViewController {
         return clsview
     }()
     //auto layout
+    private func autoLayoutBtnSearch() {
+        viewHeader.addSubview(btnSearch)
+        
+        btnSearch.bottomAnchor.constraint(equalTo: titleHeader1.bottomAnchor, constant: 0).isActive = true
+        btnSearch.rightAnchor.constraint(equalTo: viewHeader.rightAnchor, constant: -10).isActive = true
+        btnSearch.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        
+        btnSearch.widthAnchor.constraint(equalTo: btnSearch.heightAnchor, multiplier: 1).isActive = true
+        btnSearch.setBackgroundImage(UIImage.init(named: "search-icon"), for: .normal)
+    }
+    
     private func autoLayoutViewHeader() {
         view.addSubview(viewHeader)
-        viewHeader.topAnchor.constraint(equalTo: topLayoutGuide.topAnchor, constant: 20).isActive = true
+        viewHeader.topAnchor.constraint(equalTo: topLayoutGuide.topAnchor, constant: 0).isActive = true
         viewHeader.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
         viewHeader.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
-        viewHeader.heightAnchor.constraint(equalToConstant: navigationController?.navigationBar.bounds.size.height ?? 0 + 20).isActive = true
+        viewHeader.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.height/10).isActive = true
         autoLayoutTitleHeader1()
         autoLayoutTitleHeader2()
+        autoLayoutBtnSearch()
     }
     private func autoLayoutTitleHeader1() {
         viewHeader.addSubview(titleHeader1)
-        titleHeader1.centerYAnchor.constraint(equalTo: viewHeader.centerYAnchor, constant: 0).isActive = true
+        titleHeader1.bottomAnchor.constraint(equalTo: viewHeader.bottomAnchor, constant: -10).isActive = true
         titleHeader1.leftAnchor.constraint(equalTo: viewHeader.leftAnchor, constant: 10).isActive = true
     }
     private func autoLayoutTitleHeader2() {
@@ -89,10 +109,8 @@ class HomeController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
     }
     override func viewDidAppear(_ animated: Bool) {
-//        self.navigationController?.isNavigationBarHidden = true
         super.viewDidAppear(animated)
         collectionViewHome.reloadData()
-//        presenter?.printData()
     }
 }
 extension HomeController: UICollectionViewDelegate {
@@ -108,15 +126,12 @@ extension HomeController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let dataCell = presenter?.dataForRowAt(indexPath: indexPath) else {
-            return UICollectionViewCell()
-        }
+        guard let dataCell = presenter?.dataForRowAt(indexPath: indexPath) else { return UICollectionViewCell() }
         switch dataCell {
         case is SongsLocal:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LocalSongs", for: indexPath) as? LocalSongsController else { return UICollectionViewCell() }
             let interactor = LocalSongsInteractorIml(data: dataCell)
-            let presenter = LocalSongsPresenterIml(interactor: interactor, router: self)
-            cell.inject(presenter: presenter)
+            cell.inject(presenter: LocalSongsPresenterIml(interactor: interactor, router: self))
             return cell
         case is NhacOnline:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OnlineSongs", for: indexPath) as? NhacOnlineCell else {
@@ -139,18 +154,8 @@ extension HomeController: UICollectionViewDelegateFlowLayout {
         return 0
     }
 }
-extension Dictionary {
-    mutating func merge(dict: [Key: Value]){
-        for (k, v) in dict {
-            updateValue(v, forKey: k)
-        }
-    }
-}
 
-protocol CollectionHomeViewController {
-    func reloadDataCollectionView()
-}
-extension HomeController: CollectionHomeViewController {
+extension HomeController: HomeControllerInterface {
     func reloadDataCollectionView() {
         collectionViewHome.reloadData()
     }

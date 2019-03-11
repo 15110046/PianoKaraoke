@@ -9,7 +9,7 @@
 import Foundation
 
 protocol LocalSongsInteractor {
-    var data: SongsLocal { get set }
+    var data: SongsLocal { get }
 }
 
 class LocalSongsInteractorIml: LocalSongsInteractor {

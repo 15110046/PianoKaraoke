@@ -19,7 +19,7 @@ class ListSongsInteractorImp: ListSongsInteractor {
     
     var keyRoot: String?
     
-    init(key: String?,clsView: CollectionHomeViewController) {
+    init(key: String?,clsView: HomeControllerInterface) {
         self.keyRoot = key
         //        UseCaseFirebase.getData(key: keyRoot ?? "") { [weak self] (arrayDataListSongs) in
         //            guard let strongSelf = self else { return }

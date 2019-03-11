@@ -11,6 +11,7 @@ import UIKit
 class NhacOnlineCell: UICollectionViewCell {
     
     private var presenter: NhacOnlinePresenter?
+    
     func inject(presenter: NhacOnlinePresenter) {
         self.presenter = presenter
         titleCellDanhChoNguoiMoiBatDau.text = presenter.getTitleForCell()
@@ -67,9 +68,7 @@ class NhacOnlineCell: UICollectionViewCell {
         super.init(frame: frame)
         contentView.backgroundColor = .green
         autoLayoutViewHeader()
-//        autoLayoutTitleCellLocall()
         autoLayoutCollectionViewDanhChoNguoiBatDau()
-       
     }
     
     func configure() {
@@ -125,8 +124,7 @@ extension NhacOnlineCell: UICollectionViewDataSource {
             else { return UICollectionViewCell() }
         switch dataCell.category {
         case .vietnameseSong:
-            let dataNhacViet = dataCell.arrayNhacOnline[indexPath.row]
-            cell.config(imageSong: dataNhacViet.imageSong, titleSong: dataNhacViet.nameSong)
+            cell.config(imageSong: dataCell.arrayNhacOnline[indexPath.row].imageSong, titleSong: dataCell.arrayNhacOnline[indexPath.row].nameSong)
         case .chinaSong:
             cell.config(imageSong: dataCell.arrayNhacOnline[indexPath.row].imageSong, titleSong: dataCell.arrayNhacOnline[indexPath.row].nameSong)
         case .newbiew:

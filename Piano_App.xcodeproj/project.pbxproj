@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5D06704F117AC7CD9BE40DB9 /* Pods_Piano_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2380D5AEAD19D09545102FC0 /* Pods_Piano_App.framework */; };
+		CC00A7622235904900B261FE /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC00A7612235904900B261FE /* CustomSegmentedControl.swift */; };
 		CC19D78A217BB66400CAEE1B /* ModelCategoryInstrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC19D789217BB66400CAEE1B /* ModelCategoryInstrument.swift */; };
 		CC19D78C217BB7FD00CAEE1B /* TableViewCategoryInstrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC19D78B217BB7FD00CAEE1B /* TableViewCategoryInstrument.swift */; };
 		CC19D78E217BB83600CAEE1B /* TableViewListSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC19D78D217BB83600CAEE1B /* TableViewListSong.swift */; };
@@ -160,6 +161,7 @@
 		2380D5AEAD19D09545102FC0 /* Pods_Piano_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Piano_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E46A6F8C463E060E1CF3EDA /* Pods-Piano_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Piano_App.debug.xcconfig"; path = "Target Support Files/Pods-Piano_App/Pods-Piano_App.debug.xcconfig"; sourceTree = "<group>"; };
 		B4BD7F963C1452793738AABB /* Pods-Piano_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Piano_App.release.xcconfig"; path = "Target Support Files/Pods-Piano_App/Pods-Piano_App.release.xcconfig"; sourceTree = "<group>"; };
+		CC00A7612235904900B261FE /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		CC19D789217BB66400CAEE1B /* ModelCategoryInstrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCategoryInstrument.swift; sourceTree = "<group>"; };
 		CC19D78B217BB7FD00CAEE1B /* TableViewCategoryInstrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCategoryInstrument.swift; sourceTree = "<group>"; };
 		CC19D78D217BB83600CAEE1B /* TableViewListSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewListSong.swift; sourceTree = "<group>"; };
@@ -778,6 +780,7 @@
 		CCC557682173EF3B0021844A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CC00A7612235904900B261FE /* CustomSegmentedControl.swift */,
 				CCB093292228477A000FE5D3 /* UIScreen */,
 				CCB0932822284767000FE5D3 /* ServiceFirebase */,
 				CCB0932722284756000FE5D3 /* UIButton */,
@@ -1294,6 +1297,7 @@
 				CCE93F78222963E200AB9583 /* InfoSongRouter.swift in Sources */,
 				CCE328E9222D14910039CE67 /* ListSongsRouter.swift in Sources */,
 				CC63C2B02219C5E400780259 /* ModelNhacViet.swift in Sources */,
+				CC00A7622235904900B261FE /* CustomSegmentedControl.swift in Sources */,
 				CCE27CDD2209C01900A781BC /* TableViewCell.swift in Sources */,
 				CC19D78C217BB7FD00CAEE1B /* TableViewCategoryInstrument.swift in Sources */,
 				CCE328E5222D14320039CE67 /* ListSongsPresenter.swift in Sources */,
