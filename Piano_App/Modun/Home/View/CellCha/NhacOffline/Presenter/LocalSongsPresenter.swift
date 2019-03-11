@@ -23,24 +23,27 @@ protocol LocalSongsPresenter {
     func present(from cell: TypeCell, manHinh: ListScreen, indexPath: IndexPath)
 }
 
-class LocalSongsPresenterIml: LocalSongsPresenter {
+class LocalSongsPresenterIml {
+    
     private var router: Router?
-    
-    func getTitleForCell() -> String {
-        return interactor?.data.title ?? ""
-    }
-    
-     func present(from cell: TypeCell, manHinh: ListScreen, indexPath: IndexPath) {
-        guard let interactor = interactor else { return }
-        router?.present(from: cell, to: ListScreen.InfoSong, data: interactor.data.arraySongs[indexPath.row], dataOnline: nil)
-    }
-    
     private var interactor: LocalSongsInteractor?
+    
     init(interactor: LocalSongsInteractor, router: Router?) {
         self.interactor = interactor
         self.router = router
     }
     
+    
+}
+extension LocalSongsPresenterIml: LocalSongsPresenter {
+    func getTitleForCell() -> String {
+        return interactor?.data.title ?? ""
+    }
+    
+    func present(from cell: TypeCell, manHinh: ListScreen, indexPath: IndexPath) {
+        guard let interactor = interactor else { return }
+        router?.present(from: cell, to: ListScreen.InfoSong, data: interactor.data.arraySongs[indexPath.row], dataOnline: nil)
+    }
     func collectionViewLayoutHeightSize(sizeForItemAt indexPath: IndexPath) -> Float {
         switch interactor?.data.arraySongs[indexPath.row] {
         case let dataLocal as SongsLocalDetail:
@@ -66,5 +69,4 @@ class LocalSongsPresenterIml: LocalSongsPresenter {
     func numberOfItemsIn(section: Int) -> Int {
         return interactor?.data.arraySongs.count ?? 0
     }
-    
 }

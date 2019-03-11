@@ -22,25 +22,27 @@ protocol NhacOnlinePresenter {
     func present(from cell : TypeCell, manHinh: ListScreen, indexPath: IndexPath?)
     
 }
-class NhacOnlinePresenterImp: NhacOnlinePresenter {
+class NhacOnlinePresenterImp {
     
-    func present(from cell : TypeCell ,manHinh: ListScreen, indexPath: IndexPath?){
-        guard let interacter = interacter,
-                let dataOnline = dataForRowAt(indexPath: indexPath ?? IndexPath()) else { return }
-        router?.present(from: cell, to: manHinh, data: interacter.data.arrayNhacOnline[indexPath?.row ?? 0], dataOnline: dataOnline)
-    }
-
-    func getTitleForCell() -> String {
-        guard let interacter = interacter else { return "" }
-        return interacter.data.category.rawValue
-    }
     private var router: Router?
-    
     private var interacter: NhacOnlineInteracter?
     
     init(interacter: NhacOnlineInteracter?, router: Router?) {
         self.interacter = interacter
         self.router = router
+    }
+    
+}
+extension NhacOnlinePresenterImp: NhacOnlinePresenter {
+    func present(from cell : TypeCell ,manHinh: ListScreen, indexPath: IndexPath?){
+        guard let interacter = interacter,
+            let dataOnline = dataForRowAt(indexPath: indexPath ?? IndexPath()) else { return }
+        router?.present(from: cell, to: manHinh, data: interacter.data.arrayNhacOnline[indexPath?.row ?? 0], dataOnline: dataOnline)
+    }
+    
+    func getTitleForCell() -> String {
+        guard let interacter = interacter else { return "" }
+        return interacter.data.category.rawValue
     }
     
     func numberOfItemsInSection(section: Int) -> Int {

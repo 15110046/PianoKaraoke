@@ -16,6 +16,19 @@ class InfoSong: UIViewController {
     func inject(presnter: InfoSongPresenter) {
         self.presenter = presnter
     }
+
+    private var segment: CustomSegmentedControl = {
+        let sgm = CustomSegmentedControl(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width-UIScreen.main.bounds.size.width/17-UIScreen.main.bounds.size.width/17, height: 50))
+        sgm.translatesAutoresizingMaskIntoConstraints = false
+        sgm.borderColor = .red
+        sgm.textColor = .white
+        sgm.selectorColor = .red
+        sgm.backgroundColor = .clear
+        sgm.selectorTextColor = .yellow
+        sgm.borderWidth = 1
+        sgm.commaSeparatedButtonTitles = "Cảm Âm, Lời Nhạc"
+        return sgm
+    }()
     private var nameSonglbl: UILabel = {
        let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
@@ -107,7 +120,6 @@ class InfoSong: UIViewController {
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.textColor = UIColor.hexStringToUIColor(hex: "F8D44B", alpha: 1)
         lbl.numberOfLines = 0
-//        lbl.text = "Anh tìm nỗi nhớ, anh tìm quá khứ \n mi re mi sol, mi re mi sol \n Nhớ lắm, kí ức anh và em \n la la, la la sol fa sol "
         lbl.font = UIFont(name: "AmericanTypewriter", size: 15)
         lbl.textAlignment = NSTextAlignment.left
         return lbl
@@ -115,11 +127,7 @@ class InfoSong: UIViewController {
     private var viewContent: UIView = {
        let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-//        view.layer.shadowOffset = CGSize(width: -10, height: 10)
-//        view.layer.shadowRadius = 1
-//        view.layer.shadowOpacity = 0.9
         view.layer.borderColor = UIColor.hexStringToUIColor(hex: "1A103D", alpha: 1).cgColor
-//        view.layer.borderWidth = 2
         view.layer.cornerRadius = 25
         view.layer.shadowColor = UIColor.hexStringToUIColor(hex: "000000", alpha: 1).cgColor
         view.layer.shadowOffset = CGSize(width: -7, height: 7)
@@ -133,16 +141,7 @@ class InfoSong: UIViewController {
         btn.setTitle("Vào chơi", for: .normal)
         btn.titleLabel?.font = UIFont(name: "AmericanTypewriter-Bold", size: 23)
         btn.backgroundColor = UIColor.hexStringToUIColor(hex: "D48A5E", alpha: 1)
-        
-//        btn.layer.borderColor = UIColor.hexStringToUIColor(hex: "D48A5E", alpha: 1).cgColor
-//        btn.layer.borderWidth = 2
-////        btn.layer.cornerRadius = 25
-//        btn.layer.shadowColor = UIColor.hexStringToUIColor(hex: "000000", alpha: 1).cgColor
-//        btn.layer.shadowOpacity = 0.7
-//         btn.layer.shadowOffset = CGSize(width: -3, height: 3)
-//
         btn.setTitleColor(UIColor.hexStringToUIColor(hex: "000000", alpha: 1), for: .normal)
-//        btn.layer.cornerRadius = 22
         return btn
     }()
 
@@ -178,14 +177,7 @@ class InfoSong: UIViewController {
         scrollview.layer.cornerRadius = 10
         return scrollview
     }()
-//
-//    private func setUpUINaviationItem() {
-////        navigationItem.title = "Thông tin bài hát"
-//        let nav = self.navigationController?.navigationBar
-//        nav?.barStyle = .blackOpaque
-//        nav?.tintColor = UIColor.white
-//        nav?.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "AmericanTypewriter-Bold", size: 20)!,NSAttributedString.Key.foregroundColor: UIColor.hexStringToUIColor(hex: "D48A5E", alpha: 1)]
-//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.hexStringToUIColor(hex: "17182C", alpha: 1)
@@ -214,16 +206,37 @@ class InfoSong: UIViewController {
             }
             self.autoLayoutViewContent()
         })
-//        setUpUINaviationItem()
         self.navigationItem.title = "Thông tin bài hát"
+        
+    }
+    @objc func changeValue(_ sender: CustomSegmentedControl) {
+        switch sender.selectorSegmentIndex {
+        case 0:
+            print("cam am")
+        case 1:
+            print("loi nhac")
+        default:
+            break
+        }
        
+    }
+    private func autoLayoutSegment() {
+        scrollViewGenerality.addSubview(segment)
+        segment.topAnchor.constraint(equalTo: lblContentAcousticsNote.bottomAnchor, constant: 15).isActive = true
+        segment.leadingAnchor.constraint(equalTo: viewContent.leadingAnchor, constant: 3).isActive = true
+        segment.trailingAnchor.constraint(equalTo: viewContent.trailingAnchor, constant: -3).isActive = true
+        segment.bottomAnchor.constraint(equalTo: scrollViewGenerality.bottomAnchor, constant: -100).isActive = true
+        segment.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        segment.layoutIfNeeded()
+        
+        segment.addTarget(self, action: #selector(changeValue(_:)), for: .valueChanged)
     }
     private func autoContentAcousticsNote() {
         scrollViewGenerality.addSubview(lblContentAcousticsNote)
         lblContentAcousticsNote.topAnchor.constraint(equalTo: lblAcousticsNote.bottomAnchor, constant: 15).isActive = true
         lblContentAcousticsNote.leadingAnchor.constraint(equalTo: viewContent.leadingAnchor, constant: 3).isActive = true
         lblContentAcousticsNote.trailingAnchor.constraint(equalTo: viewContent.trailingAnchor, constant: -3).isActive = true
-        lblContentAcousticsNote.bottomAnchor.constraint(equalTo: scrollViewGenerality.bottomAnchor, constant: -50).isActive = true
+//        lblContentAcousticsNote.bottomAnchor.constraint(equalTo: scrollViewGenerality.bottomAnchor, constant: -50).isActive = true
     }
    
     private func autoLayoutviewNgoiSao() {
@@ -323,6 +336,7 @@ class InfoSong: UIViewController {
         autoLayoutlblAuthorContent()
         autoAcousticsNote()
         autoContentAcousticsNote()
+        autoLayoutSegment()
     }
     private func autoLayoutImageSong() {
         viewImage.addSubview(imageSong)

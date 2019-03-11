@@ -23,13 +23,7 @@ class LocalSongsController: UICollectionViewCell {
         view.backgroundColor = UIColor.hexStringToUIColor(hex: "1D1F35", alpha: 1)
         return view
     }()
-    private var btnViewAll: UIButton = {
-        let btn = UIButton()
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.setTitle("Xem tat ca", for: .normal)
-        btn.backgroundColor = UIColor.hexStringToUIColor(hex: "1D1F35", alpha: 1)
-        return btn
-    }()
+    
     private var titleCellLocal: UILabel = {
         let txtTitle = UILabel()
         txtTitle.translatesAutoresizingMaskIntoConstraints = false
@@ -70,7 +64,6 @@ class LocalSongsController: UICollectionViewCell {
         viewHeader.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 0).isActive = true
         viewHeader.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 0).isActive = true
         viewHeader.heightAnchor.constraint(equalToConstant: 50).isActive = true
-//        autoLayoutButton()
     }
     
     private func autoLayoutTitleCellLocall() {
@@ -78,17 +71,7 @@ class LocalSongsController: UICollectionViewCell {
         titleCellLocal.centerYAnchor.constraint(equalTo: viewHeader.centerYAnchor).isActive = true
         titleCellLocal.leftAnchor.constraint(equalTo: viewHeader.leftAnchor, constant: 10).isActive = true
     }
-    private func autoLayoutButton() {
-        viewHeader.addSubview(btnViewAll)
-        btnViewAll.topAnchor.constraint(equalTo: viewHeader.topAnchor, constant: 0).isActive = true
-        btnViewAll.leftAnchor.constraint(equalTo: viewHeader.leftAnchor, constant: 0).isActive = true
-        btnViewAll.rightAnchor.constraint(equalTo: viewHeader.rightAnchor, constant: 0).isActive = true
-        btnViewAll.addTarget(self, action:#selector(self.clickViewAll), for: .touchUpInside)
-    }
-    
-    @objc func clickViewAll() {
-        print("a")
-    }
+
     private func autoLayoutColectionViewBaiHatOffline() {
         contentView.addSubview(collectionViewBaiHatOffline)
         collectionViewBaiHatOffline.topAnchor.constraint(equalTo: viewHeader.bottomAnchor, constant: 0).isActive = true

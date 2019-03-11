@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 
-protocol NhacOnlineRouter {
-    
-}
-
-class NhacOnlineRouterIml: NhacOnlineRouter {
-    
-}
+//protocol NhacOnlineRouter {
+//
+//}
+//
+//class NhacOnlineRouterIml: NhacOnlineRouter {
+//
+//}

@@ -12,14 +12,19 @@ protocol InfoSongPresenter {
     func present() 
     func getData(completion: @escaping (Result) -> ())
 }
-class InfoSongPresenterImp: InfoSongPresenter {
-    func getData() {
-    }
+class InfoSongPresenterImp {
     
     private var interacter: InfoSongInteracter?
     private var router: InfoSongRouter?
+    
+    init(interacter: InfoSongInteracter, router: InfoSongRouter) {
+        self.interacter = interacter
+        self.router = router
+    }
+}
+
+extension InfoSongPresenterImp: InfoSongPresenter {
     func present() {
-//        router?.present(link: inter)
         getData { (result) in
             switch result {
             case .succesWithCellLocal(let dataOffline):
@@ -30,12 +35,7 @@ class InfoSongPresenterImp: InfoSongPresenter {
             }
         }
     }
-    
-    init(interacter: InfoSongInteracter, router: InfoSongRouter) {
-        self.interacter = interacter
-        self.router = router
-    }
-     func getData(completion: @escaping (Result) -> ()) {
+    func getData(completion: @escaping (Result) -> ()) {
         interacter?.getData(completion: { (result) in
             DispatchQueue.main.async {
                 completion(result)
@@ -43,4 +43,3 @@ class InfoSongPresenterImp: InfoSongPresenter {
         })
     }
 }
-
