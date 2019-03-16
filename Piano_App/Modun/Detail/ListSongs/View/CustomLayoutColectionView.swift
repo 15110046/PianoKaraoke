@@ -30,8 +30,8 @@ class CustomLayoutColectionView: UICollectionViewLayout {
     
     private var arrAttributes = [UICollectionViewLayoutAttributes]()
     private var contentSize = CGSize.zero
-    private var contentLeftHeight: CGFloat = 100
-    private var contentRightHeight: CGFloat = 100
+    private var contentLeftHeight: CGFloat = 10
+    private var contentRightHeight: CGFloat = 10
     override func prepare() {
         super.prepare()
         for i in 0..<numberItem {
@@ -58,10 +58,10 @@ class CustomLayoutColectionView: UICollectionViewLayout {
             arrAttributes.append(att )
         }
         if Int(contentLeftHeight) > Int(contentRightHeight) {
-            contentSize = CGSize(width: self.collectionView?.frame.width ?? 0, height:  contentLeftHeight + 100)
+            contentSize = CGSize(width: self.collectionView?.frame.width ?? 0, height:  contentLeftHeight + 10)
         }
         else {
-            contentSize = CGSize(width: self.collectionView?.frame.width ?? 0, height:   contentRightHeight + 100)
+            contentSize = CGSize(width: self.collectionView?.frame.width ?? 0, height:   contentRightHeight + 10)
         }
     }
     

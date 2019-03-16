@@ -65,6 +65,7 @@ class CustomSegmentedControl: UIControl {
             let button = UIButton(type: .system)
             button.setTitle(buttonTitle, for: .normal)
             button.setTitleColor(textColor, for: .normal)
+            
             button.addTarget(self, action: #selector(buttonTapped(button:)), for: .touchUpInside)
             buttons.append(button)
         }
@@ -90,11 +91,13 @@ class CustomSegmentedControl: UIControl {
     }
     
     @objc func buttonTapped(button: UIButton) {
+        
         for (buttonIndex,btn) in buttons.enumerated() {
             btn.setTitleColor(textColor, for: .normal)
             
             if btn == button {
                 selectorSegmentIndex = buttonIndex
+                sendActions(for: .valueChanged)
                 let selectorStartPosition = frame.width / CGFloat(buttons.count) * CGFloat(buttonIndex)
                 UIView.animate(withDuration: 0.3) {
                     self.selector.frame.origin.x = selectorStartPosition
@@ -106,4 +109,5 @@ class CustomSegmentedControl: UIControl {
     override func draw(_ rect: CGRect) {
         layer.cornerRadius = frame.height/2
     }
+
 }

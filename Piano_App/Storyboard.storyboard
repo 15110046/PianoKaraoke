@@ -56,7 +56,7 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8uF-yh-ApO" customClass="CustomSegmentedControl" customModule="Piano_App" customModuleProvider="target">
                                 <rect key="frame" x="36" y="362" width="291" height="117"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.15294117647058825" green="0.15686274509803921" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="1"/>
@@ -90,6 +90,10 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="commaSeparatedButtonTitles" value="A,B"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ki1-pw-ZBg">
+                                <rect key="frame" x="104" y="226" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.12941176470588234" green="0.34901960784313724" blue="0.40784313725490196" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="SbX-bM-QCv"/>
@@ -100,4 +104,7 @@
             <point key="canvasLocation" x="-172" y="126.38680659670166"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Image-1" width="37" height="36"/>
+    </resources>
 </document>

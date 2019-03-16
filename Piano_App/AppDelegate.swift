@@ -6,6 +6,7 @@
 //  Copyright © 2018 com.nguyenhieu.demo. All rights reserved.
 //
 
+
 import UIKit
 import Firebase
 @UIApplicationMain
@@ -19,18 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         let mainVC = HomeController()
         navigationController = UINavigationController(rootViewController: mainVC)
-        navigationController?.navigationBar.barTintColor = UIColor.hexStringToUIColor(hex: "17182C", alpha: 1)
         window?.rootViewController = navigationController
         customBackButtonNavigation()
-        setUpUINaviationItem()
+        navigationController?.setUpUINaviationItem()
         return true
     }
-    private func setUpUINaviationItem() {
-        let nav = self.navigationController?.navigationBar
-        nav?.barStyle = .blackOpaque
-        nav?.tintColor = UIColor.white
-        nav?.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "AmericanTypewriter-Bold", size: 20)!,NSAttributedString.Key.foregroundColor: UIColor.hexStringToUIColor(hex: "D48A5E", alpha: 1)]
-    }
+
     private func customBackButtonNavigation() {
         let yourBackImage = UIImage(named: "backBtn")
         self.navigationController?.navigationBar.backIndicatorImage = yourBackImage

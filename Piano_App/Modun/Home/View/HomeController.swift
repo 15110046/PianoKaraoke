@@ -20,18 +20,24 @@ class HomeController: UIViewController {
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
-    
+//    private lazy var tblSearch: UITableView = {
+//        let tbl = UITableView()
+//        tbl.delegate = self
+//        tbl.dataSource = self
+//        tbl.translatesAutoresizingMaskIntoConstraints = false
+//        return tbl
+//    }()
     private var viewHeader: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.hexStringToUIColor(hex: "272838", alpha: 1)
+        view.backgroundColor = UIColor.hexStringToUIColor(hex: ColorLayout.backgroundTitle.rawValue, alpha: 1)
         return view
     }()
     private var titleHeader1: UILabel = {
         let txtTitle = UILabel()
         txtTitle.translatesAutoresizingMaskIntoConstraints = false
         txtTitle.text = "Hát Karaoke với"
-        txtTitle.textColor = UIColor.hexStringToUIColor(hex: "D48A5E", alpha: 1)
+        txtTitle.textColor = UIColor.hexStringToUIColor(hex: ColorLayout.title.rawValue, alpha: 1)
         txtTitle.font = UIFont(name: "AmericanTypewriter-Bold", size: 18)
         return txtTitle
     }()
@@ -40,7 +46,7 @@ class HomeController: UIViewController {
         txtTitle.translatesAutoresizingMaskIntoConstraints = false
         txtTitle.text = "bàn phím Piano"
         txtTitle.font = UIFont(name: "AmericanTypewriter-Bold", size: 18)
-        txtTitle.textColor = UIColor.hexStringToUIColor(hex: "D48A5E", alpha: 1)
+        txtTitle.textColor = UIColor.hexStringToUIColor(hex: ColorLayout.title.rawValue, alpha: 1)
         return txtTitle
     }()
     private lazy var collectionViewHome: UICollectionView = {
@@ -50,13 +56,21 @@ class HomeController: UIViewController {
         clsview.delegate = self
         clsview.dataSource = self
         layout.scrollDirection = .vertical
-        clsview.backgroundColor = UIColor.hexStringToUIColor(hex: "17182C", alpha: 1)
+        clsview.backgroundColor = UIColor.hexStringToUIColor(hex: ColorLayout.backgroundHome.rawValue, alpha: 1)
         clsview.register(LocalSongsController.self, forCellWithReuseIdentifier: "LocalSongs")
         clsview.register(NhacOnlineCell.self, forCellWithReuseIdentifier: "OnlineSongs")
         clsview.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         return clsview
     }()
     //auto layout
+//    private func autoLayoutTblSearch() {
+//        view.addSubview(tblSearch)
+//        tblSearch.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 0).isActive = true
+//        tblSearch.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
+//        tblSearch.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
+//        tblSearch.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+//        tblSearch.isHidden = true
+//    }
     private func autoLayoutBtnSearch() {
         viewHeader.addSubview(btnSearch)
         
@@ -66,8 +80,22 @@ class HomeController: UIViewController {
         
         btnSearch.widthAnchor.constraint(equalTo: btnSearch.heightAnchor, multiplier: 1).isActive = true
         btnSearch.setBackgroundImage(UIImage.init(named: "search-icon"), for: .normal)
+        btnSearch.addTarget(self, action: (#selector(HomeController.clickSearchBar)), for: .touchDown)
     }
-    
+    @objc private func clickSearchBar() {
+//        let vc = SearchViewController()
+//        self.present(vc, animated: false, completion: nil)
+        self.presenter?.presentSearchViewController()
+    }
+//    private func createSearchBar(placeholder: String, delegate: UISearchBarDelegate) -> UISearchController {
+//        let searchController = UISearchController(searchResultsController: nil)
+//        searchController.searchBar.delegate = delegate
+//        searchController.searchBar.placeholder = placeholder
+//        searchController.searchBar.showsCancelButton = true
+//        searchController.searchBar.changeBackgroundUISearchBar()
+////        searchController.searchBar.barTintColor = UIColor.hexStringToUIColor(hex: "123456", alpha: 1)
+//        return searchController
+//    }
     private func autoLayoutViewHeader() {
         view.addSubview(viewHeader)
         viewHeader.topAnchor.constraint(equalTo: topLayoutGuide.topAnchor, constant: 0).isActive = true
@@ -95,6 +123,7 @@ class HomeController: UIViewController {
         collectionViewHome.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
         collectionViewHome.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
     }
+    // vòng đời
     override func viewDidLoad() {
         super.viewDidLoad()
         autoLayoutViewHeader()
@@ -102,15 +131,17 @@ class HomeController: UIViewController {
         autoLayoutCollectionViewHome()
         presenter = HomeControllerPresenterImp()
         presenter?.viewDidload(self, router: self)
-        
+    
     }
     override func viewWillAppear(_ animated: Bool) {
          super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
+//        collectionViewHome.reloadData()
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        collectionViewHome.reloadData()
+//        collectionViewHome.reloadData()
     }
 }
 extension HomeController: UICollectionViewDelegate {
@@ -127,19 +158,19 @@ extension HomeController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let dataCell = presenter?.dataForRowAt(indexPath: indexPath) else { return UICollectionViewCell() }
-        switch dataCell {
+        switch dataCell[indexPath.item] {
         case is SongsLocal:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LocalSongs", for: indexPath) as? LocalSongsController else { return UICollectionViewCell() }
-            let interactor = LocalSongsInteractorIml(data: dataCell)
+            let interactor = LocalSongsInteractorIml(data: dataCell[indexPath.item])
             cell.inject(presenter: LocalSongsPresenterIml(interactor: interactor, router: self))
             return cell
         case is NhacOnline:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OnlineSongs", for: indexPath) as? NhacOnlineCell else {
                 return UICollectionViewCell()
             }
-            let interactor = NhacOnlineInteracterImp(data: dataCell)
+            let interactor = NhacOnlineInteracterImp(data: dataCell[indexPath.item])
             cell.inject(presenter: NhacOnlinePresenterImp(interacter: interactor, router: self))
-            cell.configure()
+//            cell.configure()
             return cell
         default:
              return UICollectionViewCell()

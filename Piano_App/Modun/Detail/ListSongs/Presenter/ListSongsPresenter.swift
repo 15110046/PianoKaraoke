@@ -13,6 +13,8 @@ protocol ListSongsPresenter {
     func present(keyIdDetail: String?)
 }
 class ListSongsPresenterImp : ListSongsPresenter {
+
+    
     func getData() -> [ModelListSongs] {
         return interactor?.dataListSongs ?? [ModelListSongs]()
     }

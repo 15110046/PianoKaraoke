@@ -134,6 +134,14 @@
 		CCC882A32172476A00DC6CB7 /* F4.aiff in Resources */ = {isa = PBXBuildFile; fileRef = CCC882952172476A00DC6CB7 /* F4.aiff */; };
 		CCC882A42172476A00DC6CB7 /* A4.aiff in Resources */ = {isa = PBXBuildFile; fileRef = CCC882962172476A00DC6CB7 /* A4.aiff */; };
 		CCC882A8217272C900DC6CB7 /* Tangent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC882A7217272C800DC6CB7 /* Tangent.swift */; };
+		CCCC0D58223BDA3A00E49096 /* ColorLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCC0D57223BDA3A00E49096 /* ColorLayout.swift */; };
+		CCCC0D5B223BF0AD00E49096 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCC0D5A223BF0AD00E49096 /* SearchViewController.swift */; };
+		CCCC0D62223BF81000E49096 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCC0D61223BF81000E49096 /* SearchPresenter.swift */; };
+		CCCC0D64223BF87300E49096 /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCC0D63223BF87300E49096 /* SearchInteractor.swift */; };
+		CCCC0D66223BF88E00E49096 /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCC0D65223BF88E00E49096 /* SearchRouter.swift */; };
+		CCCC0D68223BFCD200E49096 /* ModelSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCC0D67223BFCD200E49096 /* ModelSearch.swift */; };
+		CCCC0D6B223C01F400E49096 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCC0D6A223C01F400E49096 /* SearchTableViewCell.swift */; };
+		CCCC0D6D223D5D0700E49096 /* ExtensionNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCC0D6C223D5D0700E49096 /* ExtensionNavigation.swift */; };
 		CCE27CDB2209BD7E00A781BC /* ListSongController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE27CDA2209BD7E00A781BC /* ListSongController.swift */; };
 		CCE27CDD2209C01900A781BC /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE27CDC2209C01900A781BC /* TableViewCell.swift */; };
 		CCE328C9222AD9F20039CE67 /* KeyBoardPiano.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCE328C8222AD9F20039CE67 /* KeyBoardPiano.xib */; };
@@ -289,6 +297,14 @@
 		CCC882952172476A00DC6CB7 /* F4.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = F4.aiff; sourceTree = "<group>"; };
 		CCC882962172476A00DC6CB7 /* A4.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = A4.aiff; sourceTree = "<group>"; };
 		CCC882A7217272C800DC6CB7 /* Tangent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tangent.swift; sourceTree = "<group>"; };
+		CCCC0D57223BDA3A00E49096 /* ColorLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorLayout.swift; sourceTree = "<group>"; };
+		CCCC0D5A223BF0AD00E49096 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		CCCC0D61223BF81000E49096 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		CCCC0D63223BF87300E49096 /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
+		CCCC0D65223BF88E00E49096 /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
+		CCCC0D67223BFCD200E49096 /* ModelSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSearch.swift; sourceTree = "<group>"; };
+		CCCC0D6A223C01F400E49096 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		CCCC0D6C223D5D0700E49096 /* ExtensionNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionNavigation.swift; sourceTree = "<group>"; };
 		CCE27CDA2209BD7E00A781BC /* ListSongController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSongController.swift; sourceTree = "<group>"; };
 		CCE27CDC2209C01900A781BC /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		CCE328C8222AD9F20039CE67 /* KeyBoardPiano.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyBoardPiano.xib; sourceTree = "<group>"; };
@@ -372,21 +388,21 @@
 			children = (
 				CCBFFBA72223EAC700036745 /* View */,
 				CCBFFBA62223EA9B00036745 /* Presenter */,
-				CCBFFBA42223EA7400036745 /* Interacter */,
+				CCBFFBA42223EA7400036745 /* Interactor */,
 				CCBFFBA52223EA8000036745 /* Router */,
 				CC63C2AC2219C58300780259 /* Entity */,
 			);
 			path = Home;
 			sourceTree = "<group>";
 		};
-		CC80FFA12212BFC3004E3C79 /* CellCha */ = {
+		CC80FFA12212BFC3004E3C79 /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				CC96EE932226CD6500663CE1 /* NhacOffline */,
 				CC96EE922226CD5D00663CE1 /* NhacOnline */,
 				CC80FFA22212BFD3004E3C79 /* CellCon */,
 			);
-			path = CellCha;
+			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 		CC80FFA22212BFD3004E3C79 /* CellCon */ = {
@@ -403,7 +419,7 @@
 			isa = PBXGroup;
 			children = (
 				CC96EE9B2226CDE800663CE1 /* Router */,
-				CC96EE992226CDD000663CE1 /* Interacter */,
+				CC96EE992226CDD000663CE1 /* Interactor */,
 				CC96EE9A2226CDDF00663CE1 /* Presenter */,
 				CC96EE982226CDCB00663CE1 /* View */,
 			);
@@ -415,7 +431,7 @@
 			children = (
 				CCE93F7C22296C9E00AB9583 /* Entity */,
 				CC96EE972226CD9F00663CE1 /* Router */,
-				CC96EE962226CD8D00663CE1 /* Interacter */,
+				CC96EE962226CD8D00663CE1 /* Interactor */,
 				CC96EE952226CD8500663CE1 /* Presenter */,
 				CC96EE942226CD7E00663CE1 /* View */,
 			);
@@ -438,12 +454,12 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		CC96EE962226CD8D00663CE1 /* Interacter */ = {
+		CC96EE962226CD8D00663CE1 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
 				CC96EE902226CB8300663CE1 /* LocalSongsInteractor.swift */,
 			);
-			path = Interacter;
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		CC96EE972226CD9F00663CE1 /* Router */ = {
@@ -462,12 +478,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		CC96EE992226CDD000663CE1 /* Interacter */ = {
+		CC96EE992226CDD000663CE1 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
 				CC96EE9F2226CEFC00663CE1 /* NhacOnlineInteracter.swift */,
 			);
-			path = Interacter;
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		CC96EE9A2226CDDF00663CE1 /* Presenter */ = {
@@ -534,7 +550,7 @@
 			children = (
 				CCB093212228428B000FE5D3 /* Router */,
 				CCB0932022284285000FE5D3 /* Entity */,
-				CCB0931F2228427D000FE5D3 /* Interacter */,
+				CCB0931F2228427D000FE5D3 /* Interactor */,
 				CCB0931E22284275000FE5D3 /* Pressenter */,
 				CCB0931D22284269000FE5D3 /* View */,
 			);
@@ -546,7 +562,7 @@
 			children = (
 				CCB0931C2228425B000FE5D3 /* Router */,
 				CCB0931B22284257000FE5D3 /* Entity */,
-				CCB0931A22284251000FE5D3 /* Interacter */,
+				CCB0931A22284251000FE5D3 /* Interactor */,
 				CCB093192228424B000FE5D3 /* Presenter */,
 				CCB0931822284245000FE5D3 /* View */,
 			);
@@ -568,11 +584,11 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		CCB0931A22284251000FE5D3 /* Interacter */ = {
+		CCB0931A22284251000FE5D3 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Interacter;
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		CCB0931B22284257000FE5D3 /* Entity */ = {
@@ -604,11 +620,11 @@
 			path = Pressenter;
 			sourceTree = "<group>";
 		};
-		CCB0931F2228427D000FE5D3 /* Interacter */ = {
+		CCB0931F2228427D000FE5D3 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Interacter;
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		CCB0932022284285000FE5D3 /* Entity */ = {
@@ -685,12 +701,12 @@
 			path = UIScreen;
 			sourceTree = "<group>";
 		};
-		CCBFFBA42223EA7400036745 /* Interacter */ = {
+		CCBFFBA42223EA7400036745 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
 				CCBFFBA82223EB0100036745 /* Interacter.swift */,
 			);
-			path = Interacter;
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		CCBFFBA52223EA8000036745 /* Router */ = {
@@ -713,7 +729,7 @@
 			isa = PBXGroup;
 			children = (
 				CC80FF91221277BF004E3C79 /* HomeController.swift */,
-				CC80FFA12212BFC3004E3C79 /* CellCha */,
+				CC80FFA12212BFC3004E3C79 /* CollectionViewCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -721,7 +737,9 @@
 		CCC557562173C7F70021844A /* Modun */ = {
 			isa = PBXGroup;
 			children = (
+				CCCC0D56223BDA2400E49096 /* ColorLayout */,
 				CCE93F73222950E500AB9583 /* Detail */,
+				CCCC0D59223BF06900E49096 /* Search */,
 				CC80FF90221277AE004E3C79 /* Home */,
 				CCC557572173C8040021844A /* FileTest */,
 			);
@@ -787,6 +805,7 @@
 				CCB0932622284712000FE5D3 /* LoadImageUseNSCache */,
 				CCB0932522284703000FE5D3 /* UICollectionView */,
 				CCB09324222846E2000FE5D3 /* CustomUIViewToPlaySound */,
+				CCCC0D6C223D5D0700E49096 /* ExtensionNavigation.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -926,6 +945,75 @@
 				CCC882942172476A00DC6CB7 /* B4.aiff */,
 			);
 			path = aiff;
+			sourceTree = "<group>";
+		};
+		CCCC0D56223BDA2400E49096 /* ColorLayout */ = {
+			isa = PBXGroup;
+			children = (
+				CCCC0D57223BDA3A00E49096 /* ColorLayout.swift */,
+			);
+			path = ColorLayout;
+			sourceTree = "<group>";
+		};
+		CCCC0D59223BF06900E49096 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				CCCC0D60223BF7BF00E49096 /* Entity */,
+				CCCC0D5F223BF7B300E49096 /* Router */,
+				CCCC0D5E223BF7AB00E49096 /* Interactor */,
+				CCCC0D5D223BF7A600E49096 /* Presenter */,
+				CCCC0D5C223BF7A200E49096 /* View */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		CCCC0D5C223BF7A200E49096 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CCCC0D69223C01D400E49096 /* TableViewSearchCell */,
+				CCCC0D5A223BF0AD00E49096 /* SearchViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CCCC0D5D223BF7A600E49096 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CCCC0D61223BF81000E49096 /* SearchPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		CCCC0D5E223BF7AB00E49096 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				CCCC0D63223BF87300E49096 /* SearchInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		CCCC0D5F223BF7B300E49096 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				CCCC0D65223BF88E00E49096 /* SearchRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		CCCC0D60223BF7BF00E49096 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				CCCC0D67223BFCD200E49096 /* ModelSearch.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		CCCC0D69223C01D400E49096 /* TableViewSearchCell */ = {
+			isa = PBXGroup;
+			children = (
+				CCCC0D6A223C01F400E49096 /* SearchTableViewCell.swift */,
+			);
+			path = TableViewSearchCell;
 			sourceTree = "<group>";
 		};
 		CCE27CD92209BD5300A781BC /* ListSong */ = {
@@ -1275,6 +1363,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCE328D8222BB1CC0039CE67 /* Level.swift in Sources */,
+				CCCC0D68223BFCD200E49096 /* ModelSearch.swift in Sources */,
 				CC96EE912226CB8300663CE1 /* LocalSongsInteractor.swift in Sources */,
 				CCE93F7E222A25D300AB9583 /* NhacOnlineRouter.swift in Sources */,
 				CCC881D321711D6000DC6CB7 /* ViewController.swift in Sources */,
@@ -1294,6 +1383,7 @@
 				CC39791822271F1F003496CD /* GetFrameUIScreen.swift in Sources */,
 				CC80FF98221289A3004E3C79 /* HomeControllerPresenter.swift in Sources */,
 				CC63C2B22219C60600780259 /* ModelNhacTrungQuoc.swift in Sources */,
+				CCCC0D62223BF81000E49096 /* SearchPresenter.swift in Sources */,
 				CCE93F78222963E200AB9583 /* InfoSongRouter.swift in Sources */,
 				CCE328E9222D14910039CE67 /* ListSongsRouter.swift in Sources */,
 				CC63C2B02219C5E400780259 /* ModelNhacViet.swift in Sources */,
@@ -1307,25 +1397,31 @@
 				CCC882A8217272C900DC6CB7 /* Tangent.swift in Sources */,
 				CCAC39CD2215AAE800D89162 /* ServiceFirebase.swift in Sources */,
 				CCC557622173C98F0021844A /* ModelSongKaraokeLocal.swift in Sources */,
+				CCCC0D64223BF87300E49096 /* SearchInteractor.swift in Sources */,
 				CCC5574D21739E7C0021844A /* ExtensionUIButton.swift in Sources */,
+				CCCC0D6D223D5D0700E49096 /* ExtensionNavigation.swift in Sources */,
 				CCE328CB222ADA760039CE67 /* KeyBoardPiano.swift in Sources */,
 				CCC881E521711D9200DC6CB7 /* PianoViewController.swift in Sources */,
 				CC80FF9C2212B946004E3C79 /* NhacOnlineCell.swift in Sources */,
 				CC63C2B82219CEBD00780259 /* LoadImage.swift in Sources */,
+				CCCC0D5B223BF0AD00E49096 /* SearchViewController.swift in Sources */,
 				CCC557602173C8AA0021844A /* HomeCell.swift in Sources */,
 				CC63C2BA2219D09A00780259 /* CellConLocal.swift in Sources */,
 				CCE328EF222DA6950039CE67 /* CustomLayoutColectionView.swift in Sources */,
 				CC19D78E217BB83600CAEE1B /* TableViewListSong.swift in Sources */,
 				CCC557512173C6D50021844A /* LocalSong.swift in Sources */,
 				CC80FF96221283C5004E3C79 /* ModelLayoutCell.swift in Sources */,
+				CCCC0D58223BDA3A00E49096 /* ColorLayout.swift in Sources */,
 				CCC881D121711D6000DC6CB7 /* AppDelegate.swift in Sources */,
 				CCE93F7B222965BC00AB9583 /* PianoController.swift in Sources */,
 				CCC557552173C7DE0021844A /* LocalSongPresenter.swift in Sources */,
+				CCCC0D66223BF88E00E49096 /* SearchRouter.swift in Sources */,
 				CC80FF9422128253004E3C79 /* LocalSongsController.swift in Sources */,
 				CC96EE8F2226CB3D00663CE1 /* LocalSongsPresenter.swift in Sources */,
 				CCE93F76222951A100AB9583 /* LocalSongsRouter.swift in Sources */,
 				CC96EE8D2226B77C00663CE1 /* Enum.swift in Sources */,
 				CCC882872172375400DC6CB7 /* PianoSounds.swift in Sources */,
+				CCCC0D6B223C01F400E49096 /* SearchTableViewCell.swift in Sources */,
 				CC96EE9E2226CE4600663CE1 /* NhacOnlinePresenter.swift in Sources */,
 				CCE328EB222D99DC0039CE67 /* UseCaseFirebase.swift in Sources */,
 				CC19D78A217BB66400CAEE1B /* ModelCategoryInstrument.swift in Sources */,
