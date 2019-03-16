@@ -9,7 +9,7 @@
 import Foundation
 
 protocol HomeControllerPresenter {
-    func dataForRowAt(indexPath: IndexPath) -> ModelHome?
+    func dataForRowAt(indexPath: IndexPath) -> [ModelHome]?
     
     func numberOfItems(in section: Int) -> Int
     
@@ -18,7 +18,7 @@ protocol HomeControllerPresenter {
     func collectionViewLayoutWidth(_ collectionView: HomeControllerInterface, sizeForItemAt indexPath: IndexPath) -> Float
     
     func viewDidload(_ collectionView: HomeControllerInterface, router: Router)
-    
+    func presentSearchViewController()
 }
 class HomeControllerPresenterImp {
     private var interacter: Interacter?
@@ -28,12 +28,15 @@ class HomeControllerPresenterImp {
         self.interacter = interacter
         self.router = router
     }
-  
 }
 
 extension HomeControllerPresenterImp: HomeControllerPresenter {
-    func dataForRowAt(indexPath: IndexPath) -> ModelHome? {
-        return interacter?.data[indexPath.row]
+    func presentSearchViewController() {
+        router?.presentSearchViewController()
+    }
+    
+    func dataForRowAt(indexPath: IndexPath) -> [ModelHome]? {
+        return interacter?.data
     }
     
     func viewDidload(_ collectionView: HomeControllerInterface, router: Router) {

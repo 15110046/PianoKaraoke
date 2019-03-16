@@ -15,7 +15,7 @@ protocol Interacter {
 class InteracterImp {
     
     var data: [ModelHome] = [SongsLocal(title: "Những bài hát Offline",
-                                        arraySongs: [SongsLocalDetail(image: "ThanThoai", nameSong: "Sứ Thanh Hoa", urlSong: "Cam Am Than Thoai C5"),
+                                        arraySongs: [SongsLocalDetail(image: "su-thanh-hoa", nameSong: "Sứ Thanh Hoa", urlSong: "Cam Am Than Thoai C5"),
                                                      SongsLocalDetail(image: "ThanThoai", nameSong: "Thần Thoai", urlSong: "Cam Am Than Thoai C5")])
     ]
     
@@ -24,6 +24,7 @@ class InteracterImp {
             guard let self = self else { return }
             let data = snapShot as? NSDictionary
             let dataDanhChoNguoiMoi = NhacOnline(data: data as? [String : Any] ?? [:])
+            
             self.data.append(dataDanhChoNguoiMoi)
             DispatchQueue.main.async {
                 collectionView.reloadDataCollectionView()

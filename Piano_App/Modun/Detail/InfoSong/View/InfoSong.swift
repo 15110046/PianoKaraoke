@@ -18,13 +18,13 @@ class InfoSong: UIViewController {
     }
 
     private var segment: CustomSegmentedControl = {
-        let sgm = CustomSegmentedControl(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width-UIScreen.main.bounds.size.width/17-UIScreen.main.bounds.size.width/17, height: 50))
+        let sgm = CustomSegmentedControl(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width-UIScreen.main.bounds.size.width/17-UIScreen.main.bounds.size.width/17-40, height: 30))
         sgm.translatesAutoresizingMaskIntoConstraints = false
-        sgm.borderColor = .red
+        sgm.borderColor = .white
         sgm.textColor = .white
-        sgm.selectorColor = .red
+        sgm.selectorColor = .white
         sgm.backgroundColor = .clear
-        sgm.selectorTextColor = .yellow
+        sgm.selectorTextColor = .black
         sgm.borderWidth = 1
         sgm.commaSeparatedButtonTitles = "Cảm Âm, Lời Nhạc"
         return sgm
@@ -198,6 +198,7 @@ class InfoSong: UIViewController {
                 print(dataOnline.nameSong)
                 self.nameSonglbl.text = dataOnline.nameSong
                 self.lblContentAcousticsNote.text = dataOnline.contentKaraoke
+                
                 self.lblSongCatelogyContent.text = dataOnline.category
                 self.lblLikesContent.text = String(dataOnline.likes)
                 self.lblAuthorContent.text = dataOnline.author
@@ -210,33 +211,43 @@ class InfoSong: UIViewController {
         
     }
     @objc func changeValue(_ sender: CustomSegmentedControl) {
-        switch sender.selectorSegmentIndex {
-        case 0:
-            print("cam am")
-        case 1:
-            print("loi nhac")
-        default:
-            break
-        }
+        presenter?.getData(completion: { (dataInfo) in
+            switch dataInfo {
+            case .succesWithCellLocal( _): break
+                
+            case .succesWithCellOnline(let dataOnline):
+                guard let dataOnline = dataOnline else { return }
+                switch sender.selectorSegmentIndex {
+                case 0:
+                        self.lblContentAcousticsNote.text = dataOnline.contentKaraoke
+                case 1:
+                        self.lblContentAcousticsNote.text = "dataOnline.contentKaraoke"
+                default:
+                    break
+                }
+                
+            }
+        })
+      
        
+        
     }
     private func autoLayoutSegment() {
         scrollViewGenerality.addSubview(segment)
-        segment.topAnchor.constraint(equalTo: lblContentAcousticsNote.bottomAnchor, constant: 15).isActive = true
-        segment.leadingAnchor.constraint(equalTo: viewContent.leadingAnchor, constant: 3).isActive = true
-        segment.trailingAnchor.constraint(equalTo: viewContent.trailingAnchor, constant: -3).isActive = true
-        segment.bottomAnchor.constraint(equalTo: scrollViewGenerality.bottomAnchor, constant: -100).isActive = true
-        segment.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        segment.topAnchor.constraint(equalTo: lblAuthor.bottomAnchor, constant: 40).isActive = true
+        segment.leadingAnchor.constraint(equalTo: viewContent.leadingAnchor, constant: 20).isActive = true
+        segment.trailingAnchor.constraint(equalTo: viewContent.trailingAnchor, constant: -20).isActive = true
+//        segment.heightAnchor.constraint(equalToConstant: 50).isActive = true
         segment.layoutIfNeeded()
         
         segment.addTarget(self, action: #selector(self.changeValue(_:)), for: .valueChanged)
     }
     private func autoContentAcousticsNote() {
         scrollViewGenerality.addSubview(lblContentAcousticsNote)
-        lblContentAcousticsNote.topAnchor.constraint(equalTo: lblAcousticsNote.bottomAnchor, constant: 15).isActive = true
+        lblContentAcousticsNote.topAnchor.constraint(equalTo: segment.bottomAnchor, constant: 15).isActive = true
         lblContentAcousticsNote.leadingAnchor.constraint(equalTo: viewContent.leadingAnchor, constant: 3).isActive = true
         lblContentAcousticsNote.trailingAnchor.constraint(equalTo: viewContent.trailingAnchor, constant: -3).isActive = true
-//        lblContentAcousticsNote.bottomAnchor.constraint(equalTo: scrollViewGenerality.bottomAnchor, constant: -50).isActive = true
+        lblContentAcousticsNote.bottomAnchor.constraint(equalTo: scrollViewGenerality.bottomAnchor, constant: -50).isActive = true
     }
    
     private func autoLayoutviewNgoiSao() {
@@ -266,9 +277,9 @@ class InfoSong: UIViewController {
         lblSongCatelogyContent.bottomAnchor.constraint(equalTo: lblSongCatelogy.bottomAnchor, constant: 0).isActive = true
     }
     private func autoAcousticsNote() {
-        scrollViewGenerality.addSubview(lblAcousticsNote)
-        lblAcousticsNote.topAnchor.constraint(equalTo: lblAuthor.bottomAnchor, constant: 40).isActive = true
-        lblAcousticsNote.centerXAnchor.constraint(equalTo: viewContent.centerXAnchor, constant: 0).isActive = true
+//        scrollViewGenerality.addSubview(lblAcousticsNote)
+//        lblAcousticsNote.topAnchor.constraint(equalTo: lblAuthor.bottomAnchor, constant: 40).isActive = true
+//        lblAcousticsNote.centerXAnchor.constraint(equalTo: viewContent.centerXAnchor, constant: 0).isActive = true
     }
     private func autoAuthor() {
         scrollViewGenerality.addSubview(lblAuthor)
@@ -334,9 +345,9 @@ class InfoSong: UIViewController {
         autoLayoutlblSongCatelogyContent()
         autoAuthor()
         autoLayoutlblAuthorContent()
-        autoAcousticsNote()
-        autoContentAcousticsNote()
         autoLayoutSegment()
+        autoContentAcousticsNote()
+        
     }
     private func autoLayoutImageSong() {
         viewImage.addSubview(imageSong)

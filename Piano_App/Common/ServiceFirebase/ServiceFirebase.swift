@@ -13,7 +13,19 @@ import UIKit
 class ServiceOnline {
     static var share = ServiceOnline()
     private var ref = Database.database().reference()
-    
+    func getDataSearch(param: String, comletion: @escaping (_ data: Any?) -> ()) {
+        ref.child(param).observe(.value) { (snapShot) in
+            guard let value = snapShot.value else {
+                DispatchQueue.main.async {
+                    comletion(nil)
+                }
+                return
+            }
+            DispatchQueue.main.async {
+                comletion(value)
+            }
+        }
+    }
     func getData(param: String, comletion: @escaping (_ data: Any?) -> ()) {
         ref.child("OverViewCategoryApp").child(param).observe(.value) { (snapShot) in
             guard let value = snapShot.value else {

@@ -29,6 +29,9 @@ class ListSongs: UIViewController {
         super.viewDidLoad()
         autoLayoutClsView()
     }
+    func config(title navigationTitle: String) {
+        navigationItem.title = navigationTitle
+    }
     private func autoLayoutClsView() {
         view.addSubview(collectionViewListSongs)
         collectionViewListSongs.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true

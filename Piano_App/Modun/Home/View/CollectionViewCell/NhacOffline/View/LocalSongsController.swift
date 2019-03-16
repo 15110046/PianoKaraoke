@@ -20,7 +20,7 @@ class LocalSongsController: UICollectionViewCell {
     private var viewHeader: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.hexStringToUIColor(hex: "1D1F35", alpha: 1)
+        view.backgroundColor = UIColor.hexStringToUIColor(hex: ColorLayout.backgroundCell.rawValue, alpha: 1)
         return view
     }()
     
@@ -39,7 +39,7 @@ class LocalSongsController: UICollectionViewCell {
         clsview.delegate = self
         clsview.dataSource = self
         layout.scrollDirection = .horizontal
-        clsview.backgroundColor = UIColor.hexStringToUIColor(hex: "1D1F35", alpha: 1)
+        clsview.backgroundColor = UIColor.hexStringToUIColor(hex: ColorLayout.backgroundCell.rawValue, alpha: 1)
         clsview.register(CellConLocal.self, forCellWithReuseIdentifier: "CellConLocal")
         clsview.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         clsview.showsHorizontalScrollIndicator = false

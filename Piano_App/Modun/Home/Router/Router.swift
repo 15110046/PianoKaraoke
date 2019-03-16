@@ -10,10 +10,20 @@ import Foundation
 import UIKit
 protocol Router {
     func present(from screen: TypeCell, to manHinh: ListScreen, data: ModelDetailCellSongs, dataOnline: NhacOnline?)
+    func presentSearchViewController()
 }
 
 extension HomeController: Router {
-
+    func presentSearchViewController() {
+        let searchViewController = SearchViewController()
+        let interactor = SearchInteractorImp()
+        let navigation = UINavigationController(rootViewController: searchViewController)
+        navigation.setUpUINaviationItem()
+        let router = SearchRouterImp(navigationController: navigation,viewController: searchViewController)
+        searchViewController.inject(presenter: SearchPresenterImp(interactor: interactor, router: router, tbView: searchViewController))
+        self.present(navigation, animated: false, completion: nil)
+        navigation.navigationBar.isHidden = true
+    }
     func present(from cell: TypeCell, to manHinh: ListScreen, data: ModelDetailCellSongs, dataOnline: NhacOnline?) {
         switch cell {
         case TypeCell.CellLocal: 
@@ -40,6 +50,7 @@ extension HomeController: Router {
                 let vc = ListSongs()
                
                 vc.inject(presenter: ListSongsPresenterImp(interactor: ListSongsInteractorImp.init(key: dataOnline?.key, clsView: vc), router: ListSongsRouterImp.init(navtionController: self.navigationController)))
+                vc.config(title: dataOnline?.category.rawValue ?? "")
                 self.navigationController?.pushViewController(vc, animated: false)
                 self.navigationController?.isNavigationBarHidden = false
             }

@@ -18,18 +18,20 @@ class CellTopImageBottomTitle: UICollectionViewCell {
         contentView.layoutIfNeeded()
         autoLayoutViewImage()
         autoLayoutViewTitle()
-        contentView.backgroundColor = UIColor.hexStringToUIColor(hex: "1D1F35", alpha: 1)
+        contentView.backgroundColor = UIColor.hexStringToUIColor(hex: ColorLayout.backgroundCell.rawValue, alpha: 1)
+        contentView.layer.cornerRadius = 20
     }
+    
     private var areaViewImage: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.hexStringToUIColor(hex: "1D1F35", alpha: 1)
+        view.backgroundColor = UIColor.hexStringToUIColor(hex: ColorLayout.backgroundCell.rawValue, alpha: 1)
         return view
     }()
     private var areaViewTitle: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor =  UIColor.hexStringToUIColor(hex: "1D1F35", alpha: 1)
+        view.backgroundColor =  UIColor.hexStringToUIColor(hex: ColorLayout.backgroundCell.rawValue, alpha: 1)
         return view
     }()
     private var imageSong: UIImageView = {

@@ -25,6 +25,7 @@ class LoadImageFromService {
             completion(defaultImage ?? UIImage())
             return
         }
+        
         URLSession.shared.dataTask(with: link, completionHandler: { [weak self] (data, res, err) in
             DispatchQueue.main.async {
                 guard let self = self else { return }
@@ -34,6 +35,7 @@ class LoadImageFromService {
                 }
                 self.imagecache.setObject(imageToCache, forKey: url as AnyObject)
                 completion(imageToCache)
+                return
             }
         }).resume()
     }
