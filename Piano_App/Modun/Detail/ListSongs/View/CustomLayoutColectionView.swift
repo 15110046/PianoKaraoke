@@ -38,7 +38,6 @@ class CustomLayoutColectionView: UICollectionViewLayout {
             let att = UICollectionViewLayoutAttributes(forCellWith: IndexPath(item: i, section: 0))
             let size = CGFloat.init(delegate?.collectionViewWitdhSize() ?? 0)
             guard let sizeHeighText = delegate?.heightForText(atIndexPath: IndexPath(item: i, section: 0))
-//           ,let sizeHeightImage = delegate?.heightForImage(atIndexPath: IndexPath.init(item: i, section: 0))
                 else { return }
              let sizeHeightImage = CGFloat(150)
             var x: CGFloat = 0

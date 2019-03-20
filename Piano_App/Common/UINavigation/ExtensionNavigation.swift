@@ -13,6 +13,7 @@ extension UINavigationController {
     func setUpUINaviationItem() {
         self.navigationBar.barStyle = .blackOpaque
         self.navigationBar.tintColor = UIColor.white
+//        self.navigationBar.isHidden = true
         self.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "AmericanTypewriter-Bold", size: 20)!,NSAttributedString.Key.foregroundColor: UIColor.hexStringToUIColor(hex: "D48A5E", alpha: 1)]
         self.navigationBar.barTintColor = UIColor.hexStringToUIColor(hex: "17182C", alpha: 1)
     }

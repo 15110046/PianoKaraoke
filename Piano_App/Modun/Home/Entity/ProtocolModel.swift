@@ -6,17 +6,12 @@
 //  Copyright © 2019 com.nguyenhieu.demo. All rights reserved.
 //
 
-import Foundation
-//import UIKit
+
 protocol ModelHome {
-//    var viewController: UIViewController? { get }
-    var heighthSize: Float?             { get }
-    var widthSize: Float?               { get }
-//    var background : UIColor?             { get }
+    var heighthSize: Float? { get }
+    var widthSize:   Float? { get }
 }
 protocol ModelDetailCellSongs {
-    var heighthSize: Float?             { get }
-    var widthSize: Float?               { get }
-//    var background : UIColor?             { get }
-//    var viewController: UIViewController? { get }
+    var heighthSize: Float? { get }
+    var widthSize:   Float? { get }
 }

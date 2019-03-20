@@ -6,8 +6,6 @@
 //  Copyright © 2019 com.nguyenhieu.demo. All rights reserved.
 //
 
-import Foundation
-
 enum LayoutNhacTrungQuoc {
     case heightTQ
     case widthTQ

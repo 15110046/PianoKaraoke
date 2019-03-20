@@ -6,7 +6,7 @@
 //  Copyright © 2019 com.nguyenhieu.demo. All rights reserved.
 //
 
-import Foundation
+//import Foundation
 
 struct DetailInfoSong {
     var likes: Int
@@ -18,25 +18,13 @@ struct DetailInfoSong {
     var author: String
     var level: Int
     init(data: [String: Any]) {
-        if let dic = data as? Dictionary<String, Any> {
-            self.likes = dic["likes"] as? Int ?? 0
-            self.urlMp4 = dic["urlMp4"] as? String ?? ""
-            self.contentKaraoke = dic["contentKaraoke"] as? String ?? ""
-            self.nameSong = dic["nameSong"] as? String ?? ""
-            self.imageSong = dic["imageSong"] as? String ?? ""
-            self.category = dic["kindMusic"] as? String ?? ""
-            self.author = dic["author"] as? String ?? "Chưa biết"
-            self.level = dic["level"] as? Int ?? 0
-        }
-        else {
-            self.likes = 0
-            self.urlMp4 = ""
-            self.contentKaraoke = ""
-            self.nameSong = ""
-            self.imageSong = ""
-            self.category = ""
-            self.author = "Chưa biết"
-            self.level = 0
-        }
+        self.likes = data["likes"] as? Int ?? 0
+        self.urlMp4 = data["urlMp4"] as? String ?? ""
+        self.contentKaraoke = data["contentKaraoke"] as? String ?? ""
+        self.nameSong = data["nameSong"] as? String ?? ""
+        self.imageSong = data["imageSong"] as? String ?? ""
+        self.category = data["kindMusic"] as? String ?? ""
+        self.author = data["author"] as? String ?? "Chưa biết"
+        self.level = data["level"] as? Int ?? 0
     }
 }
