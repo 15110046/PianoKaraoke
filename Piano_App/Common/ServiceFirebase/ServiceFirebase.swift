@@ -9,10 +9,29 @@
 import Foundation
 import Firebase
 import UIKit
+import FirebaseAuth
+
+enum LoginResul {
+    case error(message: String)
+    case success(data: AuthDataResult)
+}
 
 class ServiceOnline {
     static var share = ServiceOnline()
     private var ref = Database.database().reference()
+    func pushData(uid: String, data: AccountUserModel) {
+        ref.child("User").child(uid).setValue(["UID":data.uid, "avata": data.url, "name": data.name])
+    }
+    func checkLogin(email: String, pass: String, completion: @escaping (LoginResul) -> ()) {
+        Auth.auth().signIn(withEmail: email, password: pass) { (user, error) in
+            if let user = user {
+                completion(LoginResul.success(data: user))
+            }
+            else {
+                completion(LoginResul.error(message: error?.localizedDescription ?? ""))
+            }
+        }
+    }
     func getDataSearch(param: String, comletion: @escaping (_ data: Any?) -> ()) {
         ref.child(param).observe(.value) { (snapShot) in
             guard let value = snapShot.value else {

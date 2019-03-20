@@ -7,21 +7,14 @@
 //
 
 import Foundation
-struct ModelListSongs {
 
+struct ModelListSongs {
     var nameSong: String
     var imageSong: String
     var idDetail: String
     init(object:[String: String]) {
-        if let dic = object as? Dictionary<String, String> {
-            self.nameSong = dic["nameSong"] ?? ""
-            self.imageSong = dic["imageSong"] ?? ""
-            self.idDetail = dic["idDetail"] ?? ""
-        }
-        else {
-            self.nameSong = ""
-            self.imageSong = ""
-            self.idDetail = ""
-        }
+        self.nameSong = object["nameSong"] ?? ""
+        self.imageSong = object["imageSong"] ?? ""
+        self.idDetail = object["idDetail"] ?? ""
     }
 }

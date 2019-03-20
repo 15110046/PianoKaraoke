@@ -16,38 +16,11 @@ class HomeController: UIViewController {
     private var presenter: HomeControllerPresenter?
     // bien
     private var btnSearch: UIButton = {
-        let btn = UIButton()
+        let btn = UIButton(type: UIButton.ButtonType.custom)
+        btn.setImage(UIImage (named: "search-icon"), for: .normal)
         btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.addTarget(self, action: #selector(clickSearchBar), for: .touchDown)
         return btn
-    }()
-//    private lazy var tblSearch: UITableView = {
-//        let tbl = UITableView()
-//        tbl.delegate = self
-//        tbl.dataSource = self
-//        tbl.translatesAutoresizingMaskIntoConstraints = false
-//        return tbl
-//    }()
-    private var viewHeader: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.hexStringToUIColor(hex: ColorLayout.backgroundTitle.rawValue, alpha: 1)
-        return view
-    }()
-    private var titleHeader1: UILabel = {
-        let txtTitle = UILabel()
-        txtTitle.translatesAutoresizingMaskIntoConstraints = false
-        txtTitle.text = "Hát Karaoke với"
-        txtTitle.textColor = UIColor.hexStringToUIColor(hex: ColorLayout.title.rawValue, alpha: 1)
-        txtTitle.font = UIFont(name: "AmericanTypewriter-Bold", size: 18)
-        return txtTitle
-    }()
-    private var titleHeader2: UILabel = {
-        let txtTitle = UILabel()
-        txtTitle.translatesAutoresizingMaskIntoConstraints = false
-        txtTitle.text = "bàn phím Piano"
-        txtTitle.font = UIFont(name: "AmericanTypewriter-Bold", size: 18)
-        txtTitle.textColor = UIColor.hexStringToUIColor(hex: ColorLayout.title.rawValue, alpha: 1)
-        return txtTitle
     }()
     private lazy var collectionViewHome: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -62,86 +35,108 @@ class HomeController: UIViewController {
         clsview.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         return clsview
     }()
-    //auto layout
-//    private func autoLayoutTblSearch() {
-//        view.addSubview(tblSearch)
-//        tblSearch.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 0).isActive = true
-//        tblSearch.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
-//        tblSearch.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
-//        tblSearch.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-//        tblSearch.isHidden = true
-//    }
-    private func autoLayoutBtnSearch() {
-        viewHeader.addSubview(btnSearch)
+    private lazy var tableViewAccount: UITableView = {
+        let tbl = UITableView()
+        tbl.translatesAutoresizingMaskIntoConstraints = false
+        tbl.delegate = self
+        tbl.dataSource = self
+        return tbl
+    }()
+    private func mapUI() {
         
-        btnSearch.bottomAnchor.constraint(equalTo: titleHeader1.bottomAnchor, constant: 0).isActive = true
-        btnSearch.rightAnchor.constraint(equalTo: viewHeader.rightAnchor, constant: -10).isActive = true
-        btnSearch.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        view.addSubview(collectionViewHome)
+        view.addSubview(tableViewAccount)
+        autoLayoutCollectionViewHome()
+        autoLayoutTableViewAccount()
         
-        btnSearch.widthAnchor.constraint(equalTo: btnSearch.heightAnchor, multiplier: 1).isActive = true
-        btnSearch.setBackgroundImage(UIImage.init(named: "search-icon"), for: .normal)
-        btnSearch.addTarget(self, action: (#selector(HomeController.clickSearchBar)), for: .touchDown)
+        
+    }
+    func transformRight() {
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
+            self.tableViewAccount.transform = CGAffineTransform(translationX: self.witdh, y: 0)
+        }) { (abc) in
+        }
+    }
+    func transformLeft() {
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
+            self.tableViewAccount.transform = CGAffineTransform(translationX: -self.witdh, y: 0)
+        }) { (abc) in
+        }
+    }
+    private var isTapMoreButton = false {
+        didSet {
+            switch isTapMoreButton {
+            case true:
+                transformRight()
+            case false:
+                transformLeft()
+            }
+        }
+        
+    }
+    private var constrainsWitdhTableViewAccountIsZero: NSLayoutConstraint?
+    private let witdh = 3/4*UIScreen.main.bounds.size.width
+    private func autoLayoutTableViewAccount() {
+        
+        constrainsWitdhTableViewAccountIsZero =  tableViewAccount.widthAnchor.constraint(equalToConstant: 0)
+        let witdhConstrain = tableViewAccount.widthAnchor.constraint(equalToConstant: witdh)
+        tableViewAccount.leftAnchor.constraint(equalTo: view.leftAnchor, constant: -witdh).isActive = true
+        tableViewAccount.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        tableViewAccount.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 0).isActive = true
+        witdhConstrain.isActive = true
     }
     @objc private func clickSearchBar() {
-//        let vc = SearchViewController()
-//        self.present(vc, animated: false, completion: nil)
         self.presenter?.presentSearchViewController()
     }
-//    private func createSearchBar(placeholder: String, delegate: UISearchBarDelegate) -> UISearchController {
-//        let searchController = UISearchController(searchResultsController: nil)
-//        searchController.searchBar.delegate = delegate
-//        searchController.searchBar.placeholder = placeholder
-//        searchController.searchBar.showsCancelButton = true
-//        searchController.searchBar.changeBackgroundUISearchBar()
-////        searchController.searchBar.barTintColor = UIColor.hexStringToUIColor(hex: "123456", alpha: 1)
-//        return searchController
-//    }
-    private func autoLayoutViewHeader() {
-        view.addSubview(viewHeader)
-        viewHeader.topAnchor.constraint(equalTo: topLayoutGuide.topAnchor, constant: 0).isActive = true
-        viewHeader.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
-        viewHeader.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
-        viewHeader.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.height/10).isActive = true
-        autoLayoutTitleHeader1()
-        autoLayoutTitleHeader2()
-        autoLayoutBtnSearch()
+    @objc private func clickMoreBar() {
+       UserDefaults.standard.removeObject(forKey: "UID")
+        switch isTapMoreButton {
+        case true: isTapMoreButton = false
+        case false: isTapMoreButton = true
+        }
     }
-    private func autoLayoutTitleHeader1() {
-        viewHeader.addSubview(titleHeader1)
-        titleHeader1.bottomAnchor.constraint(equalTo: viewHeader.bottomAnchor, constant: -10).isActive = true
-        titleHeader1.leftAnchor.constraint(equalTo: viewHeader.leftAnchor, constant: 10).isActive = true
-    }
-    private func autoLayoutTitleHeader2() {
-        viewHeader.addSubview(titleHeader2)
-        titleHeader2.topAnchor.constraint(equalTo: titleHeader1.topAnchor, constant: 0).isActive = true
-        titleHeader2.leftAnchor.constraint(equalTo: titleHeader1.rightAnchor, constant: 5).isActive = true
-    }
+
     private func autoLayoutCollectionViewHome() {
-        view.addSubview(collectionViewHome)
-        collectionViewHome.topAnchor.constraint(equalTo: viewHeader.bottomAnchor, constant: 0).isActive = true
+        collectionViewHome.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 0).isActive = true
         collectionViewHome.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
         collectionViewHome.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
         collectionViewHome.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
     }
+    
+    func inject(presenter: HomeControllerPresenter?) {
+        self.presenter = presenter
+    }
     // vòng đời
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        autoLayoutViewHeader()
-        view.backgroundColor = .white
-        autoLayoutCollectionViewHome()
-        presenter = HomeControllerPresenterImp()
-        presenter?.viewDidload(self, router: self)
-    
+        mapUI()
+//        presenter = HomeControllerPresenterImp()
+        presenter?.viewDidload(self)
+        self.navigationItem.title = "Home"
+        
+        view.backgroundColor = .red
+        setUpLeftBarButtonItem()
+        setUpRightBarButtonItem()
     }
+    private func setUpLeftBarButtonItem() {
+        let barButtonMore = UIBarButtonItem(image: UIImage(named: "more-button"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(clickMoreBar))
+        barButtonMore.tintColor = UIColor.hexStringToUIColor(hex: "FFFFFF", alpha: 1)
+        self.navigationItem.leftBarButtonItem = barButtonMore
+    }
+    private func setUpRightBarButtonItem() {
+        let barButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(clickSearchBar))
+        barButtonItem.tintColor = UIColor.hexStringToUIColor(hex: "FFFFFF", alpha: 1)
+        self.navigationItem.rightBarButtonItem = barButtonItem
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
-         super.viewWillAppear(animated)
-        self.navigationController?.isNavigationBarHidden = true
-//        collectionViewHome.reloadData()
+        super.viewWillAppear(animated)
+        //        self.navigationController?.isNavigationBarHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        collectionViewHome.reloadData()
     }
 }
 extension HomeController: UICollectionViewDelegate {
@@ -157,7 +152,7 @@ extension HomeController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let dataCell = presenter?.dataForRowAt(indexPath: indexPath) else { return UICollectionViewCell() }
+        guard let dataCell = presenter?.dataForCell() else { return UICollectionViewCell() }
         switch dataCell[indexPath.item] {
         case is SongsLocal:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LocalSongs", for: indexPath) as? LocalSongsController else { return UICollectionViewCell() }
@@ -170,10 +165,10 @@ extension HomeController: UICollectionViewDataSource {
             }
             let interactor = NhacOnlineInteracterImp(data: dataCell[indexPath.item])
             cell.inject(presenter: NhacOnlinePresenterImp(interacter: interactor, router: self))
-//            cell.configure()
+            //            cell.configure()
             return cell
         default:
-             return UICollectionViewCell()
+            return UICollectionViewCell()
         }
     }
 }
@@ -190,4 +185,18 @@ extension HomeController: HomeControllerInterface {
     func reloadDataCollectionView() {
         collectionViewHome.reloadData()
     }
+}
+extension HomeController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
+    
+}
+extension HomeController: UITableViewDelegate {
+    
 }

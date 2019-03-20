@@ -6,19 +6,20 @@
 //  Copyright © 2019 com.nguyenhieu.demo. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 protocol InfoSongRouter {
-    var navtionController: UINavigationController? { get set}
+    var navtionController: UINavigationController? { get }
     func present(link: String?, nameSong: String?, typeCellInit: TypeCell?)
 }
-class InfoSongRouterImp: InfoSongRouter {
+class InfoSongRouterImp {
     var navtionController: UINavigationController?
     
     init(navtionController: UINavigationController?) {
         self.navtionController = navtionController
     }
+}
+extension InfoSongRouterImp: InfoSongRouter {
     func present(link: String?,nameSong: String?, typeCellInit: TypeCell?) {
         let vc = instantiate(ViewController.self)
         vc.config(link: link, nameSong: nameSong, typeCellInitViewController: typeCellInit)

@@ -14,10 +14,20 @@
 		CC19D78E217BB83600CAEE1B /* TableViewListSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC19D78D217BB83600CAEE1B /* TableViewListSong.swift */; };
 		CC22DA7721773A1300BA6030 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC22DA7621773A1300BA6030 /* Storyboard.storyboard */; };
 		CC22DA7921773A3400BA6030 /* ViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22DA7821773A3400BA6030 /* ViewControllerTest.swift */; };
+		CC39139B223F9BE4008B2E0D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC39139A223F9BE4008B2E0D /* LoginViewController.swift */; };
+		CC39139E223FB32E008B2E0D /* ServiceLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC39139D223FB32E008B2E0D /* ServiceLoginViewController.swift */; };
+		CC3913AA2240EFE2008B2E0D /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3913A92240EFE2008B2E0D /* LoginPresenter.swift */; };
+		CC3913AC2240F065008B2E0D /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3913AB2240F065008B2E0D /* LoginInteractor.swift */; };
+		CC3913AE2240F088008B2E0D /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3913AD2240F088008B2E0D /* LoginRouter.swift */; };
+		CC3913B02240F125008B2E0D /* ServiceLoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3913AF2240F125008B2E0D /* ServiceLoginPresenter.swift */; };
+		CC3913B22240F155008B2E0D /* ServiceLoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3913B12240F155008B2E0D /* ServiceLoginInteractor.swift */; };
+		CC3913B42240F182008B2E0D /* ServiceLoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3913B32240F182008B2E0D /* ServiceLoginRouter.swift */; };
+		CC3913B722417B12008B2E0D /* ExtensionUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3913B622417B12008B2E0D /* ExtensionUIViewController.swift */; };
+		CC3913BA22417D70008B2E0D /* ExtensionUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3913B922417D70008B2E0D /* ExtensionUITextField.swift */; };
+		CC3913BC224181C2008B2E0D /* AccountUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3913BB224181C2008B2E0D /* AccountUserModel.swift */; };
+		CC3913BF22420253008B2E0D /* ServiceFacebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3913BE22420253008B2E0D /* ServiceFacebook.swift */; };
 		CC39791822271F1F003496CD /* GetFrameUIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC39791722271F1F003496CD /* GetFrameUIScreen.swift */; };
 		CC63C2AE2219C5A800780259 /* ModelSongLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC63C2AD2219C5A800780259 /* ModelSongLocal.swift */; };
-		CC63C2B02219C5E400780259 /* ModelNhacViet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC63C2AF2219C5E400780259 /* ModelNhacViet.swift */; };
-		CC63C2B22219C60600780259 /* ModelNhacTrungQuoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC63C2B12219C60600780259 /* ModelNhacTrungQuoc.swift */; };
 		CC63C2B42219C64600780259 /* ProtocolModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC63C2B32219C64600780259 /* ProtocolModel.swift */; };
 		CC63C2B62219C68A00780259 /* ModelNhacOnline.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC63C2B52219C68A00780259 /* ModelNhacOnline.swift */; };
 		CC63C2B82219CEBD00780259 /* LoadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC63C2B72219CEBD00780259 /* LoadImage.swift */; };
@@ -142,6 +152,7 @@
 		CCCC0D68223BFCD200E49096 /* ModelSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCC0D67223BFCD200E49096 /* ModelSearch.swift */; };
 		CCCC0D6B223C01F400E49096 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCC0D6A223C01F400E49096 /* SearchTableViewCell.swift */; };
 		CCCC0D6D223D5D0700E49096 /* ExtensionNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCC0D6C223D5D0700E49096 /* ExtensionNavigation.swift */; };
+		CCCC0D70223D615800E49096 /* ExtensionUISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCC0D6F223D615800E49096 /* ExtensionUISearchBar.swift */; };
 		CCE27CDB2209BD7E00A781BC /* ListSongController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE27CDA2209BD7E00A781BC /* ListSongController.swift */; };
 		CCE27CDD2209C01900A781BC /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE27CDC2209C01900A781BC /* TableViewCell.swift */; };
 		CCE328C9222AD9F20039CE67 /* KeyBoardPiano.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCE328C8222AD9F20039CE67 /* KeyBoardPiano.xib */; };
@@ -154,7 +165,6 @@
 		CCE328E5222D14320039CE67 /* ListSongsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE328E4222D14320039CE67 /* ListSongsPresenter.swift */; };
 		CCE328E7222D14620039CE67 /* ListSongsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE328E6222D14620039CE67 /* ListSongsInteractor.swift */; };
 		CCE328E9222D14910039CE67 /* ListSongsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE328E8222D14910039CE67 /* ListSongsRouter.swift */; };
-		CCE328EB222D99DC0039CE67 /* UseCaseFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE328EA222D99DC0039CE67 /* UseCaseFirebase.swift */; };
 		CCE328ED222D9AB80039CE67 /* ModelListSongs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE328EC222D9AB80039CE67 /* ModelListSongs.swift */; };
 		CCE328EF222DA6950039CE67 /* CustomLayoutColectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE328EE222DA6950039CE67 /* CustomLayoutColectionView.swift */; };
 		CCE328F2222ED73C0039CE67 /* ListSongsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE328F1222ED73C0039CE67 /* ListSongsCell.swift */; };
@@ -175,10 +185,21 @@
 		CC19D78D217BB83600CAEE1B /* TableViewListSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewListSong.swift; sourceTree = "<group>"; };
 		CC22DA7621773A1300BA6030 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		CC22DA7821773A3400BA6030 /* ViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTest.swift; sourceTree = "<group>"; };
+		CC391399223F9B8E008B2E0D /* Piano_App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Piano_App.entitlements; sourceTree = "<group>"; };
+		CC39139A223F9BE4008B2E0D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CC39139D223FB32E008B2E0D /* ServiceLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLoginViewController.swift; sourceTree = "<group>"; };
+		CC3913A92240EFE2008B2E0D /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		CC3913AB2240F065008B2E0D /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		CC3913AD2240F088008B2E0D /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		CC3913AF2240F125008B2E0D /* ServiceLoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLoginPresenter.swift; sourceTree = "<group>"; };
+		CC3913B12240F155008B2E0D /* ServiceLoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLoginInteractor.swift; sourceTree = "<group>"; };
+		CC3913B32240F182008B2E0D /* ServiceLoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLoginRouter.swift; sourceTree = "<group>"; };
+		CC3913B622417B12008B2E0D /* ExtensionUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIViewController.swift; sourceTree = "<group>"; };
+		CC3913B922417D70008B2E0D /* ExtensionUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUITextField.swift; sourceTree = "<group>"; };
+		CC3913BB224181C2008B2E0D /* AccountUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountUserModel.swift; sourceTree = "<group>"; };
+		CC3913BE22420253008B2E0D /* ServiceFacebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFacebook.swift; sourceTree = "<group>"; };
 		CC39791722271F1F003496CD /* GetFrameUIScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFrameUIScreen.swift; sourceTree = "<group>"; };
 		CC63C2AD2219C5A800780259 /* ModelSongLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSongLocal.swift; sourceTree = "<group>"; };
-		CC63C2AF2219C5E400780259 /* ModelNhacViet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelNhacViet.swift; sourceTree = "<group>"; };
-		CC63C2B12219C60600780259 /* ModelNhacTrungQuoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelNhacTrungQuoc.swift; sourceTree = "<group>"; };
 		CC63C2B32219C64600780259 /* ProtocolModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolModel.swift; sourceTree = "<group>"; };
 		CC63C2B52219C68A00780259 /* ModelNhacOnline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelNhacOnline.swift; sourceTree = "<group>"; };
 		CC63C2B72219CEBD00780259 /* LoadImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadImage.swift; sourceTree = "<group>"; };
@@ -305,6 +326,7 @@
 		CCCC0D67223BFCD200E49096 /* ModelSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSearch.swift; sourceTree = "<group>"; };
 		CCCC0D6A223C01F400E49096 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		CCCC0D6C223D5D0700E49096 /* ExtensionNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionNavigation.swift; sourceTree = "<group>"; };
+		CCCC0D6F223D615800E49096 /* ExtensionUISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUISearchBar.swift; sourceTree = "<group>"; };
 		CCE27CDA2209BD7E00A781BC /* ListSongController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSongController.swift; sourceTree = "<group>"; };
 		CCE27CDC2209C01900A781BC /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		CCE328C8222AD9F20039CE67 /* KeyBoardPiano.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyBoardPiano.xib; sourceTree = "<group>"; };
@@ -317,7 +339,6 @@
 		CCE328E4222D14320039CE67 /* ListSongsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSongsPresenter.swift; sourceTree = "<group>"; };
 		CCE328E6222D14620039CE67 /* ListSongsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSongsInteractor.swift; sourceTree = "<group>"; };
 		CCE328E8222D14910039CE67 /* ListSongsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSongsRouter.swift; sourceTree = "<group>"; };
-		CCE328EA222D99DC0039CE67 /* UseCaseFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseFirebase.swift; sourceTree = "<group>"; };
 		CCE328EC222D9AB80039CE67 /* ModelListSongs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelListSongs.swift; sourceTree = "<group>"; };
 		CCE328EE222DA6950039CE67 /* CustomLayoutColectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayoutColectionView.swift; sourceTree = "<group>"; };
 		CCE328F1222ED73C0039CE67 /* ListSongsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSongsCell.swift; sourceTree = "<group>"; };
@@ -357,14 +378,139 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CC391398223F8506008B2E0D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CC3913A32240EFA9008B2E0D /* Router */,
+				CC3913A22240EFA2008B2E0D /* Entity */,
+				CC3913A12240EF9C008B2E0D /* Interactor */,
+				CC3913A02240EF98008B2E0D /* Presenter */,
+				CC39139F2240EF91008B2E0D /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		CC39139C223FAFE2008B2E0D /* ServiceLogin */ = {
+			isa = PBXGroup;
+			children = (
+				CC3913A82240EFCB008B2E0D /* Router */,
+				CC3913A72240EFC3008B2E0D /* Entity */,
+				CC3913A62240EFBD008B2E0D /* Interactor */,
+				CC3913A52240EFB8008B2E0D /* Presenter */,
+				CC3913A42240EFB1008B2E0D /* View */,
+			);
+			path = ServiceLogin;
+			sourceTree = "<group>";
+		};
+		CC39139F2240EF91008B2E0D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CC39139A223F9BE4008B2E0D /* LoginViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CC3913A02240EF98008B2E0D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CC3913A92240EFE2008B2E0D /* LoginPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		CC3913A12240EF9C008B2E0D /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				CC3913AB2240F065008B2E0D /* LoginInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		CC3913A22240EFA2008B2E0D /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				CC3913BB224181C2008B2E0D /* AccountUserModel.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		CC3913A32240EFA9008B2E0D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				CC3913AD2240F088008B2E0D /* LoginRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		CC3913A42240EFB1008B2E0D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CC39139D223FB32E008B2E0D /* ServiceLoginViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CC3913A52240EFB8008B2E0D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CC3913AF2240F125008B2E0D /* ServiceLoginPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		CC3913A62240EFBD008B2E0D /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				CC3913B12240F155008B2E0D /* ServiceLoginInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		CC3913A72240EFC3008B2E0D /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		CC3913A82240EFCB008B2E0D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				CC3913B32240F182008B2E0D /* ServiceLoginRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		CC3913B522417AFF008B2E0D /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CC3913B622417B12008B2E0D /* ExtensionUIViewController.swift */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		CC3913B822417D58008B2E0D /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				CC3913B922417D70008B2E0D /* ExtensionUITextField.swift */,
+			);
+			path = UITextField;
+			sourceTree = "<group>";
+		};
+		CC3913BD22420240008B2E0D /* ServiceFacebook */ = {
+			isa = PBXGroup;
+			children = (
+				CC3913BE22420253008B2E0D /* ServiceFacebook.swift */,
+			);
+			path = ServiceFacebook;
+			sourceTree = "<group>";
+		};
 		CC63C2AC2219C58300780259 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
 				CC63C2B52219C68A00780259 /* ModelNhacOnline.swift */,
 				CC80FF95221283C5004E3C79 /* ModelLayoutCell.swift */,
 				CC63C2AD2219C5A800780259 /* ModelSongLocal.swift */,
-				CC63C2AF2219C5E400780259 /* ModelNhacViet.swift */,
-				CC63C2B12219C60600780259 /* ModelNhacTrungQuoc.swift */,
 				CC63C2B32219C64600780259 /* ProtocolModel.swift */,
 				CC96EE8C2226B77C00663CE1 /* Enum.swift */,
 			);
@@ -737,6 +883,8 @@
 		CCC557562173C7F70021844A /* Modun */ = {
 			isa = PBXGroup;
 			children = (
+				CC39139C223FAFE2008B2E0D /* ServiceLogin */,
+				CC391398223F8506008B2E0D /* Login */,
 				CCCC0D56223BDA2400E49096 /* ColorLayout */,
 				CCE93F73222950E500AB9583 /* Detail */,
 				CCCC0D59223BF06900E49096 /* Search */,
@@ -798,14 +946,18 @@
 		CCC557682173EF3B0021844A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CC3913BD22420240008B2E0D /* ServiceFacebook */,
+				CC3913B822417D58008B2E0D /* UITextField */,
 				CC00A7612235904900B261FE /* CustomSegmentedControl.swift */,
+				CC3913B522417AFF008B2E0D /* UIViewController */,
+				CCCC0D71223D617A00E49096 /* UINavigation */,
+				CCCC0D6E223D613E00E49096 /* UISearchbar */,
 				CCB093292228477A000FE5D3 /* UIScreen */,
 				CCB0932822284767000FE5D3 /* ServiceFirebase */,
 				CCB0932722284756000FE5D3 /* UIButton */,
 				CCB0932622284712000FE5D3 /* LoadImageUseNSCache */,
 				CCB0932522284703000FE5D3 /* UICollectionView */,
 				CCB09324222846E2000FE5D3 /* CustomUIViewToPlaySound */,
-				CCCC0D6C223D5D0700E49096 /* ExtensionNavigation.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -831,6 +983,7 @@
 		CCC881CF21711D5F00DC6CB7 /* Piano_App */ = {
 			isa = PBXGroup;
 			children = (
+				CC391399223F9B8E008B2E0D /* Piano_App.entitlements */,
 				CCB0932222284656000FE5D3 /* Resource */,
 				CCC557682173EF3B0021844A /* Common */,
 				CCC557562173C7F70021844A /* Modun */,
@@ -970,8 +1123,8 @@
 		CCCC0D5C223BF7A200E49096 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CCCC0D69223C01D400E49096 /* TableViewSearchCell */,
 				CCCC0D5A223BF0AD00E49096 /* SearchViewController.swift */,
+				CCCC0D69223C01D400E49096 /* TableViewSearchCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1014,6 +1167,22 @@
 				CCCC0D6A223C01F400E49096 /* SearchTableViewCell.swift */,
 			);
 			path = TableViewSearchCell;
+			sourceTree = "<group>";
+		};
+		CCCC0D6E223D613E00E49096 /* UISearchbar */ = {
+			isa = PBXGroup;
+			children = (
+				CCCC0D6F223D615800E49096 /* ExtensionUISearchBar.swift */,
+			);
+			path = UISearchbar;
+			sourceTree = "<group>";
+		};
+		CCCC0D71223D617A00E49096 /* UINavigation */ = {
+			isa = PBXGroup;
+			children = (
+				CCCC0D6C223D5D0700E49096 /* ExtensionNavigation.swift */,
+			);
+			path = UINavigation;
 			sourceTree = "<group>";
 		};
 		CCE27CD92209BD5300A781BC /* ListSong */ = {
@@ -1084,7 +1253,6 @@
 			isa = PBXGroup;
 			children = (
 				CCE328E6222D14620039CE67 /* ListSongsInteractor.swift */,
-				CCE328EA222D99DC0039CE67 /* UseCaseFirebase.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -1188,6 +1356,11 @@
 				TargetAttributes = {
 					CCC881CC21711D5F00DC6CB7 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1338,6 +1511,11 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Piano_App/Pods-Piano_App-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -1346,6 +1524,11 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -1374,19 +1557,21 @@
 				CCBFFBAB2223F72300036745 /* Router.swift in Sources */,
 				CCE328F2222ED73C0039CE67 /* ListSongsCell.swift in Sources */,
 				CCB0931322283E50000FE5D3 /* InfoSongPresenter.swift in Sources */,
+				CC39139E223FB32E008B2E0D /* ServiceLoginViewController.swift in Sources */,
 				CCB0931522283E81000FE5D3 /* InfoSongInteracter.swift in Sources */,
 				CC63C2B42219C64600780259 /* ProtocolModel.swift in Sources */,
 				CCE27CDB2209BD7E00A781BC /* ListSongController.swift in Sources */,
+				CC39139B223F9BE4008B2E0D /* LoginViewController.swift in Sources */,
 				CC63C2B62219C68A00780259 /* ModelNhacOnline.swift in Sources */,
 				CC96EEA02226CEFC00663CE1 /* NhacOnlineInteracter.swift in Sources */,
 				CCE328E7222D14620039CE67 /* ListSongsInteractor.swift in Sources */,
 				CC39791822271F1F003496CD /* GetFrameUIScreen.swift in Sources */,
 				CC80FF98221289A3004E3C79 /* HomeControllerPresenter.swift in Sources */,
-				CC63C2B22219C60600780259 /* ModelNhacTrungQuoc.swift in Sources */,
+				CCCC0D70223D615800E49096 /* ExtensionUISearchBar.swift in Sources */,
 				CCCC0D62223BF81000E49096 /* SearchPresenter.swift in Sources */,
 				CCE93F78222963E200AB9583 /* InfoSongRouter.swift in Sources */,
 				CCE328E9222D14910039CE67 /* ListSongsRouter.swift in Sources */,
-				CC63C2B02219C5E400780259 /* ModelNhacViet.swift in Sources */,
+				CC3913BC224181C2008B2E0D /* AccountUserModel.swift in Sources */,
 				CC00A7622235904900B261FE /* CustomSegmentedControl.swift in Sources */,
 				CCE27CDD2209C01900A781BC /* TableViewCell.swift in Sources */,
 				CC19D78C217BB7FD00CAEE1B /* TableViewCategoryInstrument.swift in Sources */,
@@ -1403,12 +1588,17 @@
 				CCE328CB222ADA760039CE67 /* KeyBoardPiano.swift in Sources */,
 				CCC881E521711D9200DC6CB7 /* PianoViewController.swift in Sources */,
 				CC80FF9C2212B946004E3C79 /* NhacOnlineCell.swift in Sources */,
+				CC3913AE2240F088008B2E0D /* LoginRouter.swift in Sources */,
 				CC63C2B82219CEBD00780259 /* LoadImage.swift in Sources */,
 				CCCC0D5B223BF0AD00E49096 /* SearchViewController.swift in Sources */,
 				CCC557602173C8AA0021844A /* HomeCell.swift in Sources */,
+				CC3913B22240F155008B2E0D /* ServiceLoginInteractor.swift in Sources */,
 				CC63C2BA2219D09A00780259 /* CellConLocal.swift in Sources */,
 				CCE328EF222DA6950039CE67 /* CustomLayoutColectionView.swift in Sources */,
+				CC3913B02240F125008B2E0D /* ServiceLoginPresenter.swift in Sources */,
 				CC19D78E217BB83600CAEE1B /* TableViewListSong.swift in Sources */,
+				CC3913B722417B12008B2E0D /* ExtensionUIViewController.swift in Sources */,
+				CC3913AA2240EFE2008B2E0D /* LoginPresenter.swift in Sources */,
 				CCC557512173C6D50021844A /* LocalSong.swift in Sources */,
 				CC80FF96221283C5004E3C79 /* ModelLayoutCell.swift in Sources */,
 				CCCC0D58223BDA3A00E49096 /* ColorLayout.swift in Sources */,
@@ -1418,13 +1608,16 @@
 				CCCC0D66223BF88E00E49096 /* SearchRouter.swift in Sources */,
 				CC80FF9422128253004E3C79 /* LocalSongsController.swift in Sources */,
 				CC96EE8F2226CB3D00663CE1 /* LocalSongsPresenter.swift in Sources */,
+				CC3913AC2240F065008B2E0D /* LoginInteractor.swift in Sources */,
 				CCE93F76222951A100AB9583 /* LocalSongsRouter.swift in Sources */,
 				CC96EE8D2226B77C00663CE1 /* Enum.swift in Sources */,
 				CCC882872172375400DC6CB7 /* PianoSounds.swift in Sources */,
 				CCCC0D6B223C01F400E49096 /* SearchTableViewCell.swift in Sources */,
 				CC96EE9E2226CE4600663CE1 /* NhacOnlinePresenter.swift in Sources */,
-				CCE328EB222D99DC0039CE67 /* UseCaseFirebase.swift in Sources */,
+				CC3913BF22420253008B2E0D /* ServiceFacebook.swift in Sources */,
 				CC19D78A217BB66400CAEE1B /* ModelCategoryInstrument.swift in Sources */,
+				CC3913BA22417D70008B2E0D /* ExtensionUITextField.swift in Sources */,
+				CC3913B42240F182008B2E0D /* ServiceLoginRouter.swift in Sources */,
 				CCE328E3222D140D0039CE67 /* ListSongs.swift in Sources */,
 				CCE328ED222D9AB80039CE67 /* ModelListSongs.swift in Sources */,
 				CCBFFBA92223EB0100036745 /* Interacter.swift in Sources */,
@@ -1576,15 +1769,16 @@
 			baseConfigurationReference = 6E46A6F8C463E060E1CF3EDA /* Pods-Piano_App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Piano_App/Piano_App.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A7R3F3G78W;
+				DEVELOPMENT_TEAM = 97UGPS2289;
 				INFOPLIST_FILE = Piano_App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Piano-App";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hieunguyen.PianoKaraoke;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1596,15 +1790,16 @@
 			baseConfigurationReference = B4BD7F963C1452793738AABB /* Pods-Piano_App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Piano_App/Piano_App.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A7R3F3G78W;
+				DEVELOPMENT_TEAM = 97UGPS2289;
 				INFOPLIST_FILE = Piano_App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Piano-App";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hieunguyen.PianoKaraoke;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

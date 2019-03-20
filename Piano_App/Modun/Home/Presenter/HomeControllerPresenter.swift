@@ -9,7 +9,7 @@
 import Foundation
 
 protocol HomeControllerPresenter {
-    func dataForRowAt(indexPath: IndexPath) -> [ModelHome]?
+    func dataForCell() -> [ModelHome]?
     
     func numberOfItems(in section: Int) -> Int
     
@@ -17,14 +17,19 @@ protocol HomeControllerPresenter {
     
     func collectionViewLayoutWidth(_ collectionView: HomeControllerInterface, sizeForItemAt indexPath: IndexPath) -> Float
     
-    func viewDidload(_ collectionView: HomeControllerInterface, router: Router)
+    func viewDidload(_ collectionView: HomeControllerInterface)
+    
     func presentSearchViewController()
 }
 class HomeControllerPresenterImp {
     private var interacter: Interacter?
     private var router: Router?
     
-    func inject(interacter: Interacter, router: Router) {
+//    func inject(interacter: Interacter, router: Router) {
+//        self.interacter = interacter
+//        self.router = router
+//    }
+    init(interacter: Interacter, router: Router) {
         self.interacter = interacter
         self.router = router
     }
@@ -35,36 +40,38 @@ extension HomeControllerPresenterImp: HomeControllerPresenter {
         router?.presentSearchViewController()
     }
     
-    func dataForRowAt(indexPath: IndexPath) -> [ModelHome]? {
-        return interacter?.data
+    func dataForCell() -> [ModelHome]? {
+        return interacter?.dataExtra
     }
     
-    func viewDidload(_ collectionView: HomeControllerInterface, router: Router) {
-        inject(interacter: InteracterImp(), router: router)
-        interacter?.getData(collectionView: collectionView)
+    func viewDidload(_ collectionView: HomeControllerInterface) {
+//        inject(interacter: InteracterImp(), router: router)
+        interacter?.getData(completionHandler: { (data) in
+            collectionView.reloadDataCollectionView()
+        })
     }
     
     func numberOfItems(in section: Int) -> Int {
-        return interacter?.data.count ?? 0
+        return interacter?.dataExtra.count ?? 0
     }
     
     func collectionViewLayoutWidth(_ collectionView: HomeControllerInterface,sizeForItemAt indexPath: IndexPath) -> Float {
-        switch interacter?.data[indexPath.row] {
+        switch interacter?.dataExtra[indexPath.row] {
         case is SongsLocal:
-            return interacter?.data[indexPath.row].widthSize ?? 0
+            return interacter?.dataExtra[indexPath.row].widthSize ?? 0
         case is NhacOnline:
-            return interacter?.data[indexPath.row].widthSize ?? 0
+            return interacter?.dataExtra[indexPath.row].widthSize ?? 0
         default:
             return 0
         }
     }
     
     func collectionViewLayoutHeight(_ collectionView: HomeControllerInterface, sizeForItemAt indexPath: IndexPath) -> Float {
-        switch interacter?.data[indexPath.row] {
+        switch interacter?.dataExtra[indexPath.row] {
         case is SongsLocal:
-            return interacter?.data[indexPath.row].heighthSize ?? 0
+            return interacter?.dataExtra[indexPath.row].heighthSize ?? 0
         case is NhacOnline:
-            return interacter?.data[indexPath.row].heighthSize ?? 0
+            return interacter?.dataExtra[indexPath.row].heighthSize ?? 0
         default:
             return 0
         }

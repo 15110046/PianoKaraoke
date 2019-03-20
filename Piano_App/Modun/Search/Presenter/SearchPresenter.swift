@@ -21,11 +21,9 @@ protocol SearchPresenter {
 class SearchPresenterImp {
     private var interactor: SearchInteractor?
     private var router: SearchRouter?
-    init(interactor: SearchInteractor, router: SearchRouter, tbView: SearchViewControllerInterface) {
+    init(interactor: SearchInteractor, router: SearchRouter) {
         self.interactor = interactor
         self.router = router
-      
-//        tbView.reloadData()
     }
 }
 extension SearchPresenterImp: SearchPresenter {

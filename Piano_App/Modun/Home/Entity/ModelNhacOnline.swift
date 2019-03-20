@@ -6,8 +6,7 @@
 //  Copyright © 2019 com.nguyenhieu.demo. All rights reserved.
 //
 
-import Foundation
-//import UIKit
+
 
 struct NhacOnline: ModelHome {
     
@@ -33,15 +32,14 @@ struct NhacOnline: ModelHome {
         self.category = Category(rawValue: data["title"] as? String ?? "") ?? .unknown
         self.key = data["key"] as? String ?? ""
         let dicSongs = data["arraySongs"] as? [String: [String: Any]] ?? ["":["":""]]
-//        self.arrayNhacOnline = dicSongs.map{ArrayNhacOnline.init(object: $0.value)}
+        //        self.arrayNhacOnline = dicSongs.map{ArrayNhacOnline.init(object: $0.value)}
         var arrImp = [ArrayNhacOnline]()
         var tam = 0
         for i in dicSongs {
             if tam < 6 {
-                 arrImp.append(ArrayNhacOnline(object: i.value))
-                 tam = tam + 1
+                arrImp.append(ArrayNhacOnline(object: i.value))
+                tam = tam + 1
             }
-            print(index)
         }
         self.arrayNhacOnline = arrImp
     }
@@ -58,17 +56,10 @@ struct ArrayNhacOnline: ModelDetailCellSongs {
     var nameSong: String
     var imageSong: String
     var idDetail: String
-
+    
     init(object:[String: Any]) {
-        if let dic = object as? Dictionary<String, Any> {
-            self.nameSong = dic["nameSong"] as?     String ?? ""
-            self.imageSong = dic["imageSong"] as?   String ?? ""
-            self.idDetail = dic["idDetail"] as?         String ?? ""
-        }
-        else {
-            self.nameSong = ""
-            self.imageSong = ""
-            self.idDetail = ""
-        }
+        self.nameSong  = object["nameSong"]  as?   String ?? ""
+        self.imageSong = object["imageSong"] as?   String ?? ""
+        self.idDetail  = object["idDetail"]  as?   String ?? ""
     }
 }

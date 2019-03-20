@@ -18,7 +18,6 @@ class ListSongsInteractorImp: ListSongsInteractor {
     var dataListSongs: [ModelListSongs]?
     
     var keyRoot: String?
-    
     init(key: String?,clsView: HomeControllerInterface) {
         self.keyRoot = key
         
@@ -32,6 +31,4 @@ class ListSongsInteractorImp: ListSongsInteractor {
             }
         }
     }
-    
-    
 }

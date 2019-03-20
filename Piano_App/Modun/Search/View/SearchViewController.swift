@@ -60,7 +60,6 @@ class SearchViewController: UIViewController {
         tblSearch.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
         tblSearch.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
         tblSearch.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-        //        tblSearch.isHidden = true
     }
     private func createSearchBar(placeholder: String, delegate: UISearchBarDelegate) -> UISearchController {
         let searchController = UISearchController(searchResultsController: nil)
@@ -105,34 +104,7 @@ extension SearchViewController: UITableViewDelegate {
         presenter?.pushTo(key: dataForRowAfterSearch[indexPath.row].key)
     }
 }
-extension UISearchBar {
-    func changeBackgroundColorTextFiled(color: UIColor) {
-        for view in self.subviews {
-            for subview in view.subviews {
-                if subview is UITextField {
-                    let textField: UITextField = subview as? UITextField ?? UITextField()
-                    textField.backgroundColor = color
-                }
-            }
-        }
-    }
-    func changeBackgroundUISearchBar() {
-        for subView in self.subviews {
-            for view in subView.subviews {
-                if view.isKind(of: NSClassFromString("UINavigationButton")!) {
-                    let cancelButton = view as! UIButton
-                    cancelButton.setTitleColor(UIColor.hexStringToUIColor(hex: "FFFFFF", alpha: 1), for: .normal)
-                    cancelButton.setTitle("Huỷ", for: .normal)
-                }
-                if view.isKind(of: NSClassFromString("UISearchBarBackground")!) {
-                    let imageView = view as! UIImageView
-                    //                    imageView.removeFromSuperview()
-                    imageView.backgroundColor = .red
-                }
-            }
-        }
-    }
-}
+
 protocol SearchViewControllerInterface {
     func reloadData()
 }

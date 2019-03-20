@@ -6,11 +6,18 @@
 //  Copyright © 2019 com.nguyenhieu.demo. All rights reserved.
 //
 
-import Foundation
 enum NameCell: String {
     case LocalSongs = "LocalSongs"
     case OnlineSongs = "OnlineSongs"
     var result: String {
         return self.rawValue
     }
+}
+enum ListScreen: Int {
+    case InfoSong = 1
+    case ListSongs = 2
+}
+enum TypeCell: Int {
+    case CellLocal = 1
+    case CellOnline = 2
 }

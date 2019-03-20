@@ -6,8 +6,8 @@
 //  Copyright © 2019 com.nguyenhieu.demo. All rights reserved.
 //
 
-import Foundation
 import UIKit
+
 protocol Router {
     func present(from screen: TypeCell, to manHinh: ListScreen, data: ModelDetailCellSongs, dataOnline: NhacOnline?)
     func presentSearchViewController()
@@ -20,7 +20,7 @@ extension HomeController: Router {
         let navigation = UINavigationController(rootViewController: searchViewController)
         navigation.setUpUINaviationItem()
         let router = SearchRouterImp(navigationController: navigation,viewController: searchViewController)
-        searchViewController.inject(presenter: SearchPresenterImp(interactor: interactor, router: router, tbView: searchViewController))
+        searchViewController.inject(presenter: SearchPresenterImp(interactor: interactor, router: router))
         self.present(navigation, animated: false, completion: nil)
         navigation.navigationBar.isHidden = true
     }
@@ -58,11 +58,3 @@ extension HomeController: Router {
     }
 }
 
-enum ListScreen: Int {
-    case InfoSong = 1
-    case ListSongs = 2
-}
-enum TypeCell: Int {
-    case CellLocal = 1
-    case CellOnline = 2
-}
