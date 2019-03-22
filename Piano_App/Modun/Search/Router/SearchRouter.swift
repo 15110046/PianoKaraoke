@@ -26,7 +26,7 @@ extension SearchRouterImp: SearchRouter {
     }
     func pushTo(key: String) {
         let vc = InfoSong()
-        vc.inject(presnter: InfoSongPresenterImp(interacter: InfoSongInteracterImp(keyIdDetail: key, dataLocal: nil), router: InfoSongRouterImp(navtionController: self.navigationController)))
+        vc.inject(presnter: InfoSongPresenterImp(interacter: InfoSongInteracterImp(keyIdDetail: key, dataLocal: nil), router: InfoSongRouterImp(viewController: vc)))
         navigationController?.pushViewController(vc, animated: true)
         self.navigationController?.navigationBar.isHidden = false
     }

@@ -13,7 +13,7 @@ import UIKit
 class LoadImageFromService {
     static let share = LoadImageFromService()
     private let imagecache = NSCache<AnyObject, AnyObject>()
-    private let defaultImage = UIImage(named: "url")
+    private let defaultImage = UIImage(named: "imgDefault")
     
     func loadPhotoFromService(_ url: String, completion: @escaping (UIImage) -> ())  {
         if let imageFromCache = imagecache.object(forKey: url as AnyObject) as? UIImage {

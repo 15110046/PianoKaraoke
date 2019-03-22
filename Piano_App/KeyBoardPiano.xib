@@ -1206,6 +1206,38 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
         </view>
+        <view contentMode="scaleToFill" id="tLW-lp-tZ2">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V1F-HJ-7Op" customClass="CustomSegmentedControl" customModule="Piano_App" customModuleProvider="target">
+                    <rect key="frame" x="101" y="247" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" red="0.97514414959999995" green="1" blue="0.4201287722" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="selectorColor">
+                            <color key="value" red="0.15352868683820359" green="0.75686274509999996" blue="0.18482424985093224" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="commaSeparatedButtonTitles" value="âets, tdtudu"/>
+                        <userDefinedRuntimeAttribute type="color" keyPath="selectorTextColor">
+                            <color key="value" red="0.97514414959999995" green="1" blue="0.4201287722" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="0.23532319360000001" blue="0.3937154336" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <viewLayoutGuide key="safeArea" id="MUL-Hg-ClH"/>
+            <point key="canvasLocation" x="682" y="-898"/>
+        </view>
     </objects>
     <resources>
         <image name="KeyBlack" width="154" height="648"/>

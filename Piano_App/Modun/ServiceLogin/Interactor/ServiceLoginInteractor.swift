@@ -12,7 +12,6 @@ protocol ServiceLoginInteractor {
 }
 class ServiceLoginInteractorImp {
     private var uid: String?
-//    UserDefaults.standard.value(forKeyPath: "UID") as? String ?? "12313"
     init(uid: String?) {
         self.uid = uid
     }

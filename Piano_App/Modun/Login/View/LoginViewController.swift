@@ -9,6 +9,7 @@
 import UIKit
 import FBSDKLoginKit
 class LoginViewController: UIViewController {
+    
     private var presenter: LoginPresenter?
     func inject(presenter: LoginPresenter) {
         self.presenter = presenter
@@ -139,17 +140,30 @@ class LoginViewController: UIViewController {
     }
     
     @objc private func clickLoginFB() {
-        let login = FBSDKLoginManager()
         print("click login")
-        login.logIn(withReadPermissions: ["public_profile"], from: self) {[weak self] (result, error) in
+      
+        ServiceFacebook.share.loginIn(withReadPermissions: ["public_profile"], from: self) { [weak self] (result) in
             guard let strongSelf = self else { return }
-            if error != nil {
-                print(error ?? "")
-            }
-            else {
+            switch result {
+            case .error(let errorMess):
+                strongSelf.showAlert(stringTitle: "Loi", stringMessages: errorMess)
+            case .success(let _):
                 strongSelf.presenter?.moveToScreen()
             }
         }
+//        ServiceFacebook.share.login.logIn(withReadPermissions: ["public_profile"], from: self) {[weak self] (result, error) in
+//            guard let strongSelf = self else { return }
+//            if error != nil {
+//                print(error ?? "")
+//                self?.showAlert(withTitle: "Lỗi", withMessage: error as? String ?? "")
+//            }
+//            else if (result?.isCancelled)! {
+//            }
+//            else {
+//                strongSelf.presenter?.moveToScreen()
+//            }
+//    }
+        
     }
     
     @objc private func clickLoginButton() {

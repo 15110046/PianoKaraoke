@@ -23,7 +23,7 @@ class ListSongsRouterImp {
 extension ListSongsRouterImp: ListSongsRouter {
     func present(keyIdDetail: String?) {
         let vc = InfoSong()
-        vc.inject(presnter: InfoSongPresenterImp(interacter: InfoSongInteracterImp(keyIdDetail: keyIdDetail, dataLocal: nil), router: InfoSongRouterImp(navtionController: navtionController)))
+        vc.inject(presnter: InfoSongPresenterImp(interacter: InfoSongInteracterImp(keyIdDetail: keyIdDetail, dataLocal: nil), router: InfoSongRouterImp(viewController: vc)))
         navtionController?.pushViewController(vc, animated: false)
         navtionController?.isNavigationBarHidden = false
     }

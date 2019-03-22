@@ -19,6 +19,19 @@ enum LoginResul {
 class ServiceOnline {
     static var share = ServiceOnline()
     private var ref = Database.database().reference()
+    func getDataUser(uid: String, comletion: @escaping (_ data: Any?) -> ()) {
+        ref.child("User").child(uid).observe(.value) { (snapShot) in
+            guard let value = snapShot.value else {
+                DispatchQueue.main.async {
+                    comletion(nil)
+                }
+                return
+            }
+            DispatchQueue.main.async {
+                comletion(value)
+            }
+        }
+    }
     func pushData(uid: String, data: AccountUserModel) {
         ref.child("User").child(uid).setValue(["UID":data.uid, "avata": data.url, "name": data.name])
     }

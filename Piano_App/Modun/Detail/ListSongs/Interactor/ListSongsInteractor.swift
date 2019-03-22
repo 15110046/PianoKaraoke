@@ -22,7 +22,7 @@ class ListSongsInteractorImp: ListSongsInteractor {
         self.keyRoot = key
         
         ServiceOnline.share.getDataListSongs(param: keyRoot ?? "") { [weak self] (snapShot) in
-            guard let data = snapShot  as? [String: [String: String]],
+            guard let data = snapShot  as? [String: [String: Any]],
                 let strongSelf = self
                 else { return }
             strongSelf.dataListSongs = data.map{ ModelListSongs(object: $0.value) }

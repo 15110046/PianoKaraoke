@@ -22,10 +22,21 @@ class LoginPresenterImp {
 }
 extension LoginPresenterImp: LoginPresenter {
     func moveToScreen() {
-        interactor?.registerAccountFb(completion: { [weak self] (uid) in
+//        interactor?.registerAccountFb(completion: { [weak self] (uid) in
+//            guard let strongSelf = self else { return }
+//            strongSelf.interactor?.registerAccountFb(completion: { (uid) in
+//                 strongSelf.router?.present(uid: uid)
+//            })
+//
+//        })
+        interactor?.paserDataFormFbSDK(completion: { [weak self](dataFb) in
             guard let strongSelf = self else { return }
-            UserDefaults.standard.set(uid, forKey: "UID")
-            strongSelf.router?.present(uid: uid)
+            
+            DispatchQueue.main.async {
+                strongSelf.interactor?.pushDataToFirebaseService(uid: dataFb.uid, data: dataFb)
+                
+                strongSelf.router?.present(uid: dataFb.uid)
+            }
         })
     }
     func moveToHome(username: String, passwd: String, alert: LoginViewControllerInterface) {

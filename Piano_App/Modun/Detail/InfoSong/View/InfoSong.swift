@@ -221,7 +221,7 @@ class InfoSong: UIViewController {
                 case 0:
                         self.lblContentAcousticsNote.text = dataOnline.contentKaraoke
                 case 1:
-                        self.lblContentAcousticsNote.text = "dataOnline.contentKaraoke"
+                        self.lblContentAcousticsNote.text = dataOnline.karaokeLyric
                 default:
                     break
                 }

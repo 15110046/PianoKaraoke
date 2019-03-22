@@ -49,7 +49,7 @@ extension ListSongs: UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListSongsCell", for: indexPath)
             as? ListSongsCell
             else { return UICollectionViewCell() }
-        cell.config(nameSong: data[indexPath.row].nameSong, nameImageSong: data[indexPath.row].imageSong) { [weak self](height) in
+        cell.config(nameSong: data[indexPath.row].nameSong, nameImageSong: data[indexPath.row].imageSong, level: data[indexPath.row].level) { [weak self] (height) in
             guard let self = self else { return }
             self.arrHeightImage.append(height)
         }
@@ -89,6 +89,10 @@ extension ListSongs: CustomLayoutColectionViewDelegate {
 }
 
 extension ListSongs: HomeControllerInterface {
+    func reloadDataTableView() {
+        
+    }
+    
     func reloadDataCollectionView() {
         collectionViewListSongs.reloadData()
     }

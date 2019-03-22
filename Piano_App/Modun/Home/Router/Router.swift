@@ -30,7 +30,7 @@ extension HomeController: Router {
             switch manHinh {
             case ListScreen.InfoSong:
                 let vc = InfoSong()
-                vc.inject(presnter: InfoSongPresenterImp.init(interacter: InfoSongInteracterImp.init(keyIdDetail: nil, dataLocal: data), router: InfoSongRouterImp(navtionController: self.navigationController)))
+                vc.inject(presnter: InfoSongPresenterImp.init(interacter: InfoSongInteracterImp.init(keyIdDetail: nil, dataLocal: data), router: InfoSongRouterImp(viewController: vc)))
                 self.navigationController?.pushViewController(vc, animated: true)
                 self.navigationController?.isNavigationBarHidden = false
             default:
@@ -43,7 +43,7 @@ extension HomeController: Router {
             switch manHinh {
             case ListScreen.InfoSong:
                 let vc = InfoSong()
-                vc.inject(presnter: InfoSongPresenterImp.init(interacter: InfoSongInteracterImp.init(keyIdDetail: keyIdDetailInfoSong.idDetail, dataLocal: nil), router: InfoSongRouterImp(navtionController: self.navigationController)))
+                vc.inject(presnter: InfoSongPresenterImp.init(interacter: InfoSongInteracterImp.init(keyIdDetail: keyIdDetailInfoSong.idDetail, dataLocal: nil), router: InfoSongRouterImp(viewController: vc)))
                 self.navigationController?.isNavigationBarHidden = false
                 self.navigationController?.pushViewController(vc, animated: true)
             case ListScreen.ListSongs:
