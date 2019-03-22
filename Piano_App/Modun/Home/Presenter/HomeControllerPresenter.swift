@@ -17,14 +17,17 @@ protocol HomeControllerPresenter {
     
     func collectionViewLayoutWidth(_ collectionView: HomeControllerInterface, sizeForItemAt indexPath: IndexPath) -> Float
     
-    func viewDidload(_ collectionView: HomeControllerInterface)
+    func viewDidload(_ reloadData: HomeControllerInterface)
     
     func presentSearchViewController()
+    
+    func numberOfRow() -> Int
+    
+    func dataForRowTableView() -> [SiderTableView]
 }
 class HomeControllerPresenterImp {
     private var interacter: Interacter?
     private var router: Router?
-    
 //    func inject(interacter: Interacter, router: Router) {
 //        self.interacter = interacter
 //        self.router = router
@@ -36,6 +39,12 @@ class HomeControllerPresenterImp {
 }
 
 extension HomeControllerPresenterImp: HomeControllerPresenter {
+     func dataForRowTableView() -> [SiderTableView] {
+        return interacter?.dataUserExtra ?? []
+    }
+    func numberOfRow() -> Int {
+        return interacter?.dataUserExtra.count ?? 0
+    }
     func presentSearchViewController() {
         router?.presentSearchViewController()
     }
@@ -44,10 +53,12 @@ extension HomeControllerPresenterImp: HomeControllerPresenter {
         return interacter?.dataExtra
     }
     
-    func viewDidload(_ collectionView: HomeControllerInterface) {
-//        inject(interacter: InteracterImp(), router: router)
-        interacter?.getData(completionHandler: { (data) in
-            collectionView.reloadDataCollectionView()
+    func viewDidload(_ reloadData: HomeControllerInterface) {
+        interacter?.getData(completionHandler: {
+            reloadData.reloadDataCollectionView()
+        })
+        interacter?.getInfoUserFormServiceOnline(completion: {
+            reloadData.reloadDataTableView()
         })
     }
     

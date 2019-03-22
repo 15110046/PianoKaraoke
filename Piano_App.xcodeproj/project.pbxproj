@@ -13,7 +13,6 @@
 		CC19D78C217BB7FD00CAEE1B /* TableViewCategoryInstrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC19D78B217BB7FD00CAEE1B /* TableViewCategoryInstrument.swift */; };
 		CC19D78E217BB83600CAEE1B /* TableViewListSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC19D78D217BB83600CAEE1B /* TableViewListSong.swift */; };
 		CC22DA7721773A1300BA6030 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC22DA7621773A1300BA6030 /* Storyboard.storyboard */; };
-		CC22DA7921773A3400BA6030 /* ViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22DA7821773A3400BA6030 /* ViewControllerTest.swift */; };
 		CC39139B223F9BE4008B2E0D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC39139A223F9BE4008B2E0D /* LoginViewController.swift */; };
 		CC39139E223FB32E008B2E0D /* ServiceLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC39139D223FB32E008B2E0D /* ServiceLoginViewController.swift */; };
 		CC3913AA2240EFE2008B2E0D /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3913A92240EFE2008B2E0D /* LoginPresenter.swift */; };
@@ -26,6 +25,9 @@
 		CC3913BA22417D70008B2E0D /* ExtensionUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3913B922417D70008B2E0D /* ExtensionUITextField.swift */; };
 		CC3913BC224181C2008B2E0D /* AccountUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3913BB224181C2008B2E0D /* AccountUserModel.swift */; };
 		CC3913BF22420253008B2E0D /* ServiceFacebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3913BE22420253008B2E0D /* ServiceFacebook.swift */; };
+		CC3913C222421551008B2E0D /* TableViewCellAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3913C122421551008B2E0D /* TableViewCellAccount.swift */; };
+		CC3913C42242E4C3008B2E0D /* CellLogout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3913C32242E4C3008B2E0D /* CellLogout.swift */; };
+		CC3913C82243D76B008B2E0D /* ViewControllerDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3913C72243D76B008B2E0D /* ViewControllerDemo.swift */; };
 		CC39791822271F1F003496CD /* GetFrameUIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC39791722271F1F003496CD /* GetFrameUIScreen.swift */; };
 		CC63C2AE2219C5A800780259 /* ModelSongLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC63C2AD2219C5A800780259 /* ModelSongLocal.swift */; };
 		CC63C2B42219C64600780259 /* ProtocolModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC63C2B32219C64600780259 /* ProtocolModel.swift */; };
@@ -184,7 +186,6 @@
 		CC19D78B217BB7FD00CAEE1B /* TableViewCategoryInstrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCategoryInstrument.swift; sourceTree = "<group>"; };
 		CC19D78D217BB83600CAEE1B /* TableViewListSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewListSong.swift; sourceTree = "<group>"; };
 		CC22DA7621773A1300BA6030 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
-		CC22DA7821773A3400BA6030 /* ViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTest.swift; sourceTree = "<group>"; };
 		CC391399223F9B8E008B2E0D /* Piano_App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Piano_App.entitlements; sourceTree = "<group>"; };
 		CC39139A223F9BE4008B2E0D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CC39139D223FB32E008B2E0D /* ServiceLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLoginViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +199,9 @@
 		CC3913B922417D70008B2E0D /* ExtensionUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUITextField.swift; sourceTree = "<group>"; };
 		CC3913BB224181C2008B2E0D /* AccountUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountUserModel.swift; sourceTree = "<group>"; };
 		CC3913BE22420253008B2E0D /* ServiceFacebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFacebook.swift; sourceTree = "<group>"; };
+		CC3913C122421551008B2E0D /* TableViewCellAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellAccount.swift; sourceTree = "<group>"; };
+		CC3913C32242E4C3008B2E0D /* CellLogout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellLogout.swift; sourceTree = "<group>"; };
+		CC3913C72243D76B008B2E0D /* ViewControllerDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDemo.swift; sourceTree = "<group>"; };
 		CC39791722271F1F003496CD /* GetFrameUIScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFrameUIScreen.swift; sourceTree = "<group>"; };
 		CC63C2AD2219C5A800780259 /* ModelSongLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSongLocal.swift; sourceTree = "<group>"; };
 		CC63C2B32219C64600780259 /* ProtocolModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolModel.swift; sourceTree = "<group>"; };
@@ -503,6 +507,15 @@
 				CC3913BE22420253008B2E0D /* ServiceFacebook.swift */,
 			);
 			path = ServiceFacebook;
+			sourceTree = "<group>";
+		};
+		CC3913C02242151F008B2E0D /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CC3913C122421551008B2E0D /* TableViewCellAccount.swift */,
+				CC3913C32242E4C3008B2E0D /* CellLogout.swift */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 		CC63C2AC2219C58300780259 /* Entity */ = {
@@ -874,6 +887,7 @@
 		CCBFFBA72223EAC700036745 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CC3913C02242151F008B2E0D /* TableViewCell */,
 				CC80FF91221277BF004E3C79 /* HomeController.swift */,
 				CC80FFA12212BFC3004E3C79 /* CollectionViewCell */,
 			);
@@ -946,9 +960,9 @@
 		CCC557682173EF3B0021844A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CC00A7612235904900B261FE /* CustomSegmentedControl.swift */,
 				CC3913BD22420240008B2E0D /* ServiceFacebook */,
 				CC3913B822417D58008B2E0D /* UITextField */,
-				CC00A7612235904900B261FE /* CustomSegmentedControl.swift */,
 				CC3913B522417AFF008B2E0D /* UIViewController */,
 				CCCC0D71223D617A00E49096 /* UINavigation */,
 				CCCC0D6E223D613E00E49096 /* UISearchbar */,
@@ -989,13 +1003,13 @@
 				CCC557562173C7F70021844A /* Modun */,
 				CCC881D021711D6000DC6CB7 /* AppDelegate.swift */,
 				CCE328CA222ADA760039CE67 /* KeyBoardPiano.swift */,
+				CC3913C72243D76B008B2E0D /* ViewControllerDemo.swift */,
 				CC80FFA722154A7A004E3C79 /* GoogleService-Info.plist */,
 				CCE328C8222AD9F20039CE67 /* KeyBoardPiano.xib */,
 				CCC881D721711D6000DC6CB7 /* Assets.xcassets */,
 				CCC881D921711D6000DC6CB7 /* LaunchScreen.storyboard */,
 				CCC881DC21711D6000DC6CB7 /* Info.plist */,
 				CCC881E421711D9200DC6CB7 /* PianoViewController.swift */,
-				CC22DA7821773A3400BA6030 /* ViewControllerTest.swift */,
 				CC22DA7621773A1300BA6030 /* Storyboard.storyboard */,
 			);
 			path = Piano_App;
@@ -1552,6 +1566,7 @@
 				CCC881D321711D6000DC6CB7 /* ViewController.swift in Sources */,
 				CCC557642173CD8E0021844A /* ExtensionCollection.swift in Sources */,
 				CCE93F80222A35FB00AB9583 /* ModelInfoSong.swift in Sources */,
+				CC3913C82243D76B008B2E0D /* ViewControllerDemo.swift in Sources */,
 				CC80FFA42212C060004E3C79 /* CellTopImageBottomTitle.swift in Sources */,
 				CC80FFA622154502004E3C79 /* CellImageViewFull.swift in Sources */,
 				CCBFFBAB2223F72300036745 /* Router.swift in Sources */,
@@ -1561,6 +1576,7 @@
 				CCB0931522283E81000FE5D3 /* InfoSongInteracter.swift in Sources */,
 				CC63C2B42219C64600780259 /* ProtocolModel.swift in Sources */,
 				CCE27CDB2209BD7E00A781BC /* ListSongController.swift in Sources */,
+				CC3913C222421551008B2E0D /* TableViewCellAccount.swift in Sources */,
 				CC39139B223F9BE4008B2E0D /* LoginViewController.swift in Sources */,
 				CC63C2B62219C68A00780259 /* ModelNhacOnline.swift in Sources */,
 				CC96EEA02226CEFC00663CE1 /* NhacOnlineInteracter.swift in Sources */,
@@ -1577,7 +1593,6 @@
 				CC19D78C217BB7FD00CAEE1B /* TableViewCategoryInstrument.swift in Sources */,
 				CCE328E5222D14320039CE67 /* ListSongsPresenter.swift in Sources */,
 				CC63C2BE2219D2D700780259 /* InfoSong.swift in Sources */,
-				CC22DA7921773A3400BA6030 /* ViewControllerTest.swift in Sources */,
 				CC63C2AE2219C5A800780259 /* ModelSongLocal.swift in Sources */,
 				CCC882A8217272C900DC6CB7 /* Tangent.swift in Sources */,
 				CCAC39CD2215AAE800D89162 /* ServiceFirebase.swift in Sources */,
@@ -1613,6 +1628,7 @@
 				CC96EE8D2226B77C00663CE1 /* Enum.swift in Sources */,
 				CCC882872172375400DC6CB7 /* PianoSounds.swift in Sources */,
 				CCCC0D6B223C01F400E49096 /* SearchTableViewCell.swift in Sources */,
+				CC3913C42242E4C3008B2E0D /* CellLogout.swift in Sources */,
 				CC96EE9E2226CE4600663CE1 /* NhacOnlinePresenter.swift in Sources */,
 				CC3913BF22420253008B2E0D /* ServiceFacebook.swift in Sources */,
 				CC19D78A217BB66400CAEE1B /* ModelCategoryInstrument.swift in Sources */,

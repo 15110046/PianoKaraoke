@@ -43,13 +43,14 @@ class ListSongsCell: UICollectionViewCell {
         return view
     }()
     
-    func config(nameSong: String, nameImageSong: String, completion: @escaping (CGFloat) -> ())  {
+    func config(nameSong: String, nameImageSong: String, level: Int ,completion: @escaping (CGFloat) -> ())  {
         self.nameSong.text = nameSong
         LoadImageFromService.share.loadPhotoFromService(nameImageSong) { [weak self] (image) in
             guard let self = self else { return }
             self.imageSong.image = image
             completion(self.imageSong.bounds.size.height)
         }
+        self.viewNgoiSao.config(numberStars: level)
     }
     
     override init(frame: CGRect) {

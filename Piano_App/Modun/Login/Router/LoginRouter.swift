@@ -18,6 +18,7 @@ extension LoginViewController: LoginRouter {
         let navigation = UINavigationController(rootViewController: homeVC)
         navigation.setUpUINaviationItem()
         let interactor = InteracterImp(uid: uid)
+        UserDefaults.standard.set(uid, forKey: "UID")
         homeVC.inject(presenter: HomeControllerPresenterImp(interacter: interactor, router: homeVC))
         self.present(navigation, animated: false, completion: nil)
     }

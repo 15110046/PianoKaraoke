@@ -9,21 +9,28 @@
 import UIKit
 
 protocol InfoSongRouter {
-    var navtionController: UINavigationController? { get }
+//    var navtionController: UINavigationController? { get }
+    var viewController: UIViewController? { get }
     func present(link: String?, nameSong: String?, typeCellInit: TypeCell?)
 }
 class InfoSongRouterImp {
-    var navtionController: UINavigationController?
+//    var navtionController: UINavigationController?
+//
+//    init(navtionController: UINavigationController?) {
+//        self.navtionController = navtionController
+//    }
+    var viewController: UIViewController?
     
-    init(navtionController: UINavigationController?) {
-        self.navtionController = navtionController
+    init(viewController: UIViewController?) {
+        self.viewController = viewController
     }
 }
 extension InfoSongRouterImp: InfoSongRouter {
     func present(link: String?,nameSong: String?, typeCellInit: TypeCell?) {
         let vc = instantiate(ViewController.self)
         vc.config(link: link, nameSong: nameSong, typeCellInitViewController: typeCellInit)
-        navtionController?.pushViewController(vc, animated: true)
-        navtionController?.isNavigationBarHidden = false
+//        navtionController?.pushViewController(vc, animated: true)
+        self.viewController?.navigationController?.pushViewController(vc, animated: true)
+        self.viewController?.navigationController?.isNavigationBarHidden = false
     }
 }

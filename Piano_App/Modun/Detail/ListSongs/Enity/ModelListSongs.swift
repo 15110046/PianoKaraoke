@@ -12,9 +12,11 @@ struct ModelListSongs {
     var nameSong: String
     var imageSong: String
     var idDetail: String
-    init(object:[String: String]) {
-        self.nameSong = object["nameSong"] ?? ""
-        self.imageSong = object["imageSong"] ?? ""
-        self.idDetail = object["idDetail"] ?? ""
+    var level: Int
+    init(object:[String: Any]) {
+        self.nameSong = object["nameSong"] as? String ?? "abc"
+        self.imageSong = object["imageSong"] as? String ?? ""
+        self.idDetail = object["idDetail"] as? String ?? ""
+        self.level = object["level"] as? Int ?? 0
     }
 }

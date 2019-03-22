@@ -22,10 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        
-        
        
-        if UserDefaults.standard.value(forKey: "UID") == nil {
+        if  UserDefaults.standard.string(forKey: "UID") == nil {
              let loginVC = LoginViewController()
             loginVC.inject(presenter: LoginPresenterImp(interactor: LoginInteractorImp(), router: loginVC))
 //            navigationController = UINavigationController(rootViewController: loginVC)
@@ -34,8 +32,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         else {
             let mainVC = HomeController()
-            mainVC.inject(presenter: HomeControllerPresenterImp(interacter: InteracterImp(uid: "123"), router: mainVC))
+            mainVC.inject(presenter: HomeControllerPresenterImp(interacter: InteracterImp(uid:  UserDefaults.standard.string(forKey: "UID")), router: mainVC))
             navigationController = UINavigationController(rootViewController: mainVC)
+            print("UserDefaults:    \(UserDefaults.standard.string(forKey: "UID"))")
             window?.rootViewController = navigationController
             customBackButtonNavigation()
             navigationController?.setUpUINaviationItem()

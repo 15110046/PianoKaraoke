@@ -10,6 +10,7 @@ import UIKit
 
 protocol HomeControllerInterface {
     func reloadDataCollectionView()
+    func reloadDataTableView()
 }
 class HomeController: UIViewController {
     //presenter
@@ -40,6 +41,9 @@ class HomeController: UIViewController {
         tbl.translatesAutoresizingMaskIntoConstraints = false
         tbl.delegate = self
         tbl.dataSource = self
+        tbl.separatorColor = .white
+        tbl.register(TableViewCellAccount.self, forCellReuseIdentifier: "TableViewCellAccount")
+        tbl.register(CellLogout.self, forCellReuseIdentifier: "CellLogout")
         return tbl
     }()
     private func mapUI() {
@@ -77,7 +81,6 @@ class HomeController: UIViewController {
     private var constrainsWitdhTableViewAccountIsZero: NSLayoutConstraint?
     private let witdh = 3/4*UIScreen.main.bounds.size.width
     private func autoLayoutTableViewAccount() {
-        
         constrainsWitdhTableViewAccountIsZero =  tableViewAccount.widthAnchor.constraint(equalToConstant: 0)
         let witdhConstrain = tableViewAccount.widthAnchor.constraint(equalToConstant: witdh)
         tableViewAccount.leftAnchor.constraint(equalTo: view.leftAnchor, constant: -witdh).isActive = true
@@ -89,13 +92,15 @@ class HomeController: UIViewController {
         self.presenter?.presentSearchViewController()
     }
     @objc private func clickMoreBar() {
-       UserDefaults.standard.removeObject(forKey: "UID")
+        
         switch isTapMoreButton {
         case true: isTapMoreButton = false
         case false: isTapMoreButton = true
         }
+//        UserDefaults.standard.removeObject(forKey: "UID")
+        print("userdefault: \(UserDefaults.standard.string(forKey: "UID"))")
     }
-
+    
     private func autoLayoutCollectionViewHome() {
         collectionViewHome.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 0).isActive = true
         collectionViewHome.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
@@ -107,14 +112,13 @@ class HomeController: UIViewController {
         self.presenter = presenter
     }
     // vòng đời
-    
+    private let titleHome = "Home"
     override func viewDidLoad() {
         super.viewDidLoad()
         mapUI()
-//        presenter = HomeControllerPresenterImp()
+        //        presenter = HomeControllerPresenterImp()
         presenter?.viewDidload(self)
-        self.navigationItem.title = "Home"
-        
+        self.navigationItem.title = titleHome
         view.backgroundColor = .red
         setUpLeftBarButtonItem()
         setUpRightBarButtonItem()
@@ -132,6 +136,7 @@ class HomeController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationItem.title = "Home"
         //        self.navigationController?.isNavigationBarHidden = true
     }
     
@@ -182,21 +187,48 @@ extension HomeController: UICollectionViewDelegateFlowLayout {
 }
 
 extension HomeController: HomeControllerInterface {
+    func reloadDataTableView() {
+        tableViewAccount.reloadData()
+    }
+    
     func reloadDataCollectionView() {
         collectionViewHome.reloadData()
     }
 }
 extension HomeController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return presenter?.numberOfRow() ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let dataForRow = presenter?.dataForRowTableView()
+            else { return UITableViewCell() }
+        switch dataForRow[indexPath.row] {
+        case let dataUser as InfoUserModel:
+             guard let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCellAccount", for: indexPath) as? TableViewCellAccount else { return UITableViewCell() }
+            cell.config(nameAccount: dataUser.name, urlImage: dataUser.avata)
+            return cell
+        case let buttonLogout as Logout:
+              guard let cell = tableView.dequeueReusableCell(withIdentifier: "CellLogout", for: indexPath) as? CellLogout else { return UITableViewCell() }
+            cell.config(name: buttonLogout.nameButton)
+            return cell
+        default:
+            break
+        }
+        return UITableViewCell() 
     }
     
     
 }
 extension HomeController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       guard let maxlenght = presenter?.numberOfRow() else { return }
+        if indexPath.row == maxlenght - 1 {
+            self.showAlertHaveCancel(withTitle: "Đăng xuất", withMessage: "Bạn có muốn đăng xuất?")
+        }
+    }
 }
+
